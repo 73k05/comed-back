@@ -11,7 +11,9 @@ from requests.exceptions import HTTPError
 nbRequestSent=0
 
 while 1==1:
-	print("============ Wake Up 73kBot _o/ "+str(nbRequestSent)+" ============")
+	f=open("output.txt", "a+")
+	f.write("============ Wake Up 73kBot _o/ "+str(nbRequestSent)+" ============"+ "\r\n")
+	f.close()
 	nbRequestSent+=1
 
 	# 3 months from now
@@ -20,7 +22,9 @@ while 1==1:
 	for weeknumber in weeknumbers:
 
 		now = datetime.datetime.now()
-		print("["+now.strftime("%H:%M") + "]Week starts "+weeknumber+" days from today")
+		f=open("output.txt", "a+")
+		f.write("["+now.strftime("%H:%M") + "]Week starts "+weeknumber+" days from today"+ "\r\n")
+		f.close()
 		
 		# api-endpoint 
 		# weeknumber = "98" #2-8sept
@@ -37,10 +41,14 @@ while 1==1:
 			# If the response was successful, no Exception will be raised
 			response.raise_for_status()
 		except HTTPError as http_err:
-			print(f"HTTP error occurred: {http_err}")  # Python 3.6
+			f=open("output.txt", "a+")
+			f.write(f"HTTP error occurred: {http_err}"+ "\r\n")  # Python 3.6
+			f.close()
 			break
 		except Exception as err:
-			print(f"Other error occurred: {err}")  # Python 3.6
+			f=open("output.txt", "a+")
+			f.write(f"Other error occurred: {err}"+ "\r\n")  # Python 3.6
+			f.close()
 			break
 		else:
 			# extracting data in raw text format
@@ -49,19 +57,15 @@ while 1==1:
 			
 			found1 = data.find('libre',0,(data.find('Légende'))) != -1
 
-			# print(data)
-			# print("Index of Legende: ",data.find('Légende'))
-			# print("Slot libre found: ",'Oui' if found1 else 'Non')
-			# print("Slot libre 2 found: ",
-			# 	'Oui' if found2 else 'Non')
-
 			# Send email when slot found
 			if found1:
-				print("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!")
-				print("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!")
-				print("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!")
-				print("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!")
-				print("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!")
+				f=open("output.txt", "a+")
+				f.write("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!"+ "\r\n")
+				f.write("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!"+ "\r\n")
+				f.write("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!"+ "\r\n")
+				f.write("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!"+ "\r\n")
+				f.write("!!!!!!!!!!!!!!!!!!SLOT FOUND!!!!!!!!!!!!!!!!!!"+ "\r\n")
+				f.close()
 				import smtplib, ssl
 				from email.mime.base import MIMEBase
 				from email.mime.multipart import MIMEMultipart
@@ -99,14 +103,20 @@ while 1==1:
 					server.sendmail(sender_email, receiver_email, text)
 				except Exception as e:
 				    # Print any error messages to stdout
-				    print("Erreur: ",e)
+				    f=open("output.txt", "a+")
+				    f.write("Erreur: ",e)
+				    f.write("\r\n")
+				    f.close()
 				    exit()
 				finally:
 					server.quit()
-
-					print("73kBot sent a mail to 73k05")
+					f=open("output.txt", "a+")
+					f.write("73kBot sent a mail to 73k05"+ "\r\n")
+					f.close()
 
 	# Sleeping time in minutes
 	sleeptime = 1
-	print("============ 73kBot will sleep "+str(sleeptime)+" minutes _o/ "+str(nbRequestSent)+" ============")
+	f=open("output.txt", "a+")
+	f.write("============ 73kBot will sleep "+str(sleeptime)+" minutes _o/ "+str(nbRequestSent)+" ============"+ "\r\n")
+	f.close()
 	time.sleep(sleeptime*60)
