@@ -17,7 +17,7 @@ while 1==1:
 	nbRequestSent+=1
 
 	# 3 months from now
-	weeknumbers = ["0","7","14","21","28","35","42","49","56","63","70","77","84","91"]
+	weeknumbers = ["0","7","14","21","28","35","42","49","56","63","70"]
 	# weeknumbers = ["98"]
 	for weeknumber in weeknumbers:
 
