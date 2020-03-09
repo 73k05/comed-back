@@ -7,3 +7,8 @@ Change pwd and/or smtp config in rendev.py password = "***" and run
 ```
 python3.7 rendev.py
 ```
+# after start
+Open new terminal and paste the following command to dispaly the output of the server
+```
+tail -f output.txt 
+```
