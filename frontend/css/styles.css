@@ -1,30 +1,35 @@
 .main-form {
-    width: 450px;
+    width: 800px;
     margin: auto;
 }
 
-#bannerimage {
-  width: 100%;
-  background-image: url(../resources/images/banner.jpg);
-  height: 200px;
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center;
+.maincontainer{
+}
+.banner {
+  position: relative;
+    width: 800px;
+    margin: auto;
+}
+.stamp {
+  position: absolute;
+  top: 20px;
+  left: 50px;
 }
 
 .title-h1{
     color: #47699D;
-    width: 1050px;
+    width: 800px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 2em;
-    margin: 0 0 5px 0;
+    margin-left: 1em;
+    margin-right: 1em;
     padding: 0 0 5px 0;
     font-weight: bold;
 }
 
 .header-desc{
-    width: 1050px;
-	    clear: both;
+    width: 800px;
+    clear: both;
     color: #4d73ac;
     font-size: 1.6em;
     padding-bottom: .75em;
@@ -33,7 +38,7 @@
 
 .footer-price-rgpd{
     color: #47699D;
-    width: 1050px;
+    width: 800px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 1em;
     margin: 0 0 5px 0;
