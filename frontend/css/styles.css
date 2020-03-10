@@ -2,3 +2,41 @@
     width: 450px;
     margin: auto;
 }
+
+#bannerimage {
+  width: 100%;
+  background-image: url(../resources/images/banner.jpg);
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.title-h1{
+    color: #47699D;
+    width: 1050px;
+    font-family: "Century Gothic",Arial,Verdana;
+    font-size: 2em;
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;
+    font-weight: bold;
+}
+
+.header-desc{
+    width: 1050px;
+	    clear: both;
+    color: #4d73ac;
+    font-size: 1.6em;
+    padding-bottom: .75em;
+    text-transform: uppercase;
+}
+
+.footer-price-rgpd{
+    color: #47699D;
+    width: 1050px;
+    font-family: "Century Gothic",Arial,Verdana;
+    font-size: 1em;
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;
+    font-style:italic;
+}
