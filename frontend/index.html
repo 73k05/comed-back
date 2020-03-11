@@ -10,23 +10,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
-    <title>medical</title>
+    <link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css.map">
+    <title>M</title>
 </head>
 
 <body>
-    <form action="" class="main-form needs-validation">
+    <form action="" class="main-form needs-validation"  novalidate>
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname" class="form-control" required>
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name"  minlength="2" maxlength="30"  class="form-control" required>
                     <div class="invalid-feedback">Please enter a valid username.</div>
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname" id="lastname" class="form-control" required>
+                    <input type="text" name="lastname" id="lastname" placeholder="Last Name"  minlength="2" maxlength="30"  class="form-control" required>
                     <div class="invalid-feedback">Please enter a valid username.</div>
                 </div>
 
@@ -34,18 +33,29 @@
         </div>
 
         <div class="form-group">
-            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+            <input id="email" name="email" type="email" 
+             placeholder="Email Address" class="form-control" required>
+            <div class="invalid-feedback">Please enter a valid Email.</div>
         </div>
         
 
         <div class="form-group">
-            <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-
+            <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" 
+             placeholder="Phone" class="form-control" required>
+            <div class="invalid-feedback">Please enter a valid Phone Number.</div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 
-    <script src="./js/bootstrap.min.js"></script>
+        <div class="form-group date" id="birthdate-form">
+            <label for="birthday">Birthday:</label>
+            <input id="birthday-input" type="date" name="bday" class="form-control" required>
+            <div id="age-error-message" class="invalid-feedback">You are under 18. You cant proceed.</div>
+            <p id="resultBday"></p>
+        </div>
+
+        <button type="submit" onclick="submitBday()" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
