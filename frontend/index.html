@@ -4,57 +4,98 @@
 <head>
     <!-- created by Axios -->
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Commission Médicale</title>
+    <meta property="og:site_name" content="Commission Médicale | Réservation en ligne" />
+    <meta property="og:title" content="Commission Médicale | Réservation en ligne" />
+    <meta property="og:description"
+        content="Commission Médicale au Permis de Conduire. Prise de rendez-vous en ligne dans votre département" />
+    <meta name="description"
+        content="Commission Médicale au Permis de Conduire. Prise de rendez-vous en ligne dans votre Département">
+    <meta property="og:image" content="https://commissionmedicale.fr/resources/images/preview.png" />
+    <meta property="og:url" content="https://commissionmedicale.fr">
+    <meta name="author" content="73k05">
+    <meta name="keywords" content="Commission Médicale,Permis de Conduire,Rendez-vous,Réservation,En Ligne">
+
+    <link rel="shortcut icon" href="./resources/images/favicon.ico">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css.map">
-    <title>M</title>
+    <link rel="stylesheet" type="text/css"  href="./libs/bootstrap/bootstrap.min.css">
+    
 </head>
 
 <body>
-    <form action="" class="main-form needs-validation"  novalidate>
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <input type="text" name="firstname" id="firstname" placeholder="First Name"  minlength="2" maxlength="30"  class="form-control" required>
-                    <div class="invalid-feedback">Please enter a valid username.</div>
+    <div>
+
+         <center>
+            <img class="banner" alt="Les services de l'État" src="./resources/images/banner.jpg" />
+            <img class="stamp" alt="Les services de l'État" src="./resources/images/prefet-departement.png" />
+        </center>
+
+        <center>
+            <h1 class="title-h1">Réserver votre commission médicale au permis de conduire sans attendre</h1>
+        </center>
+        <center>
+            <h2 class="header-desc"><br />Nous centralisons la prise de rendez-vous dans votre departement même lorsque
+                c'est complet<br /><br /> Remplissez <b>consciencieusement</b> le formulaire ci dessous et nous vous
+                bloquerons le meilleur créneau disponible</h2>
+        </center> 
+
+        <form action="" class="main-form needs-validation" novalidate> 
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" name="firstname" id="firstname" placeholder="First Name" minlength="2"
+                            maxlength="30" class="form-control" required>
+                        <div class="invalid-feedback">Please enter a valid username.</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" name="lastname" id="lastname" placeholder="Last Name" minlength="2"
+                            maxlength="30" class="form-control" required>
+                        <div class="invalid-feedback">Please enter a valid username.</div>
+                    </div>
+
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <input type="text" name="lastname" id="lastname" placeholder="Last Name"  minlength="2" maxlength="30"  class="form-control" required>
-                    <div class="invalid-feedback">Please enter a valid username.</div>
-                </div>
 
+            <div class="form-group">
+                <input id="email" name="email" type="email" placeholder="Email Address" class="form-control" required>
+                <div class="invalid-feedback">Please enter a valid Email.</div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <input id="email" name="email" type="email" 
-             placeholder="Email Address" class="form-control" required>
-            <div class="invalid-feedback">Please enter a valid Email.</div>
-        </div>
-        
 
-        <div class="form-group">
-            <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" 
-             placeholder="Phone" class="form-control" required>
-            <div class="invalid-feedback">Please enter a valid Phone Number.</div>
-        </div>
+            <div class="form-group">
+                <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" placeholder="Phone"
+                    class="form-control" required>
+                <div class="invalid-feedback">Please enter a valid Phone Number.</div>
+            </div>
 
-        <div class="form-group date" id="birthdate-form">
-            <label for="birthday">Birthday:</label>
-            <input id="birthday-input" type="date" name="bday" class="form-control" required>
-            <div id="age-error-message" class="invalid-feedback">You are under 18. You cant proceed.</div>
-            <p id="resultBday"></p>
-        </div>
+            <div class="form-group date" id="birthdate-form">
+                <label for="birthday">Birthday:</label>
+                <input id="birthday-input" type="date" name="bday" class="form-control" required>
+                <div id="age-error-message" class="invalid-feedback">You are under 18. You cant proceed.</div>
+                <p id="resultBday"></p>
+            </div>
 
-        <button type="submit" onclick="submitBday()" class="btn btn-primary">Submit</button>
-    </form>
-    
+            <button type="submit" onclick="submitBday()" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+        <center>
+            <div class="footer-price-rgpd">Choisissez une date éloignée pour augmenter vos chances d'obtenir la
+                réservation<br />Ce service est gratuit, cependant des frais de gestion de 5 euros vous serons demandés
+                lors de la validation du rendez-vous. <br />Pour toute question sur le traitement de vos informations
+                personnelles: contact[*at*]commissionmedicale[*point*]fr<br /></div>
+        </center> 
+
+    </div>
+    <script src="./libs/jquery-3.4.1.min.js"></script>
+    <script src="./libs/bootstrap/bootstrap.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 
