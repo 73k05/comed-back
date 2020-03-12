@@ -1,6 +1,7 @@
 (function () {
     'use strict';
     window.addEventListener('load', function () {
+         populateSelect();
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
         // Loop over them and prevent submission
@@ -20,15 +21,14 @@
 function submitBday() {
     let errorMessage = document.getElementById('age-error-message');
     let birthdateInput = document.getElementById('birthday-input');
-    
+
     let today = new Date();
     let dateTodayYear = today.getFullYear();
     let Bdate = birthdateInput.value;
     let Bday = new Date(Bdate);
     let yearOfBirth = Bday.getFullYear();
     let age = (dateTodayYear - yearOfBirth);
-    
-    
+
     if (age < 18) {
         errorMessage.style.display = "block";
         birthdateInput.setCustomValidity('useless error message');
@@ -45,7 +45,7 @@ function submitBday() {
 }
 
 // Email JS init
-(function() {
+(function () {
     emailjs.init("user_okaI2d5BZr9wdrnselFor");
 })();
 
@@ -72,10 +72,10 @@ function sendMail(form, checkbutton) {
 
     form.is_already_sent.value = 'true';
     emailjs.send('inkos', 'inkos_template', params)
-        .then(function(response) {
+        .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
             checkbutton.removeClass("hide");
-        }, function(error) {
+        }, function (error) {
             console.log('FAILED...', error);
             form.is_already_sent.value = false;
         });
