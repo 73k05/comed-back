@@ -11,6 +11,9 @@
                     event.preventDefault();
                     event.stopPropagation();
                 }
+                else if (form.checkValidity() === true) {
+                    sendBookMail()
+                }
                 form.classList.add('was-validated');
             }, false);
         });

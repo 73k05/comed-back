@@ -90,14 +90,12 @@
             </div>
 
             <div class="form-group" id="appointment-form">
-                <input id="birthday-input" placeholder="Select Appointment" onfocus="(this.type='date')" type="text"
-                    name="bday" class="form-control" placeholder="Daten de naissance" required>
+                <input id="appointment-input" placeholder="Select Appointment" onfocus="(this.type='date')" type="text"
+                    name="appointment" class="form-control" placeholder="Daten de naissance" required>
                 <div id="age-error-message" class="invalid-feedback">Date de naissance obligatoire 18+</div>
                 <p id="resultBday"></p>
             </div>
-
             <button type="button" onclick="sendBookMail()" class="btn btn-primary">Réservez</button>
-            
         </form>
 
         <center>
