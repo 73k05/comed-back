@@ -44,4 +44,39 @@ function submitBday() {
     }
 }
 
+// Email JS init
+(function() {
+    emailjs.init("user_okaI2d5BZr9wdrnselFor");
+})();
 
+// Email JS send mail
+function sendMail(form, checkbutton) {
+    if (form == undefined || !form.checkValidity() || form.is_already_sent.value == 'true') {
+        console.error("Error, email empty or wrong or medical rendez-vous already sent");
+        return;
+    }
+
+    var email = form.email.value
+    // generate the contact number value
+    var number = Math.random() * 100000 | 0;
+    var name = email.substring(0, email.indexOf('@'));
+
+    var params = {
+        email: email,
+        firstname: firstname,
+        lastname: lastname,
+        phone: phone,
+        number: number,
+        bday: bday
+    };
+
+    form.is_already_sent.value = 'true';
+    emailjs.send('inkos', 'inkos_template', params)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            checkbutton.removeClass("hide");
+        }, function(error) {
+            console.log('FAILED...', error);
+            form.is_already_sent.value = false;
+        });
+}

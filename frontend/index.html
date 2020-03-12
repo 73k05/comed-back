@@ -47,37 +47,37 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" name="firstname" id="firstname" placeholder="First Name" minlength="2"
+                        <input type="text" name="firstname" id="firstname" placeholder="Prénom" minlength="2"
                             maxlength="30" class="form-control" required>
-                        <div class="invalid-feedback">Please enter a valid username.</div>
+                        <div class="invalid-feedback">Prénom obligatoire entre 2 et 30 lettres</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" name="lastname" id="lastname" placeholder="Last Name" minlength="2"
+                        <input type="text" name="lastname" id="lastname" placeholder="Nom" minlength="2"
                             maxlength="30" class="form-control" required>
-                        <div class="invalid-feedback">Please enter a valid username.</div>
+                        <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
                     </div>
 
                 </div>
             </div>
 
             <div class="form-group">
-                <input id="email" name="email" type="email" placeholder="Email Address" class="form-control" required>
-                <div class="invalid-feedback">Please enter a valid Email.</div>
+                <input id="email" name="email" type="email" placeholder="Email" class="form-control" required>
+                <div class="invalid-feedback">Email obligatoire</div>
             </div>
 
 
             <div class="form-group">
-                <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" placeholder="Phone"
+                <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" placeholder="Téléphone"
                     class="form-control" required>
-                <div class="invalid-feedback">Please enter a valid Phone Number.</div>
+                <div class="invalid-feedback">Le numéro obligatoire doit être français</div>
             </div>
 
-            <div class="form-group date" id="birthdate-form">
-                <label for="birthday">Birthday:</label>
-                <input id="birthday-input" type="date" name="bday" class="form-control" required>
-                <div id="age-error-message" class="invalid-feedback">You are under 18. You cant proceed.</div>
+            <div class="form-group" id="birthdate-form">
+                <label for="birthday">Date de naissance</label>
+                <input id="birthday-input" type="date" name="bday" class="form-control" placeholder="Daten de naissance" required>
+                <div id="age-error-message" class="invalid-feedback">Date de naissance obligatoire 18+</div>
                 <p id="resultBday"></p>
             </div>
 
@@ -96,7 +96,7 @@
     </div>
     <script src="./libs/jquery-3.4.1.min.js"></script>
     <script src="./libs/bootstrap/bootstrap.min.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/medical.js"></script>
 </body>
 
 </html>
