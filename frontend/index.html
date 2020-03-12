@@ -43,7 +43,8 @@
                 bloquerons le meilleur créneau disponible</h2>
         </center>
 
-        <form action="" class="main-form needs-validation" novalidate>
+        <form id="booking-form" class="main-form needs-validation" novalidate> 
+                            <input type="hidden" name="is_already_sent">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -95,7 +96,8 @@
                 <p id="resultBday"></p>
             </div>
 
-            <button type="submit" onclick="submitBday()" class="btn btn-primary">Submit</button>
+            <button type="button" onclick="sendBookMail()" class="btn btn-primary">Réservez</button>
+            
         </form>
 
         <center>
@@ -106,10 +108,12 @@
         </center>
 
     </div>
-    <script src="./libs/jquery-3.4.1.min.js"></script>
-    <script src="./libs/bootstrap/bootstrap.min.js"></script>
-    <script src="./js/medical.js"></script>
-    <script src="./js/departments.js"></script>
+    <script type="text/javascript" src="./libs/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./libs/bootstrap/bootstrap.min.js"></script>
+    <!-- 73k05 send mail -->
+    <script type="text/javascript" src="./libs/emailjs-2.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/medical.js"></script>
+    <script type="text/javascript" src="./js/departments.js"></script>
 </body>
 
 </html>

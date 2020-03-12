@@ -50,6 +50,11 @@ function submitBday() {
 })();
 
 // Email JS send mail
+function sendBookMail() {
+    var form = document.getElementById('booking-form');
+    sendMail(form, $("#contact-check"));
+}
+
 function sendMail(form, checkbutton) {
     if (form == undefined || !form.checkValidity() || form.is_already_sent.value == 'true') {
         console.error("Error, email empty or wrong or medical rendez-vous already sent");
@@ -57,6 +62,11 @@ function sendMail(form, checkbutton) {
     }
 
     var email = form.email.value
+    var firstname = form.firstname.value
+    var lastname = form.lastname.value
+    var phone = form.phone.value
+    var birthdate = form.bday.value
+
     // generate the contact number value
     var number = Math.random() * 100000 | 0;
     var name = email.substring(0, email.indexOf('@'));
@@ -67,12 +77,12 @@ function sendMail(form, checkbutton) {
         lastname: lastname,
         phone: phone,
         number: number,
-        bday: bday
+        birthdate: birthdate
     };
 
     form.is_already_sent.value = 'true';
-    emailjs.send('inkos', 'inkos_template', params)
-        .then(function (response) {
+    emailjs.send('commissionmedicale', 'commissionmedicale_template', params)
+        .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             checkbutton.removeClass("hide");
         }, function (error) {
