@@ -43,20 +43,20 @@
                 bloquerons le meilleur créneau disponible</h2>
         </center>
 
-        <form id="booking-form" class="main-form needs-validation" novalidate> 
-                            <input type="hidden" name="is_already_sent">
+        <form id="booking-form" class="main-form needs-validation" novalidate>
+            <input type="hidden" name="is_already_sent">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <input type="text" name="firstname" id="firstname" placeholder="Prénom" minlength="2"
-                            maxlength="30" class="form-control" required>
+                            maxlength="30" class="form-control" value="gogol" required>
                         <div class="invalid-feedback">Prénom obligatoire entre 2 et 30 lettres</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" name="lastname" id="lastname" placeholder="Nom" minlength="2" maxlength="30"
-                            class="form-control" required>
+                        <input type="text" name="lastname" id="lastname" value="unlimited" placeholder="Nom"
+                            minlength="2" maxlength="30" class="form-control" required>
                         <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
                     </div>
 
@@ -64,14 +64,15 @@
             </div>
 
             <div class="form-group">
-                <input id="email" name="email" type="email" placeholder="Email" class="form-control" required>
+                <input id="email" name="email" type="email" placeholder="Email" value="gogol-unlimited@gmail.com"
+                    class="form-control" required>
                 <div class="invalid-feedback">Email obligatoire</div>
             </div>
 
 
             <div class="form-group">
-                <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" placeholder="Téléphone"
-                    class="form-control" required>
+                <input id="phone" minlength="10" maxlength="10" name="phone" value="1234567899" type="tel"
+                    placeholder="Téléphone" class="form-control" required>
                 <div class="invalid-feedback">Le numéro obligatoire doit être français</div>
             </div>
 
@@ -89,21 +90,16 @@
                 <div id="age-error-message" class="invalid-feedback">Please select your area</div>
             </div>
 
-            <div class="form-group" id="appointment-form">
-                <input id="appointment-input" placeholder="Select Appointment" onfocus="(this.type='date')" type="text"
-                    name="appointment" class="form-control" placeholder="Daten de naissance" required>
-                <div id="age-error-message" class="invalid-feedback">Date de naissance obligatoire 18+</div>
-                <p id="resultBday"></p>
-            </div>
-            <button type="button" onclick="sendBookMail()" class="btn btn-primary">Réservez</button>
-        </form>
+            <button type="submit" name="bookButton" class="btn btn-primary">Réservez</button>
 
-        <center>
-            <div class="footer-price-rgpd">Choisissez une date éloignée pour augmenter vos chances d'obtenir la
-                réservation<br />Ce service est gratuit, cependant des frais de gestion de 5 euros vous serons demandés
-                lors de la validation du rendez-vous. <br />Pour toute question sur le traitement de vos informations
-                personnelles: contact[*at*]commissionmedicale[*point*]fr<br /></div>
-        </center>
+            <center>
+                <div class="footer-price-rgpd">Choisissez une date éloignée pour augmenter vos chances d'obtenir la
+                    réservation<br />Ce service est gratuit, cependant des frais de gestion de 5 euros vous serons
+                    demandés
+                    lors de la validation du rendez-vous. <br />Pour toute question sur le traitement de vos
+                    informations
+                    personnelles: contact[*at*]commissionmedicale[*point*]fr<br /></div>
+            </center>
 
     </div>
     <script type="text/javascript" src="./libs/jquery-3.4.1.min.js"></script>
