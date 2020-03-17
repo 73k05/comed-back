@@ -1,14 +1,17 @@
+const minimumDelayBook = 7;
+
+
 (function () {
     'use strict';
     window.addEventListener('load', function () {
         populateSelect();
+        initBookDatePicker();
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
         // Loop over them and prevent submission
         var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
                 if (form.checkValidity() === false) {
-                    console.log('not true');
                     preventEvents(event);
                 }
                 else if (form.checkValidity() === true) {
@@ -86,7 +89,6 @@ function sendMail(form, checkbutton) {
     };
 
     form.is_already_sent.value = 'true';
-    console.log('anything');
     emailjs.send('commissionmedicale', 'commissionmedicale_template', params)
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
@@ -108,7 +110,18 @@ function enableBookButton() {
     return false;
 };
 
-function preventEvents(event){
+function preventEvents(event) {
     event.preventDefault();
     event.stopPropagation();
 };
+
+// Display Booking Date
+
+function initBookDatePicker() {
+    let displayBookingInput = document.getElementById('bookingDate-input');
+    let nextWeekDate = new Date();
+    // Calculating the actual day date + 6 days ahead
+    nextWeekDate.setDate(nextWeekDate.getDate() + minimumDelayBook);
+    displayBookingInput.min = nextWeekDate.getFullYear().toString() + '-' + (nextWeekDate.getMonth() + 1).toString().padStart(2, 0)
+        + '-' + nextWeekDate.getDate().toString().padStart(2, 0);
+}

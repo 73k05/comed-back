@@ -44,19 +44,18 @@
         </center>
 
         <form id="booking-form" class="main-form needs-validation" novalidate>
-            <input type="hidden" name="is_already_sent">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <input type="text" name="firstname" id="firstname" placeholder="Prénom" minlength="2"
-                            maxlength="30" class="form-control" value="gogol" required>
+                            maxlength="30" class="form-control" required>
                         <div class="invalid-feedback">Prénom obligatoire entre 2 et 30 lettres</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" name="lastname" id="lastname" value="unlimited" placeholder="Nom"
-                            minlength="2" maxlength="30" class="form-control" required>
+                        <input type="text" name="lastname" id="lastname" placeholder="Nom" minlength="2" maxlength="30"
+                            class="form-control" required>
                         <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
                     </div>
 
@@ -64,15 +63,14 @@
             </div>
 
             <div class="form-group">
-                <input id="email" name="email" type="email" placeholder="Email" value="gogol-unlimited@gmail.com"
-                    class="form-control" required>
+                <input id="email" name="email" type="email" placeholder="Email" class="form-control" required>
                 <div class="invalid-feedback">Email obligatoire</div>
             </div>
 
 
             <div class="form-group">
-                <input id="phone" minlength="10" maxlength="10" name="phone" value="1234567899" type="tel"
-                    placeholder="Téléphone" class="form-control" required>
+                <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" placeholder="Téléphone"
+                    class="form-control" required>
                 <div class="invalid-feedback">Le numéro obligatoire doit être français</div>
             </div>
 
@@ -80,7 +78,6 @@
                 <input id="birthday-input" placeholder="Enter your birthday" onfocus="(this.type='date')" type="text"
                     name="bday" class="form-control" placeholder="Daten de naissance" required>
                 <div id="age-error-message" class="invalid-feedback">Date de naissance obligatoire 18+</div>
-                <p id="resultBday"></p>
             </div>
 
             <div class="form-group">
@@ -88,6 +85,13 @@
                     <option value="" disabled selected hidden>Select your area</option>
                 </select>
                 <div id="age-error-message" class="invalid-feedback">Please select your area</div>
+            </div>
+
+            <div class="form-group" id="bookingDate-form">
+                <input id="bookingDate-input" placeholder="Select appointment" onfocus="(this.type='date')" type="date"
+                    name="bookingDate" class="form-control" placeholder="Daten de naissance" required>
+                <div id="bookingDate-error-message" class="invalid-feedback">please Select appointment in one week a
+                    head</div>
             </div>
 
             <button type="submit" name="bookButton" class="btn btn-primary">Réservez</button>
