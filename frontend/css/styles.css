@@ -8,13 +8,14 @@
     width: 800px;
     margin: auto;
 }
+
 .stamp {
   position: absolute;
   top: 20px;
   left: 50px;
 }
 
-.title-h1{
+.title-h1 {
     color: #47699D;
     width: 800px;
     font-family: "Century Gothic",Arial,Verdana;
@@ -25,7 +26,7 @@
     font-weight: bold;
 }
 
-.header-desc{
+.header-desc {
     width: 800px;
     clear: both;
     color: #4d73ac;
@@ -34,7 +35,7 @@
     text-transform: uppercase;
 }
 
-.footer-price-rgpd{
+.footer-price-rgpd {
     color: #47699D;
     width: 800px;
     font-family: "Century Gothic",Arial,Verdana;
@@ -42,4 +43,17 @@
     margin: 0 0 5px 0;
     padding: 0 0 5px 0;
     font-style:italic;
+}
+
+.alert {
+    margin-top: 10px;
+    display: none;
+}
+
+.progress {
+    margin-top: 8px;
+}
+
+.progress-bar {
+    width:100%;
 }
