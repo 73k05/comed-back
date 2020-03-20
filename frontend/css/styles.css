@@ -1,11 +1,11 @@
 .main-form {
-    width: 800px;
+    width: 1200px;
     margin: auto;
 }
 
 .banner {
   position: relative;
-    width: 800px;
+    width: 1200px;
     margin: auto;
 }
 
@@ -17,7 +17,7 @@
 
 .title-h1 {
     color: #47699D;
-    width: 800px;
+    width: 1200px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 2em;
     margin-left: 1em;
@@ -27,7 +27,7 @@
 }
 
 .header-desc {
-    width: 800px;
+    width: 1200px;
     clear: both;
     color: #4d73ac;
     font-size: 1.4em;
@@ -37,7 +37,7 @@
 
 .footer-price-rgpd {
     color: #47699D;
-    width: 800px;
+    width: 1200px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 1em;
     margin: 0 0 5px 0;
