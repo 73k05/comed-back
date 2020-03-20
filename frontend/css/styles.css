@@ -1,12 +1,16 @@
+
+.container {
+  width: 100%;
+  align-items: center;
+}
+
 .main-form {
-    width: 1200px;
     margin: auto;
 }
 
 .banner {
   position: relative;
-    width: 1200px;
-    margin: auto;
+  margin: auto;
 }
 
 .stamp {
@@ -17,26 +21,25 @@
 
 .title-h1 {
     color: #47699D;
-    width: 1200px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 2em;
     padding: 0 0 5px 0;
     font-weight: bold;
     margin: auto;
+    text-align: center;
 }
 
 .header-desc {
-    width: 1200px;
     clear: both;
     color: #4d73ac;
     font-size: 1.4em;
     padding-bottom: .75em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .footer-price-rgpd {
     color: #47699D;
-    width: 1200px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 1em;
     margin: 0 0 5px 0;

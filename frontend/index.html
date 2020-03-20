@@ -28,21 +28,15 @@
 </head>
 
 <body>
-    <div>
+    <div class="container">
 
-        <center>
-            <img class="banner" alt="Les services de l'État" src="./resources/images/banner.jpg" />
-            <img class="stamp" alt="Les services de l'État" src="./resources/images/prefet-departement.png" />
-        </center>
+        <img class="banner" alt="Les services de l'État" src="./resources/images/banner.jpg" />
+        <img class="stamp" alt="Les services de l'État" src="./resources/images/prefet-departement.png" />
 
-        <center>
-            <h1 class="title-h1">Réserver votre commission médicale au permis de conduire sans attendre</h1>
-        </center>
-        <center>
-            <h2 class="header-desc"><br />Nous centralisons la prise de rendez-vous dans votre departement même lorsque
-                c'est complet<br /><br /> Remplissez <b>consciencieusement</b> le formulaire ci dessous et nous vous
-            bloquerons le meilleur créneau disponible</h2>
-        </center>
+        <h1 class="title-h1">Réserver votre commission médicale au permis de conduire sans attendre</h1>
+        <h2 class="header-desc"><br />Nous centralisons la prise de rendez-vous dans votre departement même lorsque
+            c'est complet<br /><br /> Remplissez <b>consciencieusement</b> le formulaire ci dessous et nous vous
+        bloquerons le meilleur créneau disponible</h2>
 
         <form id="booking-form" class="main-form needs-validation" novalidate>
             <div class="row">
@@ -59,7 +53,6 @@
                         pattern="[a-zA-Z- ]*" class="form-control" required>
                         <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
                     </div>
-
                 </div>
             </div>
 
@@ -112,57 +105,59 @@
 
 
             <button type="submit" name="bookButton" class="btn btn-primary">Réservez</button>
+        </form>
 
-            <div id="progressId" class="progress" hidden>
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary">Reservation en cours...
-                </div>
+        <div id="progressId" class="progress" hidden>
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary">Reservation en cours...
             </div>
+        </div>
 
-            <div class="alert alert-success alert-dismissible fade show" id="success-message">
-                <h4 class="alert-heading">Réservation envoyée!</h4>
-                <p>Merci d'avoir réservé sur <a href="https://commissionmedicale.fr">commissionmedicale.fr</a></p>
-                <hr>
+        <div class="alert alert-success alert-dismissible fade show" id="success-message">
+            <h4 class="alert-heading">Réservation envoyée!</h4>
+            <p>Merci d'avoir réservé sur <a href="https://commissionmedicale.fr">commissionmedicale.fr</a></p>
+            <hr>
 
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+
+        <div class="alert alert-danger alert-dismissible fade show" id="error-message">
+            <h4 class="alert-heading">Erreur de réservation</h4>
+            <p>La réservation n'a pu être réalisée comme il faut veuillez réessayer plus tard ou nous contacter à contact [*at*] commissionmedicale [*point*] fr</p>
+            <hr>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+
+        <center>
+            <div class="footer-price-rgpd">Choisissez une date éloignée pour augmenter vos chances d'obtenir la
+                réservation<br />Ce service est gratuit, cependant des frais de gestion de 5 euros vous serons
+                demandés
+                lors de la validation du rendez-vous. <br />Pour toute question sur le traitement de vos
+                informations
+                personnelles: contact [*at*] commissionmedicale [*point*] fr<br />
             </div>
+        </center>
 
-            <div class="alert alert-danger alert-dismissible fade show" id="error-message">
-                <h4 class="alert-heading">Erreur de réservation</h4>
-                <p>La réservation n'a pu être réalisée comme il faut veuillez réessayer plus tard ou nous contacter à contact[*at*]commissionmedicale[*point*]fr</p>
-                <hr>
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-            </div>
+    </div>
+    <!-- Jquery libs -->
+    <script type="text/javascript" src="./libs/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
-            <center>
-                <div class="footer-price-rgpd">Choisissez une date éloignée pour augmenter vos chances d'obtenir la
-                    réservation<br />Ce service est gratuit, cependant des frais de gestion de 5 euros vous serons
-                    demandés
-                    lors de la validation du rendez-vous. <br />Pour toute question sur le traitement de vos
-                    informations
-                    personnelles: contact[*at*]commissionmedicale[*point*]fr<br /></div>
-                </center>
+    <script type="text/javascript" src="./libs/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./libs/bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js"></script>
 
-            </div>
-            <!-- Jquery libs -->
-            <script type="text/javascript" src="./libs/jquery-3.4.1.min.js"></script>
-            <script type="text/javascript" src="libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <!-- 73k05 send mail -->
+    <script type="text/javascript" src="./libs/emailjs-2.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/medical.js"></script>
+    <script type="text/javascript" src="./js/departments.js"></script>
 
-            <script type="text/javascript" src="./libs/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="./libs/bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="./libs/analytics.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-85193412-12');
+    </script>
+</body>
 
-            <!-- 73k05 send mail -->
-            <script type="text/javascript" src="./libs/emailjs-2.4.1.min.js"></script>
-            <script type="text/javascript" src="./js/medical.js"></script>
-            <script type="text/javascript" src="./js/departments.js"></script>
-
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="./libs/analytics.js"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'UA-85193412-12');
-            </script>
-        </body>
-
-        </html>
+</html>
