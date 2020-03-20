@@ -20,10 +20,9 @@
     width: 1200px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 2em;
-    margin-left: 1em;
-    margin-right: 1em;
     padding: 0 0 5px 0;
     font-weight: bold;
+    margin: auto;
 }
 
 .header-desc {

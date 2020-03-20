@@ -4,20 +4,19 @@ const minimumDelayBook = 7;
     'use strict';
     window.addEventListener('load', function () {
         populateSelect();
-        initBookDatePicker();
+        initBookDatePickers();
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
         // Loop over them and prevent submission
         var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
-                submitBday();
                 if (form.checkValidity() === false) {
                     preventEvents(event);
                 }
                 else if (form.checkValidity() === true) {
                     preventEvents(event);
                     disableBookButton(form);
-                     sendBookMail();
+                    sendBookMail();
                 }
                 form.classList.add('was-validated');
             }, false);
@@ -25,34 +24,29 @@ const minimumDelayBook = 7;
     }, false);
 })();
 
-// calculate age
-function submitBday() {
-    let errorMessage = document.getElementById('age-error-message');
-    let birthdateInput = document.getElementById('birthday-input');
+// Display Booking Date
+function initBookDatePickers() {
+    // Calculating the actual day date + 6 days ahead
+    let nextWeekDate = new Date();
+    nextWeekDate.setDate(nextWeekDate.getDate() + minimumDelayBook);
+    $("#bookingDatePicker").datepicker({
+        onSelect: function(date) {
+        },
+        format: "dd/mm/yyyy",
+        startDate: nextWeekDate,
+        firstDay: 1,
+    });
 
-    let today = new Date();
-    let dateTodayYear = today.getFullYear();
-    let Bdate = birthdateInput.value;
-    let Bday = new Date(Bdate);
-    let yearOfBirth = Bday.getFullYear();
-    let age = (dateTodayYear - yearOfBirth);
-
-    if (age < 18) {
-        errorMessage.style.display = "block";
-        birthdateInput.setCustomValidity('useless error message');
-        return false;
-    }
-
-    else if (age > 18) {
-        birthdateInput.setCustomValidity('');
-        errorMessage.style.display = "none";
-        return true;
-    }
-
-    else if (age === 18) {
-        return true;
-        // your algorithm is our concern compute the exact day of the year 
-    }
+    // Calculating the actual day date - 18 years behind
+    let minBirthDate = new Date()
+    minBirthDate.setFullYear(new Date().getFullYear() - 18);    
+    $("#birthDatePicker").datepicker({
+        onSelect: function(date) {
+        },
+        format: "dd/mm/yyyy",
+        endDate: minBirthDate,
+        firstDay: 1,
+    });
 };
 
 // Email JS init
@@ -63,10 +57,10 @@ function submitBday() {
 // Email JS send mail
 function sendBookMail() {
     var form = document.getElementById('booking-form');
-    sendMail(form, $("#contact-check"));
+    sendMail(form);
 };
 
-function sendMail(form, checkbutton) {
+function sendMail(form) {
     if (form == undefined || !form.checkValidity()) {
         console.error("Error, email empty or wrong or medical rendez-vous already sent");
         return;
@@ -101,17 +95,17 @@ function sendMail(form, checkbutton) {
     showProgressBar();
 
     emailjs.send('commissionmedicale', 'commissionmedicale_template', params)
-        .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            hideProgressBar();
-            showSuccesMessage();
+    .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+        hideProgressBar();
+        showSuccesMessage();
 
-        }, function (error) {
-            enableBookButton(form);
-            console.log('FAILED...', error);
-            hideProgressBar();
-            showErrorMEssage();
-        });
+    }, function (error) {
+        enableBookButton(form);
+        console.log('FAILED...', error);
+        hideProgressBar();
+        showErrorMEssage();
+    });
 };
 
 function disableBookButton(form) {
@@ -127,17 +121,6 @@ function enableBookButton(form) {
 function preventEvents(event) {
     event.preventDefault();
     event.stopPropagation();
-};
-
-// Display Booking Date
-
-function initBookDatePicker() {
-    let displayBookingInput = document.getElementById('bookingDate-input');
-    let nextWeekDate = new Date();
-    // Calculating the actual day date + 6 days ahead
-    nextWeekDate.setDate(nextWeekDate.getDate() + minimumDelayBook);
-    displayBookingInput.min = nextWeekDate.getFullYear().toString() + '-' + (nextWeekDate.getMonth() + 1).toString().padStart(2, 0)
-        + '-' + nextWeekDate.getDate().toString().padStart(2, 0);
 };
 
 function showSuccesMessage() {
