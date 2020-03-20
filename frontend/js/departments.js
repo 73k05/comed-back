@@ -99,10 +99,10 @@ function populateSelect() {
         { "Department_Name": "Mayotte" }
     ];
 
-    let element = document.getElementById('selection');
+    let element = document.getElementById('selectRegion');
     for (var i = 0; i < departments.length; i++) {
         // POPULATE SELECT ELEMENT WITH JSON.
         element.innerHTML = element.innerHTML +
-            '<option value="' + '">' + departments[i]['Department_Name'] + '</option>';
+            '<option value="' +departments[i]['Department_Name'] + '">' + departments[i]['Department_Name'] + '</option>';
     }
-}
+};

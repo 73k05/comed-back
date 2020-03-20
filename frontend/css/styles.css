@@ -1,32 +1,32 @@
 .main-form {
-    width: 800px;
+    width: 1200px;
     margin: auto;
 }
 
 .banner {
   position: relative;
-    width: 800px;
+    width: 1200px;
     margin: auto;
 }
+
 .stamp {
   position: absolute;
   top: 20px;
   left: 50px;
 }
 
-.title-h1{
+.title-h1 {
     color: #47699D;
-    width: 800px;
+    width: 1200px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 2em;
-    margin-left: 1em;
-    margin-right: 1em;
     padding: 0 0 5px 0;
     font-weight: bold;
+    margin: auto;
 }
 
-.header-desc{
-    width: 800px;
+.header-desc {
+    width: 1200px;
     clear: both;
     color: #4d73ac;
     font-size: 1.4em;
@@ -34,12 +34,25 @@
     text-transform: uppercase;
 }
 
-.footer-price-rgpd{
+.footer-price-rgpd {
     color: #47699D;
-    width: 800px;
+    width: 1200px;
     font-family: "Century Gothic",Arial,Verdana;
     font-size: 1em;
     margin: 0 0 5px 0;
     padding: 0 0 5px 0;
     font-style:italic;
+}
+
+.alert {
+    margin-top: 10px;
+    display: none;
+}
+
+.progress {
+    margin-top: 8px;
+}
+
+.progress-bar {
+    width:100%;
 }

@@ -11,10 +11,10 @@
     <meta property="og:site_name" content="Commission Médicale | Réservation en ligne" />
     <meta property="og:title" content="Commission Médicale | Réservation en ligne" />
     <meta property="og:description"
-        content="Commission Médicale au Permis de Conduire. Prise de rendez-vous en ligne dans votre département" />
+    content="Commission Médicale au Permis de Conduire. Prise de rendez-vous en ligne dans votre département" />
     <meta name="description"
-        content="Commission Médicale au Permis de Conduire. Prise de rendez-vous en ligne dans votre Département">
-    <meta property="og:image" content="https://commissionmedicale.fr/resources/images/preview.png" />
+    content="Commission Médicale au Permis de Conduire. Prise de rendez-vous en ligne dans votre Département">
+    <meta property="og:image" content="https://commissionmedicale.fr/resources/images/preview.jpg" />
     <meta property="og:url" content="https://commissionmedicale.fr">
     <meta name="author" content="73k05">
     <meta name="keywords" content="Commission Médicale,Permis de Conduire,Rendez-vous,Réservation,En Ligne">
@@ -22,8 +22,9 @@
     <link rel="shortcut icon" href="./resources/images/favicon.ico">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./libs/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.standalone.css"/>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
         <center>
             <h2 class="header-desc"><br />Nous centralisons la prise de rendez-vous dans votre departement même lorsque
                 c'est complet<br /><br /> Remplissez <b>consciencieusement</b> le formulaire ci dessous et nous vous
-                bloquerons le meilleur créneau disponible</h2>
+            bloquerons le meilleur créneau disponible</h2>
         </center>
 
         <form id="booking-form" class="main-form needs-validation" novalidate>
@@ -48,14 +49,14 @@
                 <div class="col">
                     <div class="form-group">
                         <input type="text" name="firstname" id="firstname" placeholder="Prénom" minlength="2"
-                            maxlength="30" class="form-control" required>
+                        maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
                         <div class="invalid-feedback">Prénom obligatoire entre 2 et 30 lettres</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <input type="text" name="lastname" id="lastname" placeholder="Nom" minlength="2" maxlength="30"
-                            class="form-control" required>
+                        pattern="[a-zA-Z- ]*" class="form-control" required>
                         <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
                     </div>
 
@@ -63,38 +64,74 @@
             </div>
 
             <div class="form-group">
-                <input id="email" name="email" type="email" placeholder="Email" class="form-control" required>
+                <input type="text" name="birthname" id="birthname" placeholder="Nom de naissance" minlength="2"
+                maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
+                <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
+            </div>
+
+            <div class="form-group">
+                <input id="email" name="email" type="email" placeholder="Email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required>
                 <div class="invalid-feedback">Email obligatoire</div>
             </div>
 
 
             <div class="form-group">
                 <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" placeholder="Téléphone"
-                    class="form-control" required>
-                <div class="invalid-feedback">Le numéro obligatoire doit être français</div>
+                pattern="0[0-9]{9}" class="form-control" required>
+                <div class="invalid-feedback">Le numéro doit être français</div>
             </div>
 
             <div class="form-group" id="birthdate-form">
-                <input id="birthday-input" placeholder="Enter your birthday" onfocus="(this.type='date')" type="text"
-                    name="bday" class="form-control" placeholder="Daten de naissance" required>
+                <input id="birthDatePicker" placeholder="Annee de naissance" type="text"
+                name="bday" class="form-control" required>
                 <div id="age-error-message" class="invalid-feedback">Date de naissance obligatoire 18+</div>
             </div>
 
             <div class="form-group">
-                <select class="form-control" id="selection" required>
-                    <option value="" disabled selected hidden>Select your area</option>
+                <select class="form-control" id="selectRegion" name="selectregion" required>
+                    <option value="" disabled selected hidden>Région</option>
                 </select>
-                <div id="age-error-message" class="invalid-feedback">Please select your area</div>
+                <div id="age-error-message" class="invalid-feedback">Veuillez sélectionner votre région</div>
+            </div>
+
+            <div class="form-group">
+                <select class="form-control" id="select-case" name="selectcase" required>
+                    <option value="alcool">Alcool</option>
+                    <option>Alcool et stupéfiant</option>
+                    <option>Autre</option>
+                </select>
+                <div id="age-error-message" class="invalid-feedback">Veuillez sélectionner votre type de visite</div>
             </div>
 
             <div class="form-group" id="bookingDate-form">
-                <input id="bookingDate-input" placeholder="Select appointment" onfocus="(this.type='date')" type="date"
-                    name="bookingDate" class="form-control" placeholder="Daten de naissance" required>
-                <div id="bookingDate-error-message" class="invalid-feedback">please Select appointment in one week a
-                    head</div>
+                <input id="bookingDatePicker" placeholder="Date de réservation" type="text"
+                name="bookingdate" class="form-control" required>
+                <div id="bookingDate-error-message" class="invalid-feedback">Veuillez sélectionner un rendez-vous à une semaine mini</div>
             </div>
 
+
             <button type="submit" name="bookButton" class="btn btn-primary">Réservez</button>
+
+            <div id="progressId" class="progress" hidden>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary">Reservation en cours...
+                </div>
+            </div>
+
+            <div class="alert alert-success alert-dismissible fade show" id="success-message">
+                <h4 class="alert-heading">Réservation envoyée!</h4>
+                <p>Merci d'avoir réservé sur <a href="https://commissionmedicale.fr">commissionmedicale.fr</a></p>
+                <hr>
+
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+
+            <div class="alert alert-danger alert-dismissible fade show" id="error-message">
+                <h4 class="alert-heading">Erreur de réservation</h4>
+                <p>La réservation n'a pu être réalisée comme il faut veuillez réessayer plus tard ou nous contacter à contact[*at*]commissionmedicale[*point*]fr</p>
+                <hr>
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
 
             <center>
                 <div class="footer-price-rgpd">Choisissez une date éloignée pour augmenter vos chances d'obtenir la
@@ -103,15 +140,29 @@
                     lors de la validation du rendez-vous. <br />Pour toute question sur le traitement de vos
                     informations
                     personnelles: contact[*at*]commissionmedicale[*point*]fr<br /></div>
-            </center>
+                </center>
 
-    </div>
-    <script type="text/javascript" src="./libs/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="./libs/bootstrap/bootstrap.min.js"></script>
-    <!-- 73k05 send mail -->
-    <script type="text/javascript" src="./libs/emailjs-2.4.1.min.js"></script>
-    <script type="text/javascript" src="./js/medical.js"></script>
-    <script type="text/javascript" src="./js/departments.js"></script>
-</body>
+            </div>
+            <!-- Jquery libs -->
+            <script type="text/javascript" src="./libs/jquery-3.4.1.min.js"></script>
+            <script type="text/javascript" src="libs/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
-</html>
+            <script type="text/javascript" src="./libs/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="./libs/bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js"></script>
+
+            <!-- 73k05 send mail -->
+            <script type="text/javascript" src="./libs/emailjs-2.4.1.min.js"></script>
+            <script type="text/javascript" src="./js/medical.js"></script>
+            <script type="text/javascript" src="./js/departments.js"></script>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="./libs/analytics.js"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-85193412-12');
+            </script>
+        </body>
+
+        </html>
