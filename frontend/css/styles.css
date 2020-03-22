@@ -8,8 +8,14 @@
     margin: auto;
 }
 
-.banner {
+.banner-container {
   position: relative;
+  margin: auto;
+  max-width: 1200px;
+  height: auto;
+}
+
+.banner {
   margin: auto;
   width: 100%;
   max-width: 1200px;
@@ -18,8 +24,10 @@
 
 .stamp {
   position: absolute;
-  top: 20px;
-  left: 50px;
+  margin: auto;
+  height: auto;
+  top: 0px;
+  left: 0px;
 }
 
 .title-h1 {

@@ -30,8 +30,12 @@
 <body>
     <div class="container">
 
-        <img class="banner" alt="Les services de l'État" src="./resources/images/banner.jpg" />
-        <img class="stamp" alt="Les services de l'État" src="./resources/images/prefet-departement.png" />
+        <div class="banner-container">
+            <img  class="banner" alt="Les services de l'État" src="./resources/images/banner.jpg" />
+            <div class="stamp">
+                <img alt="Les services de l'État" src="./resources/images/stamp-mobile.png" />
+            </div>
+        </div>
 
         <h1 class="title-h1">Réservation de commission médicale au permis de conduire sans attendre</h1>
         <h2 class="header-desc"><br />Prise de rendez-vous dans votre département même complet<br /><br />La commission médicale au permis de conduire est obligatoire suite à une suspension de permis pour alcoolémie ou stupéfiant</h2>
@@ -40,14 +44,14 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" name="firstname" id="firstname" placeholder="Prénom sur le permis" minlength="2"
+                        <input type="text" name="firstname" id="firstname" placeholder="Prénom permis" minlength="2"
                         maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
                         <div class="invalid-feedback">Prénom obligatoire entre 2 et 30 lettres</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" name="lastname" id="lastname" placeholder="Nom sur le permis" minlength="2" maxlength="30"
+                        <input type="text" name="lastname" id="lastname" placeholder="Nom permis" minlength="2" maxlength="30"
                         pattern="[a-zA-Z- ]*" class="form-control" required>
                         <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
                     </div>
@@ -74,7 +78,7 @@
             </div>
 
             <div class="form-group" id="birthdate-form">
-                <input id="birthDatePicker" placeholder="Annee de naissance" type="text"
+                <input id="birthDatePicker" placeholder="Date de naissance" type="text"
                 name="bday" class="form-control" required>
                 <div id="age-error-message" class="invalid-feedback">Date de naissance obligatoire 18+</div>
             </div>
