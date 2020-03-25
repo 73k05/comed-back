@@ -49,6 +49,14 @@
     text-align: center;
 }
 
+.header-info{
+    clear: both;
+    color: #4d73ac;
+    font-size: 0.7em;
+    padding-bottom: .75em;
+    text-transform: uppercase;
+}
+
 .footer-price-rgpd {
     color: #47699D;
     font-family: "Century Gothic",Arial,Verdana;
