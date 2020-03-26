@@ -33,16 +33,25 @@
 .title-h1 {
     color: #47699D;
     font-family: "Century Gothic",Arial,Verdana;
-    font-size: 1.6em;
+    font-size: 1.7em;
     padding: 0 0 5px 0;
     font-weight: bold;
     margin: auto;
     text-align: center;
 }
 
-.header-desc {
+.header-comed {
+    color: #E71C23;
     clear: both;
+    font-size: 0.9em;
+    padding-bottom: .75em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header-desc {
     color: #4d73ac;
+    clear: both;
     font-size: 0.7em;
     padding-bottom: .75em;
     text-transform: uppercase;
