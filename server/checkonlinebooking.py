@@ -7,13 +7,7 @@ import time
 import datetime
 
 from mail import sendMail
-
-# Write in Log file
-def writeLog( str ):
-	f=open("output.txt", "a+")
-	f.write(str)
-	f.close()
-	return
+from log import writeLog
 
 # Count number of request sent
 nbRequestSent=0
@@ -52,11 +46,15 @@ while 1==1:
 			# extracting data in raw text format
 			# data = response.content
 			data = response.text
+			writeLog(data)
 			
-			found1 = data.find('ultérieurement',0,(data.find('<footer>'))) != -1
-			writeLog(found1)
+			indexFooter = data.find('<footer>') 
+			writeLog(f"\r\nIndex footer: {indexFooter} \r\n")
+
+			found = data.find('ultérieurement',0,(indexFooter)) != -1
+			writeLog(f"Found: {found} \r\n")
 			# Send email when slot found
-			if found1:
+			if found:
 				writeLog(": [CLOSED]\r\n")
 			# Send email when slot found
 			else:
