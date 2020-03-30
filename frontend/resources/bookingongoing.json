@@ -1,0 +1,29 @@
+{
+	"bookings":
+	[{
+        "email": "email",
+        "firstname": "firstname",
+        "lastname": "lastname",
+        "phone": "phone",
+        "number": "number",
+        "birthdate": "birthdate",
+        "birthname": "birthname",
+        "department": 1,
+        "typevisit": "selectcase",
+        "bookingchoosedate": "15/04/2020",
+        "bookingcurrentdate": "01/06/2020"
+    },{
+        "email": "email",
+        "firstname": "firstname",
+        "lastname": "lastname",
+        "phone": "phone",
+        "number": "number",
+        "birthdate": "birthdate",
+        "birthname": "birthname",
+        "department": 63,
+        "typevisit": "selectcase",
+        "bookingchoosedate": "20/04/2020",
+        "bookingcurrentdate": ""
+    },
+	{"..."}]
+}
