@@ -12,9 +12,14 @@ from log import writeLog
 # Count number of request sent
 nbRequestSent=0
 urlDepartmentList = {}
+bookingOngoingList = {}
 
 # Load dep list
-with open('./gouvendpoints.json') as json_data:
+with open('./json/gouvendpoints.json') as json_data:
+    urlDepartmentList = json.load(json_data)["gouvUrlList"]
+
+# Load Booking Ongoing List
+with open('../frontend/resources/bookingongoing.json') as json_data:
     urlDepartmentList = json.load(json_data)["gouvUrlList"]
 
 # fake header to bypass security
