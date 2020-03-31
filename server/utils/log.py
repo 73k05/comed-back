@@ -1,6 +1,8 @@
 # Write in Log file
-def writeLog( str ):
-	f=open("output.txt", "a+")
-	f.write(str)
-	f.close()
-	return
+def writeLog(logmessage):
+    print(logmessage)
+    if isinstance(logmessage, str):
+        f = open("output.txt", "a+")
+        f.write(logmessage)
+        f.close()
+    return
