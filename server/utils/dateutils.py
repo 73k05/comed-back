@@ -1,5 +1,5 @@
 import locale
-from datetime import date
+from datetime import datetime
 
 # ex: frenchmonth == avril return 4
 def getmonthfromfrench(frenchmonth):
@@ -47,8 +47,5 @@ def getdatefromdata(data):
     monthFrench = strMonthAndYear[:sizeMonthYear - 5]
     year = strMonthAndYear[sizeMonthYear - 4:sizeMonthYear]
     month = getmonthfromfrench(monthFrench)
-    print(f"day:{dayOfTheMonth} month: {monthFrench} - {month} year: {year}")
     # then dayBooking - dayZero % 7 and request again
-    dateZero = date(int(year), int(month), int(dayOfTheMonth))
-    print(dateZero.strftime("%d/%m/%yyyy"))
-    return dateZero
+    return datetime(int(year), int(month), int(dayOfTheMonth))
