@@ -1,29 +1,57 @@
 {
-	"gouvUrlList":
-	[
-		"http://www.rdv.ain.gouv.fr/booking/create/804/4",
-		"http://www.aisne.gouv.fr/booking/create/19070/4",
-		"http://www.rdv.allier.gouv.fr/booking/create/752/4",
-		"http://www.alpes-de-haute-provence.gouv.fr/booking/create/12099/0",
-		"http://www.rdv.hautes-alpes.gouv.fr/booking/create/723/4",
-		"http://www.alpes-maritimes.gouv.fr/booking/create/21660/4",
-		"http://www.rdv.ardeche.gouv.fr/booking/create/802/0",
-		"http://www.rdv.ardennes.gouv.fr/booking/create/765/4",
-		"http://www.ariege.gouv.fr/booking/create/2723/4",
-		"http://www.aube.gouv.fr/booking/create/9629/4",
-		"http://www.rdv.aude.gouv.fr/booking/create/807/0",
-		"http://www.rdv.aveyron.gouv.fr/booking/create/751/4",
-		"http://www.rdv.calvados.gouv.fr/booking/create/789/2",
-		"http://www.rdv.cantal.gouv.fr/booking/create/764/0",
-		"http://www.charente.gouv.fr/booking/create/24911",
-		"http://www.cher.gouv.fr/booking/create/18534/4",
-		"http://www.correze.gouv.fr/booking/create/16789/2",
-		"http://www.rdv.cote-dor.gouv.fr/booking/create/942/4",
-		"http://www.rdv.cote-dor.gouv.fr/booking/create/936/4",
-		"http://www.rdv.cote-dor.gouv.fr/booking/create/930/4",
-		"http://www.cotes-darmor.gouv.fr/booking/create/18451/2",
-		"http://www.creuse.gouv.fr/booking/create/9038/2",
-		"http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795/0",
-		"http://www.rdv.puy-de-dome.gouv.fr/booking/create/801/0"
-	]
+  "gouvUrlList": [
+    {
+      "code": "1",
+      "url": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::0"
+    },
+    {
+      "code": "2",
+      "url": "",
+      "dayZero": ""
+    },
+    {
+      "code": "3",
+      "url": "http://www.rdv.allier.gouv.fr/ezjscore/call/bookingserver::planning::assign::752::753::0"
+    },
+    {
+      "code": "4",
+      "url": ""
+    },
+    {
+      "code": "5",
+      "url": "http://www.rdv.hautes-alpes.gouv.fr/ezjscore/call/bookingserver::planning::assign::723::729::0"
+    },
+    {
+      "code": "6",
+      "url": "",
+      "dayZero": ""
+    },
+    {
+      "code": "7",
+      "url": "http://www.rdv.ardeche.gouv.fr/ezjscore/call/bookingserver::planning::assign::802::810::0"
+    },
+    {
+      "code": "8",
+      "url": "http://www.rdv.ardennes.gouv.fr/ezjscore/call/bookingserver::planning::assign::765::770::0"
+    },
+    {
+      "code": "21",
+      "subDepartmentList": [
+        {
+          "code": "1",
+          "url": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::0"
+        },{
+          "code": "1",
+          "url": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::84"
+        },{
+          "code": "1",
+          "url": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::84"
+        }
+      ]
+    },
+    {
+      "code": "63",
+      "url": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::0"
+    }
+  ]
 }

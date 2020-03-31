@@ -1,29 +1,15 @@
 {
 	"bookings":
 	[{
-        "email": "email",
-        "firstname": "firstname",
-        "lastname": "lastname",
-        "phone": "phone",
-        "number": "number",
-        "birthdate": "birthdate",
-        "birthname": "birthname",
+        "email": "bob@bib.com",
+        "firstName": "bib",
+        "lastName": "bab",
+        "phone": "01245678",
+        "birthDate": "05/06/82",
+        "birthName": "bab",
         "department": 1,
-        "typevisit": "selectcase",
-        "bookingchoosedate": "15/04/2020",
-        "bookingcurrentdate": "01/06/2020"
-    },{
-        "email": "email",
-        "firstname": "firstname",
-        "lastname": "lastname",
-        "phone": "phone",
-        "number": "number",
-        "birthdate": "birthdate",
-        "birthname": "birthname",
-        "department": 63,
-        "typevisit": "selectcase",
-        "bookingchoosedate": "20/04/2020",
-        "bookingcurrentdate": ""
-    },
-	{"..."}]
+        "typeVisit": "alcool",
+        "bookingChooseDate": "20/04/2020",
+        "bookingCurrentDate": ""
+    }]
 }
