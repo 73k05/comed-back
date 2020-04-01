@@ -3,6 +3,7 @@
     {
       "code": "1",
       "endPointUrl": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::",
+      "dayZero": 0,
       "bookUrl": ""
     },
     {
@@ -242,7 +243,8 @@
     },
     {
       "code": "47",
-      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::0::812::1200",
+      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::0::812::",
+      "indexDayZero": 1197,
       "bookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
     },
     {
@@ -308,6 +310,7 @@
     {
       "code": "60",
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
@@ -323,6 +326,7 @@
     {
       "code": "63",
       "endPointUrl": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {

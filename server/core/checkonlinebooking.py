@@ -17,21 +17,23 @@ nbRequestSent = 0
 urlDepartmentList = {}
 bookingOngoingList = {}
 
-# Load dep list
-with open('../json/gouvendpoints.json') as json_data:
-    urlDepartmentList = json.load(json_data)["gouvUrlList"]
-
-# Load Booking Ongoing List
-with open('../../frontend/resources/bookingongoing.json') as json_data:
-    bookingList = json.load(json_data)["bookings"]
-
 while 1 == 1:
+
+    # Load dep list
+    with open('../json/gouvendpoints.json') as json_data:
+        urlDepartmentList = json.load(json_data)["gouvUrlList"]
+
+    # Load Booking Ongoing List
+    with open('../../frontend/resources/bookingongoing.json') as json_data:
+        bookingList = json.load(json_data)["bookings"]
 
     nbRequestSent += 1
 
     # Check all prefs
     for booking in bookingList:
         now = datetime.datetime.now()
+        writeLog("[" + now.strftime("%H:%M") + "] Booking...")
+
         code = booking["departmentCode"]
         bookingChooseDate = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
         bookedDateStr = booking["bookedCurrentDate"]
@@ -45,12 +47,13 @@ while 1 == 1:
         department = urlDepartmentList[code - 1]
         endPointUrl = department["endPointUrl"]
         bookUrl = department["bookUrl"]
+        indexDayZero = department["indexDayZero"]
 
-        writeLog("[" + now.strftime("%H:%M") + "]Booking of: " + email + " code: " + str(
-            code) + " request: " + endPointUrl + "0")
+        writeLog("Booking of: " + email + " code: " + str(
+            code) + " request: " + endPointUrl + str(indexDayZero))
 
         # extracting data in raw text format
-        data = sendGetRequest(endPointUrl + "0")
+        data = sendGetRequest(endPointUrl + str(indexDayZero))
         if data == -1:
             continue
 
@@ -58,7 +61,7 @@ while 1 == 1:
         maxDate = max([now, dateZero, bookingChooseDate])
 
         if dateZero + datetime.timedelta(days=7) >= maxDate and data.find('plage libre') != -1:
-            print("Bingo!")
+            writeLog("/!\\ Free slot Bingo /!\\")
             # TODO: Make booking system
             # params = getParamsFromUser(booking)
             # sendPostRequest(bookUrl, params)
@@ -66,17 +69,17 @@ while 1 == 1:
             continue
         else:
             bookingTryDate = maxDate
-            dayDelta = (maxDate - dateZero).days
+            dayDelta = indexDayZero + (maxDate - dateZero).days
             # If not already booked slot for this booking
             # we set it to 1 month max ahead from now to avoid forever tries
             if not bookedMaxDate:
-                bookedMaxDate = now + datetime.timedelta(days=60)
+                bookedMaxDate = bookingTryDate + datetime.timedelta(days=30)
             while bookedMaxDate > bookingTryDate:
                 data = sendGetRequest(endPointUrl + str(dayDelta))
                 if data == -1:
                     break
                 elif data.find('plage libre') != -1:
-                    print("Bingo!")
+                    writeLog("/!\\ Free slot Bingo /!\\")
                     # TODO: Make booking system
                     sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
                     break
