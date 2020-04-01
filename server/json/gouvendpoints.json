@@ -1,29 +1,398 @@
 {
-	"gouvUrlList":
-	[
-		"http://www.rdv.ain.gouv.fr/booking/create/804/4",
-		"http://www.aisne.gouv.fr/booking/create/19070/4",
-		"http://www.rdv.allier.gouv.fr/booking/create/752/4",
-		"http://www.alpes-de-haute-provence.gouv.fr/booking/create/12099/0",
-		"http://www.rdv.hautes-alpes.gouv.fr/booking/create/723/4",
-		"http://www.alpes-maritimes.gouv.fr/booking/create/21660/4",
-		"http://www.rdv.ardeche.gouv.fr/booking/create/802/0",
-		"http://www.rdv.ardennes.gouv.fr/booking/create/765/4",
-		"http://www.ariege.gouv.fr/booking/create/2723/4",
-		"http://www.aube.gouv.fr/booking/create/9629/4",
-		"http://www.rdv.aude.gouv.fr/booking/create/807/0",
-		"http://www.rdv.aveyron.gouv.fr/booking/create/751/4",
-		"http://www.rdv.calvados.gouv.fr/booking/create/789/2",
-		"http://www.rdv.cantal.gouv.fr/booking/create/764/0",
-		"http://www.charente.gouv.fr/booking/create/24911",
-		"http://www.cher.gouv.fr/booking/create/18534/4",
-		"http://www.correze.gouv.fr/booking/create/16789/2",
-		"http://www.rdv.cote-dor.gouv.fr/booking/create/942/4",
-		"http://www.rdv.cote-dor.gouv.fr/booking/create/936/4",
-		"http://www.rdv.cote-dor.gouv.fr/booking/create/930/4",
-		"http://www.cotes-darmor.gouv.fr/booking/create/18451/2",
-		"http://www.creuse.gouv.fr/booking/create/9038/2",
-		"http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795/0",
-		"http://www.rdv.puy-de-dome.gouv.fr/booking/create/801/0"
-	]
+  "gouvUrlList": [
+    {
+      "code": "1",
+      "endPointUrl": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::",
+      "dayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "code": "2",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "3",
+      "endPointUrl": "http://www.rdv.allier.gouv.fr/ezjscore/call/bookingserver::planning::assign::752::753::",
+      "bookUrl": ""
+    },
+    {
+      "code": "4",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "5",
+      "endPointUrl": "http://www.rdv.hautes-alpes.gouv.fr/ezjscore/call/bookingserver::planning::assign::723::729::",
+      "bookUrl": ""
+    },
+    {
+      "code": "6",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "7",
+      "endPointUrl": "http://www.rdv.ardeche.gouv.fr/ezjscore/call/bookingserver::planning::assign::802::810::",
+      "bookUrl": "http://www.rdv.ardeche.gouv.fr/booking/create/802/8"
+    },
+    {
+      "code": "8",
+      "endPointUrl": "http://www.rdv.ardennes.gouv.fr/ezjscore/call/bookingserver::planning::assign::765::770::",
+      "bookUrl": ""
+    },
+    {
+      "code": "9",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "10",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "11",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "12",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "13",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "14",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "15",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "16",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "17",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "18",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "19",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "20",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "21",
+      "subDepartmentList": [
+        {
+          "code": "1",
+          "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
+        },{
+          "code": "1",
+          "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
+        },{
+          "code": "1",
+          "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
+        }
+      ]
+    },
+    {
+      "code": "22",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "23",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "24",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "25",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "26",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "27",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "28",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "29",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "30",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "31",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "32",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "33",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "34",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "35",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "36",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "37",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "38",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "39",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "40",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "41",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "42",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "43",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "44",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "45",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "46",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "47",
+      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::0::812::",
+      "indexDayZero": 1197,
+      "bookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
+    },
+    {
+      "code": "48",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "49",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "50",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "51",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "52",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "53",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "54",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "55",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "56",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "57",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "58",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "59",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "60",
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "code": "61",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "62",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "63",
+      "endPointUrl": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "code": "64",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "65",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "66",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "67",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "68",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "69",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "70",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "71",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "72",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "73",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "74",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "75",
+      "endPointUrl": "",
+      "bookUrl": ""
+    }
+  ]
 }

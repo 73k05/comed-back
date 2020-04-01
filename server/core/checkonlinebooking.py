@@ -1,73 +1,94 @@
-import json
-# importing the requests library 
-import requests
-from requests.exceptions import HTTPError
-# Time lib to sleep
-import time	
 import datetime
+import json
+# importing the requests library
+import sys
+import time
 
-from mail import sendMail
+# Time lib to sleep
+
+sys.path.insert(1, '../utils')
 from log import writeLog
+from dateutils import getdatefromdata
+from requestsender import sendGetRequest
+from mail import sendMail
 
 # Count number of request sent
-nbRequestSent=0
+nbRequestSent = 0
 urlDepartmentList = {}
 bookingOngoingList = {}
 
-# Load dep list
-with open('./json/gouvendpoints.json') as json_data:
-    urlDepartmentList = json.load(json_data)["gouvUrlList"]
+while 1 == 1:
 
-# Load Booking Ongoing List
-with open('../frontend/resources/bookingongoing.json') as json_data:
-    urlDepartmentList = json.load(json_data)["gouvUrlList"]
+    # Load dep list
+    with open('../json/gouvendpoints.json') as json_data:
+        urlDepartmentList = json.load(json_data)["gouvUrlList"]
 
-# fake header to bypass security
-headers = {"User-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"}
+    # Load Booking Ongoing List
+    with open('../../frontend/resources/bookingongoing.json') as json_data:
+        bookingList = json.load(json_data)["bookings"]
 
-while 1==1:
-	
-	nbRequestSent+=1
+    nbRequestSent += 1
 
-	# Check all prefs
-	for departmentUrl in urlDepartmentList:
+    # Check all prefs
+    for booking in bookingList:
+        now = datetime.datetime.now()
+        writeLog("[" + now.strftime("%H:%M") + "] Booking...")
 
-		now = datetime.datetime.now()
-		writeLog("["+now.strftime("%H:%M") + "]Department: "+departmentUrl)
-		
-		# Send request to gouv
-		# sending get request and saving the response as response object
-		try:
-			response = requests.post(departmentUrl, headers = headers, data={"condition":"on","nextButton":'Effectuer une demande de rendez-vous'})
-			# If the response was successful, no Exception will be raised
-			response.raise_for_status()
-		except HTTPError as http_err:
-			writeLog(f"\r\nRequest HTTP error occurred: {http_err}\r\n")  # Python 3.6
-			break
-		except Exception as err:
-			writeLog(f"\r\nRequest Other error occurred: {err}\r\n")  # Python 3.6
-			break
-		else:
-			# extracting data in raw text format
-			# data = response.content
-			data = response.text
-			writeLog(data)
-			
-			indexFooter = data.find('<footer>') 
-			writeLog(f"\r\nIndex footer: {indexFooter} \r\n")
+        code = booking["departmentCode"]
+        bookingChooseDate = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
+        bookedDateStr = booking["bookedCurrentDate"]
+        email = booking["email"]
 
-			found = data.find('ultérieurement',0,(indexFooter)) != -1
-			writeLog(f"Found: {found} \r\n")
-			# Send email when slot found
-			if found:
-				writeLog(": [CLOSED]\r\n")
-			# Send email when slot found
-			else:
-				writeLog(": [OPEN]\r\n")
+        if bookedDateStr:
+            bookedMaxDate = datetime.datetime.strptime(bookedDateStr, "%d/%m/%Y")
+        else:
+            bookedMaxDate = ""
 
-	# Sleeping time in minutes
-	sleeptime = 1
-	
-	writeLog("============ 73kBot will sleep "+str(sleeptime)+" minutes _o/ "+str(nbRequestSent)+" ============"+ "\r\n")
-	
-	time.sleep(sleeptime*60)
+        department = urlDepartmentList[code - 1]
+        endPointUrl = department["endPointUrl"]
+        bookUrl = department["bookUrl"]
+        indexDayZero = department["indexDayZero"]
+
+        writeLog("Booking of: " + email + " code: " + str(
+            code) + " request: " + endPointUrl + str(indexDayZero))
+
+        # extracting data in raw text format
+        data = sendGetRequest(endPointUrl + str(indexDayZero))
+        if data == -1:
+            continue
+
+        dateZero = getdatefromdata(data)
+        maxDate = max([now, dateZero, bookingChooseDate])
+
+        if dateZero + datetime.timedelta(days=7) >= maxDate and data.find('plage libre') != -1:
+            writeLog("/!\\ Free slot Bingo /!\\")
+            # TODO: Make booking system
+            # params = getParamsFromUser(booking)
+            # sendPostRequest(bookUrl, params)
+            sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
+            continue
+        else:
+            bookingTryDate = maxDate
+            dayDelta = indexDayZero + (maxDate - dateZero).days
+            # If not already booked slot for this booking
+            # we set it to 1 month max ahead from now to avoid forever tries
+            if not bookedMaxDate:
+                bookedMaxDate = bookingTryDate + datetime.timedelta(days=30)
+            while bookedMaxDate > bookingTryDate:
+                data = sendGetRequest(endPointUrl + str(dayDelta))
+                if data == -1:
+                    break
+                elif data.find('plage libre') != -1:
+                    writeLog("/!\\ Free slot Bingo /!\\")
+                    # TODO: Make booking system
+                    sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
+                    break
+                bookingTryDate = bookingTryDate + datetime.timedelta(days=7)
+                dayDelta += 7
+
+    # Sleeping time in minutes
+    sleeptime = 1
+
+    writeLog(f"============ 73kBot will sleep {str(sleeptime)} minutes _o/ {str(nbRequestSent)} ============\r\n")
+
+    time.sleep(sleeptime * 60)

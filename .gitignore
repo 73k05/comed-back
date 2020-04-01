@@ -1,3 +1,4 @@
 output.txt
 server/__pycache__
-server/.idea/
+server/utils/__pycache__
+server/.idea
