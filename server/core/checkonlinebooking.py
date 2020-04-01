@@ -87,7 +87,7 @@ while 1 == 1:
                 dayDelta += 7
 
     # Sleeping time in minutes
-    sleeptime = 1
+    sleeptime = 60
 
     writeLog(f"============ 73kBot will sleep {str(sleeptime)} minutes _o/ {str(nbRequestSent)} ============\r\n")
 
