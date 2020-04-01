@@ -32,7 +32,7 @@ while 1 == 1:
     # Check all prefs
     for booking in bookingList:
         now = datetime.datetime.now()
-        code = booking["department"]
+        code = booking["departmentCode"]
         bookingChooseDate = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
         bookedDateStr = booking["bookedCurrentDate"]
         email = booking["email"]

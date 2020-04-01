@@ -2,56 +2,393 @@
   "gouvUrlList": [
     {
       "code": "1",
-      "url": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::"
+      "endPointUrl": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::",
+      "bookUrl": ""
     },
     {
       "code": "2",
-      "url": "",
-      "dayZero": ""
+      "endPointUrl": "",
+      "bookUrl": ""
     },
     {
       "code": "3",
-      "url": "http://www.rdv.allier.gouv.fr/ezjscore/call/bookingserver::planning::assign::752::753::"
+      "endPointUrl": "http://www.rdv.allier.gouv.fr/ezjscore/call/bookingserver::planning::assign::752::753::",
+      "bookUrl": ""
     },
     {
       "code": "4",
-      "url": ""
+      "endPointUrl": "",
+      "bookUrl": ""
     },
     {
       "code": "5",
-      "url": "http://www.rdv.hautes-alpes.gouv.fr/ezjscore/call/bookingserver::planning::assign::723::729::"
+      "endPointUrl": "http://www.rdv.hautes-alpes.gouv.fr/ezjscore/call/bookingserver::planning::assign::723::729::",
+      "bookUrl": ""
     },
     {
       "code": "6",
-      "url": "",
-      "dayZero": ""
+      "endPointUrl": "",
+      "bookUrl": ""
     },
     {
       "code": "7",
-      "url": "http://www.rdv.ardeche.gouv.fr/ezjscore/call/bookingserver::planning::assign::802::810::"
+      "endPointUrl": "http://www.rdv.ardeche.gouv.fr/ezjscore/call/bookingserver::planning::assign::802::810::",
+      "bookUrl": "http://www.rdv.ardeche.gouv.fr/booking/create/802/8"
     },
     {
       "code": "8",
-      "url": "http://www.rdv.ardennes.gouv.fr/ezjscore/call/bookingserver::planning::assign::765::770::"
+      "endPointUrl": "http://www.rdv.ardennes.gouv.fr/ezjscore/call/bookingserver::planning::assign::765::770::",
+      "bookUrl": ""
+    },
+    {
+      "code": "9",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "10",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "11",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "12",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "13",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "14",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "15",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "16",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "17",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "18",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "19",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "20",
+      "endPointUrl": "",
+      "bookUrl": ""
     },
     {
       "code": "21",
       "subDepartmentList": [
         {
           "code": "1",
-          "url": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
+          "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
         },{
           "code": "1",
-          "url": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
+          "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
         },{
           "code": "1",
-          "url": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
+          "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
         }
       ]
     },
     {
+      "code": "22",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "23",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "24",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "25",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "26",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "27",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "28",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "29",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "30",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "31",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "32",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "33",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "34",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "35",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "36",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "37",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "38",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "39",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "40",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "41",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "42",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "43",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "44",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "45",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "46",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "47",
+      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::0::812::1200",
+      "bookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
+    },
+    {
+      "code": "48",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "49",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "50",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "51",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "52",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "53",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "54",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "55",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "56",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "57",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "58",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "59",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "60",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "61",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "62",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
       "code": "63",
-      "url": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::"
+      "endPointUrl": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::",
+      "bookUrl": ""
+    },
+    {
+      "code": "64",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "65",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "66",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "67",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "68",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "69",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "70",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "71",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "72",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "73",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "74",
+      "endPointUrl": "",
+      "bookUrl": ""
+    },
+    {
+      "code": "75",
+      "endPointUrl": "",
+      "bookUrl": ""
     }
   ]
 }
