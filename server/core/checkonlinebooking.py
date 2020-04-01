@@ -10,6 +10,7 @@ sys.path.insert(1, '../utils')
 from log import writeLog
 from dateutils import getdatefromdata
 from requestsender import sendGetRequest
+from mail import sendMail
 
 # Count number of request sent
 nbRequestSent = 0
@@ -34,17 +35,22 @@ while 1 == 1:
         code = booking["department"]
         bookingChooseDate = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
         bookedDateStr = booking["bookedCurrentDate"]
+        email = booking["email"]
+
         if bookedDateStr:
             bookedMaxDate = datetime.datetime.strptime(bookedDateStr, "%d/%m/%Y")
         else:
             bookedMaxDate = ""
-        urlEndPoint = urlDepartmentList[code - 1]["url"]
 
-        writeLog("[" + now.strftime("%H:%M") + "]Booking of: " + booking[
-            "email"] + " code: " + str(code) + " request: " + urlEndPoint + "0")
+        department = urlDepartmentList[code - 1]
+        endPointUrl = department["endPointUrl"]
+        bookUrl = department["bookUrl"]
+
+        writeLog("[" + now.strftime("%H:%M") + "]Booking of: " + email + " code: " + str(
+            code) + " request: " + endPointUrl + "0")
 
         # extracting data in raw text format
-        data = sendGetRequest(urlEndPoint + "0")
+        data = sendGetRequest(endPointUrl + "0")
         if data == -1:
             continue
 
@@ -54,6 +60,9 @@ while 1 == 1:
         if dateZero + datetime.timedelta(days=7) >= maxDate and data.find('plage libre') != -1:
             print("Bingo!")
             # TODO: Make booking system
+            # params = getParamsFromUser(booking)
+            # sendPostRequest(bookUrl, params)
+            sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
             continue
         else:
             bookingTryDate = maxDate
@@ -63,12 +72,13 @@ while 1 == 1:
             if not bookedMaxDate:
                 bookedMaxDate = now + datetime.timedelta(days=60)
             while bookedMaxDate > bookingTryDate:
-                data = sendGetRequest(urlEndPoint + str(dayDelta))
+                data = sendGetRequest(endPointUrl + str(dayDelta))
                 if data == -1:
                     break
                 elif data.find('plage libre') != -1:
                     print("Bingo!")
                     # TODO: Make booking system
+                    sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
                     break
                 bookingTryDate = bookingTryDate + datetime.timedelta(days=7)
                 dayDelta += 7
