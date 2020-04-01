@@ -3,7 +3,7 @@ from datetime import datetime
 
 # ex: frenchmonth == avril return 4
 def getmonthfromfrench(frenchmonth):
-    locale.setlocale(locale.LC_ALL, 'fr_FR')
+    locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8')
     frenchmonth = frenchmonth.lower()
 
     if frenchmonth == locale.nl_langinfo(locale.MON_1).lower():
