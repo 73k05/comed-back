@@ -1,0 +1,13 @@
+{
+  "departments": [
+    {
+      "departmentCode": 1,
+      "departmentName": "Ain",
+      "bookingFirstOpenSlotDate": "2020-04-15"
+    },{
+      "departmentCode":2,
+      "departmentName":"Aisne",
+      "bookingFirstOpenSlotDate":""
+    }
+  ]
+}
