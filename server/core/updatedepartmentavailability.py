@@ -1,21 +1,22 @@
 import datetime
 import json
-# importing the requests library
 import sys
 import time
 
-# Time lib to sleep
+from dateutils import getdatefromdata
+from dateutils import update_index_day_zero_to_today
+from jsonutils import add_department_to_list
+from jsonutils import write_department_availability
+from log import writeLog
+from requestsender import sendGetRequest
 
 sys.path.insert(1, '../utils')
-from log import writeLog
-from dateutils import getdatefromdata
-from requestsender import sendGetRequest
-from mail import sendMail
 
 # Count number of request sent
 nbRequestSent = 0
 urlDepartmentList = {}
-bookingOngoingList = {}
+departmentStartIndex = 0
+indexDep = 0
 
 while 1 == 1:
 
@@ -23,34 +24,31 @@ while 1 == 1:
     with open('../json/gouvendpoints.json') as json_data:
         urlDepartmentList = json.load(json_data)["gouvUrlList"]
 
-    # Load department availability List
-    with open('../../frontend/resources/json/departmentavailabilities.json') as json_data:
-        departmentList = json.load(json_data)["bookings"]
+    departmentAvailabilityList = []
 
     nbRequestSent += 1
 
     # Check all prefs
-    for booking in departmentList:
+    for departmentEndpoint in urlDepartmentList:
+        departmentCode = departmentEndpoint["departmentCode"]
+        departmentName = departmentEndpoint["departmentName"]
+        endPointUrl = departmentEndpoint["endPointUrl"]
+        indexDayZero = departmentEndpoint["indexDayZero"]
+
         now = datetime.datetime.now()
-        writeLog("[" + now.strftime("%H:%M") + "] Booking...")
+        writeLog("[" + now.strftime("%H:%M") + "] Department " + str(departmentName) + " availability update...")
 
-        code = booking["departmentCode"]
-        bookingChooseDate = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
-        bookedDateStr = booking["bookedCurrentDate"]
-        email = booking["email"]
+        indexDep += 1
+        if departmentEndpoint["bypass"] == 1 or indexDep < departmentStartIndex:
+            writeLog(f"Skip dep!")
+            continue
 
-        if bookedDateStr:
-            bookedMaxDate = datetime.datetime.strptime(bookedDateStr, "%d/%m/%Y")
-        else:
-            bookedMaxDate = ""
+        if not endPointUrl:
+            continue
 
-        department = urlDepartmentList[code - 1]
-        endPointUrl = department["endPointUrl"]
-        bookUrl = department["bookUrl"]
-        indexDayZero = department["indexDayZero"]
+        isSlotAvailableFound = False
 
-        writeLog("Booking of: " + email + " code: " + str(
-            code) + " request: " + endPointUrl + str(indexDayZero))
+        writeLog("Booking of: " + str(departmentCode) + " request: " + endPointUrl + str(indexDayZero))
 
         # extracting data in raw text format
         data = sendGetRequest(endPointUrl + str(indexDayZero))
@@ -58,33 +56,34 @@ while 1 == 1:
             continue
 
         dateZero = getdatefromdata(data)
-        maxDate = max([now, dateZero, bookingChooseDate])
 
-        if dateZero + datetime.timedelta(days=7) >= maxDate and data.find('plage libre') != -1:
+        if dateZero >= now and data.find('plage libre') != -1:
             writeLog("/!\\ Free slot Bingo /!\\")
-            # TODO: Make booking system
-            # params = getParamsFromUser(booking)
-            # sendPostRequest(bookUrl, params)
-            sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
+            isSlotAvailableFound = True
+            add_department_to_list(departmentCode, departmentName, dateZero, departmentAvailabilityList)
             continue
         else:
-            bookingTryDate = maxDate
-            dayDelta = indexDayZero + (maxDate - dateZero).days
+            dayDelta = update_index_day_zero_to_today(indexDayZero, dateZero, now)
             # If not already booked slot for this booking
             # we set it to 1 month max ahead from now to avoid forever tries
-            if not bookedMaxDate:
-                bookedMaxDate = bookingTryDate + datetime.timedelta(days=30)
+            # if not bookedMaxDate:
+            bookingTryDate = max([now, dateZero])
+            bookedMaxDate = bookingTryDate + datetime.timedelta(days=14)
             while bookedMaxDate > bookingTryDate:
                 data = sendGetRequest(endPointUrl + str(dayDelta))
                 if data == -1:
                     break
                 elif data.find('plage libre') != -1:
                     writeLog("/!\\ Free slot Bingo /!\\")
-                    # TODO: Make booking system
-                    sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
+                    isSlotAvailableFound = True
+                    add_department_to_list(departmentCode, departmentName, bookingTryDate, departmentAvailabilityList)
                     break
                 bookingTryDate = bookingTryDate + datetime.timedelta(days=7)
                 dayDelta += 7
+        if not isSlotAvailableFound:
+            add_department_to_list(departmentCode, departmentName, "", departmentAvailabilityList)
+
+    write_department_availability(departmentAvailabilityList)
 
     # Sleeping time in minutes
     sleeptime = 60
