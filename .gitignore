@@ -2,3 +2,6 @@ output.txt
 server/__pycache__
 server/utils/__pycache__
 server/.idea
+server/.idea/*.xml
+*.idea
+server/.idea/**

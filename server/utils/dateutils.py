@@ -1,5 +1,6 @@
 import locale
-from datetime import datetime
+import datetime
+
 
 # ex: frenchmonth == avril return 4
 def getmonthfromfrench(frenchmonth):
@@ -33,13 +34,20 @@ def getmonthfromfrench(frenchmonth):
 
     return 0
 
+
 def getdatefromdata(data):
     # get the date for dayZero
     # "Semaine du lundi 27 avril 2020 au dimanche 03 mai 2020"
     strStartDate = "Semaine du lundi "
-    indexStart = data.find(strStartDate) + len(strStartDate)
+    if data.find(strStartDate) == -1:
+        strStartDate = "Week from lundi "
+        indexEnd = data.find(" to dimanche ")
+        indexStart = data.find(strStartDate) + len(strStartDate)
+    else:
+        indexStart = data.find(strStartDate) + len(strStartDate)
+        indexEnd = data.find(" au dimanche ")
+
     dayOfTheMonth = data[indexStart:indexStart + 2]
-    indexEnd = data.find(" au dimanche ")
     # "Semaine du lundi 27 [avril 2020] au dimanche 03 mai 2020"
     strMonthAndYear = data[indexStart + 3:indexEnd]
     sizeMonthYear = len(strMonthAndYear)
@@ -48,4 +56,12 @@ def getdatefromdata(data):
     year = strMonthAndYear[sizeMonthYear - 4:sizeMonthYear]
     month = getmonthfromfrench(monthFrench)
     # then dayBooking - dayZero % 7 and request again
-    return datetime(int(year), int(month), int(dayOfTheMonth))
+    return datetime.datetime(int(year), int(month), int(dayOfTheMonth))
+
+
+# Update index to reach today's date
+def update_index_day_zero_to_today(indexDayZero, dateZero, dateToday):
+    while dateZero < dateToday:
+        dateZero = dateZero + datetime.timedelta(days=7)
+        indexDayZero += 7
+    return indexDayZero

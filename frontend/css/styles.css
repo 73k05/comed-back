@@ -1,7 +1,7 @@
 
 .container {
-  width: 100%;
-  align-items: center;
+    width: 100%;
+    align-items: center;
 }
 
 .main-form {
@@ -9,30 +9,30 @@
 }
 
 .banner-container {
-  position: relative;
-  margin: auto;
-  max-width: 1200px;
-  height: auto;
+    position: relative;
+    margin: auto;
+    max-width: 1200px;
+    height: auto;
 }
 
 .banner {
-  margin: auto;
-  width: 100%;
-  max-width: 1200px;
-  height: auto;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
 }
 
 .stamp {
-  position: absolute;
-  margin: auto;
-  height: auto;
-  top: 0px;
-  left: 0px;
+    position: absolute;
+    margin: auto;
+    height: auto;
+    top: 0px;
+    left: 0px;
 }
 
 .title-h1 {
     color: #47699D;
-    font-family: "Century Gothic",Arial,Verdana;
+    font-family: "Century Gothic", Arial, Verdana;
     font-size: 1.7em;
     padding: 0 0 5px 0;
     font-weight: bold;
@@ -58,7 +58,7 @@
     text-align: center;
 }
 
-.header-info{
+.header-info {
     clear: both;
     color: #4d73ac;
     font-size: 0.7em;
@@ -68,11 +68,11 @@
 
 .footer-price-rgpd {
     color: #47699D;
-    font-family: "Century Gothic",Arial,Verdana;
+    font-family: "Century Gothic", Arial, Verdana;
     font-size: 0.7em;
     margin: 0 0 5px 0;
     padding: 0 0 5px 0;
-    font-style:italic;
+    font-style: italic;
     text-align: center;
 }
 
@@ -86,9 +86,18 @@
 }
 
 .progress-bar {
-    width:100%;
+    width: 100%;
 }
 
-.btn{
+.btn {
     align-self: center;
+}
+
+#mapid {
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    width: 100%;
+    height: 800px;
+    max-width: 1200px;
 }

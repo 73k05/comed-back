@@ -1,397 +1,788 @@
 {
   "gouvUrlList": [
     {
-      "code": "1",
+      "departmentCode": "1",
+      "departmentName": "Ain",
+      "bypass": 0,
       "endPointUrl": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::",
-      "dayZero": 0,
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "2",
-      "endPointUrl": "",
+      "departmentCode": "2",
+      "departmentName": "Aisne",
+      "bypass": 0,
+      "endPointUrl": "http://www.aisne.gouv.fr/ezjscore/call/bookingserver::planning::assign::19070::19071::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "3",
+      "departmentCode": "3",
+      "departmentName": "",
+      "bypass": 0,
       "endPointUrl": "http://www.rdv.allier.gouv.fr/ezjscore/call/bookingserver::planning::assign::752::753::",
+      "indexDayZero": 84,
       "bookUrl": ""
     },
     {
-      "code": "4",
+      "departmentCode": "4",
+      "departmentName": "Alpes-de-Haute-Provence",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "5",
+      "departmentCode": "5",
+      "departmentName": "Hautes-Alpes",
+      "bypass": 0,
       "endPointUrl": "http://www.rdv.hautes-alpes.gouv.fr/ezjscore/call/bookingserver::planning::assign::723::729::",
+      "indexDayZero": 133,
       "bookUrl": ""
     },
     {
-      "code": "6",
-      "endPointUrl": "",
+      "departmentCode": "6",
+      "departmentName": "Alpes-Maritimes",
+      "bypass": 0,
+      "endPointUrl": "http://www.alpes-maritimes.gouv.fr/ezjscore/call/bookingserver::planning::assign::21660::21663::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "7",
+      "departmentCode": "7",
+      "departmentName": "Ardeche",
+      "bypass": 0,
       "endPointUrl": "http://www.rdv.ardeche.gouv.fr/ezjscore/call/bookingserver::planning::assign::802::810::",
+      "indexDayZero": 245,
       "bookUrl": "http://www.rdv.ardeche.gouv.fr/booking/create/802/8"
     },
     {
-      "code": "8",
+      "departmentCode": "8",
+      "departmentName": "Ardennes",
+      "bypass": 0,
       "endPointUrl": "http://www.rdv.ardennes.gouv.fr/ezjscore/call/bookingserver::planning::assign::765::770::",
+      "indexDayZero": 105,
       "bookUrl": ""
     },
     {
-      "code": "9",
+      "departmentCode": "9",
+      "departmentName": "Ariege",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "10",
+      "departmentCode": "10",
+      "departmentName": "Aube",
+      "bypass": 0,
+      "endPointUrl": "http://www.aube.gouv.fr/ezjscore/call/bookingserver::planning::assign::9629::9632::",
+      "indexDayZero": 14,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "11",
+      "departmentName": "Alpes-Maritimes",
+      "bypass": 0,
+      "endPointUrl": "http://www.alpes-maritimes.gouv.fr/ezjscore/call/bookingserver::planning::assign::21660::21663::",
+      "indexDayZero": 42,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "12",
+      "departmentName": "Aveyron",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.aveyron.gouv.fr/ezjscore/call/bookingserver::planning::assign::751::752::",
+      "indexDayZero": 14,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "13",
+      "departmentName": "Bouches-Du-Rhone",
+      "bypass": 0,
+      "endPointUrl": "http://www.bouches-du-rhone.gouv.fr/ezjscore/call/bookingserver::planning::assign::25519::25520::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "14",
+      "departmentName": "Calvados",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "11",
+      "departmentCode": "15",
+      "departmentName": "Cantal",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.cantal.gouv.fr/ezjscore/call/bookingserver::planning::assign::764::766::",
+      "indexDayZero": 91,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "16",
+      "departmentName": "Charente",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "12",
-      "endPointUrl": "",
+      "departmentCode": "17",
+      "departmentName": "Charente-Maritime",
+      "bypass": 0,
+      "endPointUrl": "http://www.charente-maritime.gouv.fr/ezjscore/call/bookingserver::planning::assign::27136::27137::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "13",
-      "endPointUrl": "",
+      "departmentCode": "18",
+      "departmentName": "Cher",
+      "bypass": 0,
+      "endPointUrl": "http://www.cher.gouv.fr/ezjscore/call/bookingserver::planning::assign::18534::18535::",
+      "indexDayZero": 77,
       "bookUrl": ""
     },
     {
-      "code": "14",
-      "endPointUrl": "",
+      "departmentCode": "19",
+      "departmentName": "Correze",
+      "bypass": 0,
+      "endPointUrl": "http://www.correze.gouv.fr/ezjscore/call/bookingserver::planning::assign::16790::16791::",
+      "indexDayZero": 35,
       "bookUrl": ""
     },
     {
-      "code": "15",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "16",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "17",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "18",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "19",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "20",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "21",
+      "departmentCode": "20",
+      "departmentName": "Cote-Dor",
+      "bypass": 1,
+      "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::",
+      "indexDayZero": 84,
       "subDepartmentList": [
         {
-          "code": "1",
+          "departmentCode": "1",
+          "departmentName": "",
           "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
-        },{
-          "code": "1",
+        },
+        {
+          "departmentCode": "1",
+          "departmentName": "",
           "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
-        },{
-          "code": "1",
+        },
+        {
+          "departmentCode": "1",
+          "departmentName": "",
           "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::"
         }
       ]
     },
     {
-      "code": "22",
+      "departmentCode": "22",
+      "departmentName": "Cotes-Darmor",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "23",
-      "endPointUrl": "",
+      "departmentCode": "23",
+      "departmentName": "Creuse",
+      "bypass": 0,
+      "endPointUrl": "http://www.creuse.gouv.fr/ezjscore/call/bookingserver::planning::assign::9038::9039::",
+      "indexDayZero": 35,
       "bookUrl": ""
     },
     {
-      "code": "24",
-      "endPointUrl": "",
+      "departmentCode": "24",
+      "departmentName": "Dordogne",
+      "bypass": 0,
+      "endPointUrl": "http://www.dordogne.gouv.fr/ezjscore/call/bookingserver::planning::assign::17364::17365::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "25",
-      "endPointUrl": "",
+      "departmentCode": "25",
+      "departmentName": "Doubs",
+      "bypass": 0,
+      "endPointUrl": "http://www.doubs.gouv.fr/ezjscore/call/bookingserver::planning::assign::14641::14649::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "26",
-      "endPointUrl": "",
+      "departmentCode": "26",
+      "departmentName": "Drome",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.drome.gouv.fr/ezjscore/call/bookingserver::planning::assign::753::754::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "27",
+      "departmentCode": "27",
+      "departmentName": "Eure",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "28",
-      "endPointUrl": "",
+      "departmentCode": "28",
+      "departmentName": "eure-et-loir",
+      "bypass": 0,
+      "endPointUrl": "http://www.eure-et-loir.gouv.fr/ezjscore/call/bookingserver::planning::assign::22839::22840::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "29",
-      "endPointUrl": "",
+      "departmentCode": "29",
+      "departmentName": "finistere",
+      "bypass": 0,
+      "endPointUrl": "http://www.finistere.gouv.fr/ezjscore/call/bookingserver::planning::assign::17254::17255::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "30",
-      "endPointUrl": "",
+      "departmentCode": "30",
+      "departmentName": "Gard",
+      "bypass": 0,
+      "endPointUrl": "http://www.gard.gouv.fr/ezjscore/call/bookingserver::planning::assign::18866::18867::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "31",
-      "endPointUrl": "",
+      "departmentCode": "31",
+      "departmentName": "haute-garonne",
+      "bypass": 0,
+      "endPointUrl": "http://www.haute-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::13660::13661::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "32",
+      "departmentCode": "32",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "33",
+      "departmentCode": "33",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "34",
+      "departmentCode": "34",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "35",
-      "endPointUrl": "",
+      "departmentCode": "35",
+      "departmentName": "ille-et-vilaine",
+      "bypass": 0,
+      "endPointUrl": "http://www.ille-et-vilaine.gouv.fr/ezjscore/call/bookingserver::planning::assign::36497::36498::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "36",
-      "endPointUrl": "",
+      "departmentCode": "36",
+      "departmentName": "indre",
+      "bypass": 0,
+      "endPointUrl": "http://www.indre.gouv.fr/ezjscore/call/bookingserver::planning::assign::16369::16373::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "37",
+      "departmentCode": "37",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "38",
+      "departmentCode": "38",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "39",
-      "endPointUrl": "",
+      "departmentCode": "39",
+      "departmentName": "Jura",
+      "bypass": 0,
+      "endPointUrl": "http://www.jura.gouv.fr/ezjscore/call/bookingserver::planning::assign::13502::13504::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "40",
+      "departmentCode": "40",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "41",
-      "endPointUrl": "",
+      "departmentCode": "41",
+      "departmentName": "loir-et-cher",
+      "bypass": 0,
+      "endPointUrl": "http://www.loir-et-cher.gouv.fr/ezjscore/call/bookingserver::planning::assign::11097::11098::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "42",
-      "endPointUrl": "",
+      "departmentCode": "42",
+      "departmentName": "Loire",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::773::774::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "43",
-      "endPointUrl": "",
+      "departmentCode": "43",
+      "departmentName": "haute-loire",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.haute-loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::739::740::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "44",
+      "departmentCode": "44",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "45",
+      "departmentCode": "45",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "46",
-      "endPointUrl": "",
+      "departmentCode": "46",
+      "departmentName": "Lot",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.lot.gouv.fr/ezjscore/call/bookingserver::planning::assign::825::826::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "47",
+      "departmentCode": "47",
+      "departmentName": "lot-et-garonne",
+      "bypass": 0,
       "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::0::812::",
       "indexDayZero": 1197,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
     },
     {
-      "code": "48",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "49",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "50",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "51",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "52",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "53",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "54",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "55",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "56",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "57",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "58",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "59",
-      "endPointUrl": "",
-      "bookUrl": ""
-    },
-    {
-      "code": "60",
+      "departmentCode": "48",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "61",
-      "endPointUrl": "",
+      "departmentCode": "49",
+      "departmentName": "maine-et-loire",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.maine-et-loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::825::826::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "62",
+      "departmentCode": "50",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "63",
+      "departmentCode": "51",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "52",
+      "departmentName": "haute-marne",
+      "bypass": 0,
+      "endPointUrl": "http://www.haute-marne.gouv.fr/ezjscore/call/bookingserver::planning::assign::9914::9915::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "53",
+      "departmentName": "mayenne",
+      "bypass": 0,
+      "endPointUrl": "http://www.mayenne.gouv.fr/ezjscore/call/bookingserver::planning::assign::30252::30253::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "54",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "55",
+      "departmentName": "Meuse",
+      "bypass": 0,
+      "endPointUrl": "http://www.meuse.gouv.fr/ezjscore/call/bookingserver::planning::assign::9933::9934::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "56",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "57",
+      "departmentName": "Moselle",
+      "bypass": 0,
+      "endPointUrl": "http://www.moselle.gouv.fr/ezjscore/call/bookingserver::planning::assign::9439::9440::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "58",
+      "departmentName": "Nievre",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.nievre.gouv.fr/ezjscore/call/bookingserver::planning::assign::713::714::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "59",
+      "departmentName": "Nord",
+      "bypass": 0,
+      "endPointUrl": "http://www.nord.gouv.fr/ezjscore/call/bookingserver::planning::assign::48041::48042::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "60",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "61",
+      "departmentName": "Orne",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.orne.gouv.fr/ezjscore/call/bookingserver::planning::assign::702::703::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "62",
+      "departmentName": "pas-de-calais",
+      "bypass": 0,
+      "endPointUrl": "http://www.pas-de-calais.gouv.fr/ezjscore/call/bookingserver::planning::assign::29846::29858::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "63",
+      "departmentName": "",
+      "bypass": 0,
       "endPointUrl": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::",
+      "indexDayZero": 98,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "64",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
       "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "64",
-      "endPointUrl": "",
+      "departmentCode": "65",
+      "departmentName": "hautes-pyrenees",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.hautes-pyrenees.gouv.fr/ezjscore/call/bookingserver::planning::assign::585::586::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "65",
-      "endPointUrl": "",
+      "departmentCode": "66",
+      "departmentName": "pyrenees-orientales",
+      "bypass": 0,
+      "endPointUrl": "http://www.pyrenees-orientales.gouv.fr/ezjscore/call/bookingserver::planning::assign::20835::20836::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "66",
-      "endPointUrl": "",
+      "departmentCode": "67",
+      "departmentName": "bas-rhin",
+      "bypass": 0,
+      "endPointUrl": "http://www.bas-rhin.gouv.fr/ezjscore/call/bookingserver::planning::assign::16671::16672::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "67",
-      "endPointUrl": "",
+      "departmentCode": "68",
+      "departmentName": "haut-rhin",
+      "bypass": 0,
+      "endPointUrl": "http://www.haut-rhin.gouv.fr/ezjscore/call/bookingserver::planning::assign::17994::17995::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "68",
+      "departmentCode": "69",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "69",
-      "endPointUrl": "",
+      "departmentCode": "70",
+      "departmentName": "haute-saone",
+      "bypass": 0,
+      "endPointUrl": "http://www.haute-saone.gouv.fr/ezjscore/call/bookingserver::planning::assign::10907::10908::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "",
-      "endPointUrl": "",
+      "departmentCode": "71",
+      "departmentName": "saone-et-loire",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.saone-et-loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::737::738::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "70",
-      "endPointUrl": "",
+      "departmentCode": "72",
+      "departmentName": "sarthe",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.sarthe.gouv.fr/ezjscore/call/bookingserver::planning::assign::735::736::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "71",
+      "departmentCode": "73",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "72",
-      "endPointUrl": "",
+      "departmentCode": "74",
+      "departmentName": "haute-savoie",
+      "bypass": 0,
+      "endPointUrl": "http://www.haute-savoie.gouv.fr/ezjscore/call/bookingserver::planning::assign::26890::26891::",
+      "indexDayZero": 364,
       "bookUrl": ""
     },
     {
-      "code": "73",
+      "departmentCode": "75",
+      "departmentName": "Paris",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "74",
+      "departmentCode": "76",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
-      "code": "75",
+      "departmentCode": "77",
+      "departmentName": "",
+      "bypass": 1,
       "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "78",
+      "departmentName": "Yvelines",
+      "bypass": 0,
+      "endPointUrl": "http://www.yvelines.gouv.fr/ezjscore/call/bookingserver::planning::assign::14256::14257::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "79",
+      "departmentName": "",
+      "bypass": 0,
+      "endPointUrl": "http://www.deux-sevres.gouv.fr/ezjscore/call/bookingserver::planning::assign::24119::24120::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "80",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "81",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "82",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "83",
+      "departmentName": "Var",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.var.gouv.fr/ezjscore/call/bookingserver::planning::assign::872::873::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "84",
+      "departmentName": "Vaucluse",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.vaucluse.gouv.fr/ezjscore/call/bookingserver::planning::assign::867::868::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "85",
+      "departmentName": "Vendee",
+      "bypass": 0,
+      "endPointUrl": "http://www.rdv.vendee.gouv.fr/ezjscore/call/bookingserver::planning::assign::773::774::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "86",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "87",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "88",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "89",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "90",
+      "departmentName": "Belfort",
+      "bypass": 0,
+      "endPointUrl": "https://www.territoire-de-belfort.gouv.fr/ezjscore/call/bookingserver::planning::assign::16564::16565::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "91",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "92",
+      "departmentName": "hauts-de-seine",
+      "bypass": 0,
+      "endPointUrl": "http://www.hauts-de-seine.gouv.fr/ezjscore/call/bookingserver::planning::assign::10674::10675::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "93",
+      "departmentName": "seine-saint-denis",
+      "bypass": 0,
+      "endPointUrl": "http://www.seine-saint-denis.gouv.fr/ezjscore/call/bookingserver::planning::assign::11238::11239::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "94",
+      "departmentName": "val-de-marne",
+      "bypass": 0,
+      "endPointUrl": "http://www.val-de-marne.gouv.fr/ezjscore/call/bookingserver::planning::assign::8294::8295::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "95",
+      "departmentName": "Val-Doise",
+      "bypass": 0,
+      "endPointUrl": "http://www.val-doise.gouv.fr/ezjscore/call/bookingserver::planning::assign::12884::12885::",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "2A",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "2B",
+      "departmentName": "",
+      "bypass": 1,
+      "endPointUrl": "",
+      "indexDayZero": 0,
       "bookUrl": ""
     }
   ]
