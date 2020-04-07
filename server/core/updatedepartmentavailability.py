@@ -17,6 +17,7 @@ nbRequestSent = 0
 urlDepartmentList = {}
 departmentStartIndex = 0
 indexDep = 0
+maxDayToLookForward = 60
 
 while 1 == 1:
 
@@ -33,6 +34,7 @@ while 1 == 1:
         departmentCode = departmentEndpoint["departmentCode"]
         departmentName = departmentEndpoint["departmentName"]
         endPointUrl = departmentEndpoint["endPointUrl"]
+        departmentBookUrl = departmentEndpoint["bookUrl"]
         indexDayZero = departmentEndpoint["indexDayZero"]
 
         now = datetime.datetime.now()
@@ -60,7 +62,8 @@ while 1 == 1:
         if dateZero >= now and data.find('plage libre') != -1:
             writeLog("/!\\ Free slot Bingo /!\\")
             isSlotAvailableFound = True
-            add_department_to_list(departmentCode, departmentName, dateZero, departmentAvailabilityList)
+            add_department_to_list(departmentCode, departmentName, dateZero, departmentBookUrl,
+                                   departmentAvailabilityList)
             continue
         else:
             dayDelta = update_index_day_zero_to_today(indexDayZero, dateZero, now)
@@ -68,7 +71,7 @@ while 1 == 1:
             # we set it to 1 month max ahead from now to avoid forever tries
             # if not bookedMaxDate:
             bookingTryDate = max([now, dateZero])
-            bookedMaxDate = bookingTryDate + datetime.timedelta(days=14)
+            bookedMaxDate = bookingTryDate + datetime.timedelta(days=maxDayToLookForward)
             while bookedMaxDate > bookingTryDate:
                 data = sendGetRequest(endPointUrl + str(dayDelta))
                 if data == -1:
@@ -76,12 +79,17 @@ while 1 == 1:
                 elif data.find('plage libre') != -1:
                     writeLog("/!\\ Free slot Bingo /!\\")
                     isSlotAvailableFound = True
-                    add_department_to_list(departmentCode, departmentName, bookingTryDate, departmentAvailabilityList)
+                    add_department_to_list(departmentCode, departmentName, bookingTryDate, departmentBookUrl,
+                                           departmentAvailabilityList)
                     break
                 bookingTryDate = bookingTryDate + datetime.timedelta(days=7)
                 dayDelta += 7
         if not isSlotAvailableFound:
-            add_department_to_list(departmentCode, departmentName, "", departmentAvailabilityList)
+            add_department_to_list(departmentCode, departmentName, "", departmentBookUrl, departmentAvailabilityList)
+        # TODO: Check front for availability
+        # else:
+            # indexFooter = data.find('<footer>')
+            # found = data.find('ultérieurement', 0, (indexFooter)) != -1
 
     write_department_availability(departmentAvailabilityList)
 

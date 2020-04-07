@@ -6,7 +6,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.ain.gouv.fr/booking/create/804/4"
     },
     {
       "departmentCode": "2",
@@ -14,7 +14,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.aisne.gouv.fr/ezjscore/call/bookingserver::planning::assign::19070::19071::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.aisne.gouv.fr/booking/create/19070"
     },
     {
       "departmentCode": "3",
@@ -22,7 +22,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.allier.gouv.fr/ezjscore/call/bookingserver::planning::assign::752::753::",
       "indexDayZero": 84,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.allier.gouv.fr/booking/create/752/4"
     },
     {
       "departmentCode": "4",
@@ -30,7 +30,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.alpes-de-haute-provence.gouv.fr/booking/create/12099"
     },
     {
       "departmentCode": "5",
@@ -38,7 +38,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.hautes-alpes.gouv.fr/ezjscore/call/bookingserver::planning::assign::723::729::",
       "indexDayZero": 133,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.hautes-alpes.gouv.fr/booking/create/723/4"
     },
     {
       "departmentCode": "6",
@@ -46,7 +46,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.alpes-maritimes.gouv.fr/ezjscore/call/bookingserver::planning::assign::21660::21663::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.alpes-maritimes.gouv.fr/booking/create/21660/4"
     },
     {
       "departmentCode": "7",
@@ -62,7 +62,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.ardennes.gouv.fr/ezjscore/call/bookingserver::planning::assign::765::770::",
       "indexDayZero": 105,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.ardennes.gouv.fr/booking/create/765/4"
     },
     {
       "departmentCode": "9",
@@ -70,7 +70,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.ariege.gouv.fr/booking/create/2723"
     },
     {
       "departmentCode": "10",
@@ -78,7 +78,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.aube.gouv.fr/ezjscore/call/bookingserver::planning::assign::9629::9632::",
       "indexDayZero": 14,
-      "bookUrl": ""
+      "bookUrl": "http://www.aube.gouv.fr/booking/create/9629/4"
     },
     {
       "departmentCode": "11",
@@ -86,7 +86,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.alpes-maritimes.gouv.fr/ezjscore/call/bookingserver::planning::assign::21660::21663::",
       "indexDayZero": 42,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.aude.gouv.fr/booking/create/807/0"
     },
     {
       "departmentCode": "12",
@@ -94,7 +94,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.aveyron.gouv.fr/ezjscore/call/bookingserver::planning::assign::751::752::",
       "indexDayZero": 14,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.aveyron.gouv.fr/booking/create/751/4"
     },
     {
       "departmentCode": "13",
@@ -102,7 +102,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.bouches-du-rhone.gouv.fr/ezjscore/call/bookingserver::planning::assign::25519::25520::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.bouches-du-rhone.gouv.fr/booking/create/25519"
     },
     {
       "departmentCode": "14",
@@ -110,7 +110,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.calvados.gouv.fr/booking/create/789"
     },
     {
       "departmentCode": "15",
@@ -118,7 +118,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.cantal.gouv.fr/ezjscore/call/bookingserver::planning::assign::764::766::",
       "indexDayZero": 91,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.cantal.gouv.fr/booking/create/764/0"
     },
     {
       "departmentCode": "16",
@@ -126,7 +126,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.charente.gouv.fr/booking/create/24911"
     },
     {
       "departmentCode": "17",
@@ -134,7 +134,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.charente-maritime.gouv.fr/ezjscore/call/bookingserver::planning::assign::27136::27137::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.charente-maritime.gouv.fr/booking/create/27136"
     },
     {
       "departmentCode": "18",
@@ -142,7 +142,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.cher.gouv.fr/ezjscore/call/bookingserver::planning::assign::18534::18535::",
       "indexDayZero": 77,
-      "bookUrl": ""
+      "bookUrl": "http://www.cher.gouv.fr/booking/create/18534/4"
     },
     {
       "departmentCode": "19",
@@ -150,7 +150,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.correze.gouv.fr/ezjscore/call/bookingserver::planning::assign::16790::16791::",
       "indexDayZero": 35,
-      "bookUrl": ""
+      "bookUrl": "http://www.correze.gouv.fr/booking/create/16789/2"
     },
     {
       "departmentCode": "20",
@@ -158,6 +158,7 @@
       "bypass": 1,
       "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::",
       "indexDayZero": 84,
+      "bookUrl": "http://www.rdv.cote-dor.gouv.fr/booking/create/942/4",
       "subDepartmentList": [
         {
           "departmentCode": "1",
@@ -182,7 +183,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.cotes-darmor.gouv.fr/booking/create/18451"
     },
     {
       "departmentCode": "23",
@@ -190,7 +191,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.creuse.gouv.fr/ezjscore/call/bookingserver::planning::assign::9038::9039::",
       "indexDayZero": 35,
-      "bookUrl": ""
+      "bookUrl": "http://www.creuse.gouv.fr/booking/create/9038/2"
     },
     {
       "departmentCode": "24",
@@ -198,7 +199,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.dordogne.gouv.fr/ezjscore/call/bookingserver::planning::assign::17364::17365::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.dordogne.gouv.fr/booking/create/17364"
     },
     {
       "departmentCode": "25",
@@ -206,7 +207,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.doubs.gouv.fr/ezjscore/call/bookingserver::planning::assign::14641::14649::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.doubs.gouv.fr/booking/create/14641"
     },
     {
       "departmentCode": "26",
@@ -214,7 +215,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.drome.gouv.fr/ezjscore/call/bookingserver::planning::assign::753::754::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.drome.gouv.fr/booking/create/753/3"
     },
     {
       "departmentCode": "27",
@@ -222,7 +223,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.eure.gouv.fr/booking/create/17595"
     },
     {
       "departmentCode": "28",
@@ -230,7 +231,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.eure-et-loir.gouv.fr/ezjscore/call/bookingserver::planning::assign::22839::22840::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.eure-et-loir.gouv.fr/booking/create/22839"
     },
     {
       "departmentCode": "29",
@@ -238,7 +239,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.finistere.gouv.fr/ezjscore/call/bookingserver::planning::assign::17254::17255::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.finistere.gouv.fr/booking/create/17254"
     },
     {
       "departmentCode": "30",
@@ -246,7 +247,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.gard.gouv.fr/ezjscore/call/bookingserver::planning::assign::18866::18867::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.gard.gouv.fr/booking/create/18866"
     },
     {
       "departmentCode": "31",
@@ -254,7 +255,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.haute-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::13660::13661::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.haute-garonne.gouv.fr/booking/create/13660"
     },
     {
       "departmentCode": "32",
@@ -262,7 +263,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.gers.gouv.fr/booking/create/21616"
     },
     {
       "departmentCode": "33",
@@ -270,7 +271,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.gironde.gouv.fr/booking/create/24775"
     },
     {
       "departmentCode": "34",
@@ -278,7 +279,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.herault.gouv.fr/booking/create/15245"
     },
     {
       "departmentCode": "35",
@@ -286,7 +287,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.ille-et-vilaine.gouv.fr/ezjscore/call/bookingserver::planning::assign::36497::36498::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.ille-et-vilaine.gouv.fr/booking/create/36497"
     },
     {
       "departmentCode": "36",
@@ -294,7 +295,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.indre.gouv.fr/ezjscore/call/bookingserver::planning::assign::16369::16373::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.indre.gouv.fr/booking/create/16369"
     },
     {
       "departmentCode": "37",
@@ -302,7 +303,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.indre-et-loire.gouv.fr/booking/create/13891"
     },
     {
       "departmentCode": "38",
@@ -310,7 +311,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.isere.gouv.fr/booking/create/24989"
     },
     {
       "departmentCode": "39",
@@ -318,7 +319,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.jura.gouv.fr/ezjscore/call/bookingserver::planning::assign::13502::13504::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.jura.gouv.fr/booking/create/13502"
     },
     {
       "departmentCode": "40",
@@ -326,7 +327,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.landes.gouv.fr/booking/create/763"
     },
     {
       "departmentCode": "41",
@@ -334,7 +335,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.loir-et-cher.gouv.fr/ezjscore/call/bookingserver::planning::assign::11097::11098::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.loir-et-cher.gouv.fr/booking/create/11097"
     },
     {
       "departmentCode": "42",
@@ -342,7 +343,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::773::774::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.loire.gouv.fr/booking/create/773"
     },
     {
       "departmentCode": "43",
@@ -350,7 +351,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.haute-loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::739::740::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.haute-loire.gouv.fr/booking/create/737"
     },
     {
       "departmentCode": "44",
@@ -358,7 +359,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.loire-atlantique.gouv.fr/booking/create/20266"
     },
     {
       "departmentCode": "45",
@@ -366,7 +367,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.loiret.gouv.fr/booking/create/33203"
     },
     {
       "departmentCode": "46",
@@ -374,7 +375,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.lot.gouv.fr/ezjscore/call/bookingserver::planning::assign::825::826::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.lot.gouv.fr/booking/create/825"
     },
     {
       "departmentCode": "47",
@@ -391,7 +392,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.lozere.gouv.fr/booking/create/19837"
     },
     {
       "departmentCode": "49",
@@ -399,7 +400,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.maine-et-loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::825::826::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.maine-et-loire.gouv.fr/booking/create/824"
     },
     {
       "departmentCode": "50",
@@ -407,7 +408,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.manche.gouv.fr/booking/create/34211"
     },
     {
       "departmentCode": "51",
@@ -415,7 +416,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.marne.gouv.fr/booking/create/15309"
     },
     {
       "departmentCode": "52",
@@ -423,7 +424,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.haute-marne.gouv.fr/ezjscore/call/bookingserver::planning::assign::9914::9915::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.haute-marne.gouv.fr/booking/create/9912"
     },
     {
       "departmentCode": "53",
@@ -431,7 +432,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.mayenne.gouv.fr/ezjscore/call/bookingserver::planning::assign::30252::30253::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.mayenne.gouv.fr/booking/create/30252"
     },
     {
       "departmentCode": "54",
@@ -439,7 +440,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.meurthe-et-moselle.gouv.fr/booking/create/10557"
     },
     {
       "departmentCode": "55",
@@ -447,7 +448,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.meuse.gouv.fr/ezjscore/call/bookingserver::planning::assign::9933::9934::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.meuse.gouv.fr/booking/create/9933"
     },
     {
       "departmentCode": "56",
@@ -455,7 +456,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.morbihan.gouv.fr/booking/create/21039"
     },
     {
       "departmentCode": "57",
@@ -463,7 +464,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.moselle.gouv.fr/ezjscore/call/bookingserver::planning::assign::9439::9440::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.moselle.gouv.fr/booking/create/9439"
     },
     {
       "departmentCode": "58",
@@ -471,7 +472,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.nievre.gouv.fr/ezjscore/call/bookingserver::planning::assign::713::714::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.nievre.gouv.fr/booking/create/713"
     },
     {
       "departmentCode": "59",
@@ -479,7 +480,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.nord.gouv.fr/ezjscore/call/bookingserver::planning::assign::48041::48042::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.nord.gouv.fr/booking/create/48041"
     },
     {
       "departmentCode": "60",
@@ -487,7 +488,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.oise.gouv.fr/booking/create/25336"
     },
     {
       "departmentCode": "61",
@@ -495,7 +496,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.orne.gouv.fr/ezjscore/call/bookingserver::planning::assign::702::703::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.orne.gouv.fr/booking/create/702"
     },
     {
       "departmentCode": "62",
@@ -503,7 +504,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.pas-de-calais.gouv.fr/ezjscore/call/bookingserver::planning::assign::29846::29858::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.pas-de-calais.gouv.fr/booking/create/29846"
     },
     {
       "departmentCode": "63",
@@ -511,7 +512,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::",
       "indexDayZero": 98,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.puy-de-dome.gouv.fr/booking/create/801/0"
     },
     {
       "departmentCode": "64",
@@ -519,7 +520,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.pyrenees-atlantiques.gouv.fr/booking/create/15414"
     },
     {
       "departmentCode": "65",
@@ -527,7 +528,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.hautes-pyrenees.gouv.fr/ezjscore/call/bookingserver::planning::assign::585::586::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.hautes-pyrenees.gouv.fr/booking/create/585"
     },
     {
       "departmentCode": "66",
@@ -535,7 +536,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.pyrenees-orientales.gouv.fr/ezjscore/call/bookingserver::planning::assign::20835::20836::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.pyrenees-orientales.gouv.fr/booking/create/20835"
     },
     {
       "departmentCode": "67",
@@ -543,7 +544,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.bas-rhin.gouv.fr/ezjscore/call/bookingserver::planning::assign::16671::16672::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.bas-rhin.gouv.fr/booking/create/16671"
     },
     {
       "departmentCode": "68",
@@ -551,7 +552,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.haut-rhin.gouv.fr/ezjscore/call/bookingserver::planning::assign::17994::17995::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.haut-rhin.gouv.fr/booking/create/17994"
     },
     {
       "departmentCode": "69",
@@ -559,7 +560,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "https://rdv.rhone.gouv.fr/eAppointment_PREF69_DSPC/element/jsp/appointment.jsp"
     },
     {
       "departmentCode": "70",
@@ -567,7 +568,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.haute-saone.gouv.fr/ezjscore/call/bookingserver::planning::assign::10907::10908::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.haute-saone.gouv.fr/booking/create/10907"
     },
     {
       "departmentCode": "71",
@@ -575,7 +576,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.saone-et-loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::737::738::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.saone-et-loire.gouv.fr/booking/create/737"
     },
     {
       "departmentCode": "72",
@@ -583,7 +584,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.sarthe.gouv.fr/ezjscore/call/bookingserver::planning::assign::735::736::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.sarthe.gouv.fr/booking/create/735"
     },
     {
       "departmentCode": "73",
@@ -591,7 +592,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.savoie.gouv.fr/booking/create/23718"
     },
     {
       "departmentCode": "74",
@@ -599,7 +600,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.haute-savoie.gouv.fr/ezjscore/call/bookingserver::planning::assign::26890::26891::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.haute-savoie.gouv.fr/booking/create/24978"
     },
     {
       "departmentCode": "75",
@@ -615,7 +616,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.seine-maritime.gouv.fr/booking/create/19113"
     },
     {
       "departmentCode": "77",
@@ -623,7 +624,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.seine-et-marne.gouv.fr/booking/create/29676"
     },
     {
       "departmentCode": "78",
@@ -631,7 +632,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.yvelines.gouv.fr/ezjscore/call/bookingserver::planning::assign::14256::14257::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.yvelines.gouv.fr/booking/create/14256"
     },
     {
       "departmentCode": "79",
@@ -639,7 +640,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.deux-sevres.gouv.fr/ezjscore/call/bookingserver::planning::assign::24119::24120::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.deux-sevres.gouv.fr/booking/create/23715"
     },
     {
       "departmentCode": "80",
@@ -647,7 +648,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.somme.gouv.fr/booking/create/22859"
     },
     {
       "departmentCode": "81",
@@ -655,7 +656,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.tarn.gouv.fr/booking/create/811"
     },
     {
       "departmentCode": "82",
@@ -663,7 +664,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.tarn-et-garonne.gouv.fr/booking/create/13976"
     },
     {
       "departmentCode": "83",
@@ -671,7 +672,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.var.gouv.fr/ezjscore/call/bookingserver::planning::assign::872::873::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.var.gouv.fr/booking/create/872"
     },
     {
       "departmentCode": "84",
@@ -679,7 +680,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.vaucluse.gouv.fr/ezjscore/call/bookingserver::planning::assign::867::868::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.vaucluse.gouv.fr/booking/create/867"
     },
     {
       "departmentCode": "85",
@@ -687,7 +688,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.rdv.vendee.gouv.fr/ezjscore/call/bookingserver::planning::assign::773::774::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.vendee.gouv.fr/booking/create/773"
     },
     {
       "departmentCode": "86",
@@ -695,7 +696,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.vienne.gouv.fr/booking/create/14153"
     },
     {
       "departmentCode": "87",
@@ -703,7 +704,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.haute-vienne.gouv.fr/booking/create/18626"
     },
     {
       "departmentCode": "88",
@@ -711,7 +712,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.vosges.gouv.fr/booking/create/14296"
     },
     {
       "departmentCode": "89",
@@ -719,7 +720,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.yonne.gouv.fr/booking/create/23477"
     },
     {
       "departmentCode": "90",
@@ -727,7 +728,7 @@
       "bypass": 0,
       "endPointUrl": "https://www.territoire-de-belfort.gouv.fr/ezjscore/call/bookingserver::planning::assign::16564::16565::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "https://www.territoire-de-belfort.gouv.fr/booking/create/16564"
     },
     {
       "departmentCode": "91",
@@ -735,7 +736,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.essonne.gouv.fr/booking/create/22351"
     },
     {
       "departmentCode": "92",
@@ -743,7 +744,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.hauts-de-seine.gouv.fr/ezjscore/call/bookingserver::planning::assign::10674::10675::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.hauts-de-seine.gouv.fr/booking/create/10674"
     },
     {
       "departmentCode": "93",
@@ -751,7 +752,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.seine-saint-denis.gouv.fr/ezjscore/call/bookingserver::planning::assign::11238::11239::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.seine-saint-denis.gouv.fr/booking/create/11238"
     },
     {
       "departmentCode": "94",
@@ -759,7 +760,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.val-de-marne.gouv.fr/ezjscore/call/bookingserver::planning::assign::8294::8295::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.val-de-marne.gouv.fr/booking/create/8294"
     },
     {
       "departmentCode": "95",
@@ -767,7 +768,7 @@
       "bypass": 0,
       "endPointUrl": "http://www.val-doise.gouv.fr/ezjscore/call/bookingserver::planning::assign::12884::12885::",
       "indexDayZero": 364,
-      "bookUrl": ""
+      "bookUrl": "http://www.val-doise.gouv.fr/booking/create/12884"
     },
     {
       "departmentCode": "2A",
@@ -775,7 +776,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.corse-du-sud.gouv.fr/booking/create/742"
     },
     {
       "departmentCode": "2B",
@@ -783,7 +784,7 @@
       "bypass": 1,
       "endPointUrl": "",
       "indexDayZero": 0,
-      "bookUrl": ""
+      "bookUrl": "http://www.rdv.haute-corse.gouv.fr/booking/create/757"
     }
   ]
 }
