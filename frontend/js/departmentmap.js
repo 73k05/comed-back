@@ -17,14 +17,30 @@
                     var firstOpenSlot = departmentAvailability ? departmentAvailability["bookingFirstOpenSlotDate"] : "";
                     var todayDate = new Date();
                     var openSlotDate = Date.parse(firstOpenSlot);
+
                     if (openSlotDate >= todayDate) {
                         return {color: "#78995D"};
                     } else {
                         //Booking closed
                         return {color: "#ff0000"};
                     }
-                }
+                }, onEachFeature: onEachFeature
             }).addTo(map);
+
+            //Bind popup to display name & availability
+            function onEachFeature(feature, layer) {
+                var departmentAvailability = getDepartment(feature.properties.code, departmentAvailabilityList["departments"]);
+                var popupText = "<b>"+feature.properties.nom + "</b><br>";
+                var firstOpenSlot = departmentAvailability ? departmentAvailability["bookingFirstOpenSlotDate"] : "";
+                if (firstOpenSlot) {
+                    popupText = popupText + " Ouvert le: " + firstOpenSlot;
+                } else {
+                    popupText = popupText + " Fermé ";
+                }
+                var departmentBookUrl = departmentAvailability ? departmentAvailability["departmentBookUrl"] : "";
+                var popupText = popupText + " réserver sur <a href='" + departmentBookUrl + "' target='_blank'>gouv</a>";
+                layer.bindPopup(popupText);
+            }
         });
     });
 })();
@@ -39,9 +55,3 @@ function getDepartment(departmentCode, departmentList) {
     });
     return departmentToReturn;
 }
-
-//TODO: Bind popup to display name & availability
-// function onEachFeature(feature, layer) {
-//     // layer.bindPopup(feature.properties.popupContent);
-//     // layer.setbindPopup(feature.properties.popupContent);
-// }

@@ -1,13 +1,358 @@
 {
   "departments": [
     {
-      "departmentCode": 1,
+      "departmentCode": "1",
       "departmentName": "Ain",
-      "bookingFirstOpenSlotDate": "2020-04-15"
-    },{
-      "departmentCode":2,
-      "departmentName":"Aisne",
-      "bookingFirstOpenSlotDate":""
+      "bookingFirstOpenSlotDate": "2020-04-20",
+      "departmentBookUrl": "http://www.rdv.ain.gouv.fr/booking/create/804/4"
+    },
+    {
+      "departmentCode": "2",
+      "departmentName": "Aisne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.aisne.gouv.fr/booking/create/19070"
+    },
+    {
+      "departmentCode": "3",
+      "departmentName": "",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.allier.gouv.fr/booking/create/752/4"
+    },
+    {
+      "departmentCode": "5",
+      "departmentName": "Hautes-Alpes",
+      "bookingFirstOpenSlotDate": "2020-08-17",
+      "departmentBookUrl": "http://www.rdv.hautes-alpes.gouv.fr/booking/create/723/4"
+    },
+    {
+      "departmentCode": "6",
+      "departmentName": "Alpes-Maritimes",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.alpes-maritimes.gouv.fr/booking/create/21660/4"
+    },
+    {
+      "departmentCode": "7",
+      "departmentName": "Ardeche",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.ardeche.gouv.fr/booking/create/802/8"
+    },
+    {
+      "departmentCode": "8",
+      "departmentName": "Ardennes",
+      "bookingFirstOpenSlotDate": "2020-06-01",
+      "departmentBookUrl": "http://www.rdv.ardennes.gouv.fr/booking/create/765/4"
+    },
+    {
+      "departmentCode": "10",
+      "departmentName": "Aube",
+      "bookingFirstOpenSlotDate": "2020-04-07",
+      "departmentBookUrl": "http://www.aube.gouv.fr/booking/create/9629/4"
+    },
+    {
+      "departmentCode": "11",
+      "departmentName": "Alpes-Maritimes",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.aude.gouv.fr/booking/create/807/0"
+    },
+    {
+      "departmentCode": "12",
+      "departmentName": "Aveyron",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.aveyron.gouv.fr/booking/create/751/4"
+    },
+    {
+      "departmentCode": "13",
+      "departmentName": "Bouches-Du-Rhone",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.bouches-du-rhone.gouv.fr/booking/create/25519"
+    },
+    {
+      "departmentCode": "15",
+      "departmentName": "Cantal",
+      "bookingFirstOpenSlotDate": "2020-04-07",
+      "departmentBookUrl": "http://www.rdv.cantal.gouv.fr/booking/create/764/0"
+    },
+    {
+      "departmentCode": "17",
+      "departmentName": "Charente-Maritime",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.charente-maritime.gouv.fr/booking/create/27136"
+    },
+    {
+      "departmentCode": "18",
+      "departmentName": "Cher",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.cher.gouv.fr/booking/create/18534/4"
+    },
+    {
+      "departmentCode": "19",
+      "departmentName": "Correze",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.correze.gouv.fr/booking/create/16789/2"
+    },
+    {
+      "departmentCode": "23",
+      "departmentName": "Creuse",
+      "bookingFirstOpenSlotDate": "2020-07-06",
+      "departmentBookUrl": "http://www.creuse.gouv.fr/booking/create/9038/2"
+    },
+    {
+      "departmentCode": "24",
+      "departmentName": "Dordogne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.dordogne.gouv.fr/booking/create/17364"
+    },
+    {
+      "departmentCode": "25",
+      "departmentName": "Doubs",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.doubs.gouv.fr/booking/create/14641"
+    },
+    {
+      "departmentCode": "26",
+      "departmentName": "Drome",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.drome.gouv.fr/booking/create/753/3"
+    },
+    {
+      "departmentCode": "28",
+      "departmentName": "eure-et-loir",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.eure-et-loir.gouv.fr/booking/create/22839"
+    },
+    {
+      "departmentCode": "29",
+      "departmentName": "finistere",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.finistere.gouv.fr/booking/create/17254"
+    },
+    {
+      "departmentCode": "30",
+      "departmentName": "Gard",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.gard.gouv.fr/booking/create/18866"
+    },
+    {
+      "departmentCode": "31",
+      "departmentName": "haute-garonne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.haute-garonne.gouv.fr/booking/create/13660"
+    },
+    {
+      "departmentCode": "35",
+      "departmentName": "ille-et-vilaine",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.ille-et-vilaine.gouv.fr/booking/create/36497"
+    },
+    {
+      "departmentCode": "36",
+      "departmentName": "indre",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.indre.gouv.fr/booking/create/16369"
+    },
+    {
+      "departmentCode": "39",
+      "departmentName": "Jura",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.jura.gouv.fr/booking/create/13502"
+    },
+    {
+      "departmentCode": "41",
+      "departmentName": "loir-et-cher",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.loir-et-cher.gouv.fr/booking/create/11097"
+    },
+    {
+      "departmentCode": "42",
+      "departmentName": "Loire",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.loire.gouv.fr/booking/create/773"
+    },
+    {
+      "departmentCode": "43",
+      "departmentName": "haute-loire",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.haute-loire.gouv.fr/booking/create/737"
+    },
+    {
+      "departmentCode": "46",
+      "departmentName": "Lot",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.lot.gouv.fr/booking/create/825"
+    },
+    {
+      "departmentCode": "47",
+      "departmentName": "lot-et-garonne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
+    },
+    {
+      "departmentCode": "49",
+      "departmentName": "maine-et-loire",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.maine-et-loire.gouv.fr/booking/create/824"
+    },
+    {
+      "departmentCode": "52",
+      "departmentName": "haute-marne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.haute-marne.gouv.fr/booking/create/9912"
+    },
+    {
+      "departmentCode": "53",
+      "departmentName": "mayenne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.mayenne.gouv.fr/booking/create/30252"
+    },
+    {
+      "departmentCode": "55",
+      "departmentName": "Meuse",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.meuse.gouv.fr/booking/create/9933"
+    },
+    {
+      "departmentCode": "57",
+      "departmentName": "Moselle",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.moselle.gouv.fr/booking/create/9439"
+    },
+    {
+      "departmentCode": "58",
+      "departmentName": "Nievre",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.nievre.gouv.fr/booking/create/713"
+    },
+    {
+      "departmentCode": "59",
+      "departmentName": "Nord",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.nord.gouv.fr/booking/create/48041"
+    },
+    {
+      "departmentCode": "61",
+      "departmentName": "Orne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.orne.gouv.fr/booking/create/702"
+    },
+    {
+      "departmentCode": "62",
+      "departmentName": "pas-de-calais",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.pas-de-calais.gouv.fr/booking/create/29846"
+    },
+    {
+      "departmentCode": "63",
+      "departmentName": "",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.puy-de-dome.gouv.fr/booking/create/801/0"
+    },
+    {
+      "departmentCode": "65",
+      "departmentName": "hautes-pyrenees",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.hautes-pyrenees.gouv.fr/booking/create/585"
+    },
+    {
+      "departmentCode": "66",
+      "departmentName": "pyrenees-orientales",
+      "bookingFirstOpenSlotDate": "2020-06-01",
+      "departmentBookUrl": "http://www.pyrenees-orientales.gouv.fr/booking/create/20835"
+    },
+    {
+      "departmentCode": "67",
+      "departmentName": "bas-rhin",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.bas-rhin.gouv.fr/booking/create/16671"
+    },
+    {
+      "departmentCode": "68",
+      "departmentName": "haut-rhin",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.haut-rhin.gouv.fr/booking/create/17994"
+    },
+    {
+      "departmentCode": "70",
+      "departmentName": "haute-saone",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.haute-saone.gouv.fr/booking/create/10907"
+    },
+    {
+      "departmentCode": "71",
+      "departmentName": "saone-et-loire",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.saone-et-loire.gouv.fr/booking/create/737"
+    },
+    {
+      "departmentCode": "72",
+      "departmentName": "sarthe",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.sarthe.gouv.fr/booking/create/735"
+    },
+    {
+      "departmentCode": "74",
+      "departmentName": "haute-savoie",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.haute-savoie.gouv.fr/booking/create/24978"
+    },
+    {
+      "departmentCode": "78",
+      "departmentName": "Yvelines",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.yvelines.gouv.fr/booking/create/14256"
+    },
+    {
+      "departmentCode": "79",
+      "departmentName": "",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.deux-sevres.gouv.fr/booking/create/23715"
+    },
+    {
+      "departmentCode": "83",
+      "departmentName": "Var",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.var.gouv.fr/booking/create/872"
+    },
+    {
+      "departmentCode": "84",
+      "departmentName": "Vaucluse",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.vaucluse.gouv.fr/booking/create/867"
+    },
+    {
+      "departmentCode": "85",
+      "departmentName": "Vendee",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.rdv.vendee.gouv.fr/booking/create/773"
+    },
+    {
+      "departmentCode": "90",
+      "departmentName": "Belfort",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "https://www.territoire-de-belfort.gouv.fr/booking/create/16564"
+    },
+    {
+      "departmentCode": "92",
+      "departmentName": "hauts-de-seine",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.hauts-de-seine.gouv.fr/booking/create/10674"
+    },
+    {
+      "departmentCode": "93",
+      "departmentName": "seine-saint-denis",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.seine-saint-denis.gouv.fr/booking/create/11238"
+    },
+    {
+      "departmentCode": "94",
+      "departmentName": "val-de-marne",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.val-de-marne.gouv.fr/booking/create/8294"
+    },
+    {
+      "departmentCode": "95",
+      "departmentName": "Val-Doise",
+      "bookingFirstOpenSlotDate": "",
+      "departmentBookUrl": "http://www.val-doise.gouv.fr/booking/create/12884"
     }
   ]
 }
