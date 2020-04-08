@@ -8,8 +8,8 @@ import time
 
 sys.path.insert(1, '../utils')
 from log import writeLog
-from dateutils import getdatefromdata
-from requestsender import sendGetRequest
+from dateutils import get_date_from_data
+from requestsender import send_get_request
 from mail import sendMail
 
 # Count number of request sent
@@ -53,11 +53,11 @@ while 1 == 1:
             code) + " request: " + endPointUrl + str(indexDayZero))
 
         # extracting data in raw text format
-        data = sendGetRequest(endPointUrl + str(indexDayZero))
+        data = send_get_request(endPointUrl + str(indexDayZero))
         if data == -1:
             continue
 
-        dateZero = getdatefromdata(data)
+        dateZero = get_date_from_data(data)
         maxDate = max([now, dateZero, bookingChooseDate])
 
         if dateZero + datetime.timedelta(days=7) >= maxDate and data.find('plage libre') != -1:
@@ -75,7 +75,7 @@ while 1 == 1:
             if not bookedMaxDate:
                 bookedMaxDate = bookingTryDate + datetime.timedelta(days=30)
             while bookedMaxDate > bookingTryDate:
-                data = sendGetRequest(endPointUrl + str(dayDelta))
+                data = send_get_request(endPointUrl + str(dayDelta))
                 if data == -1:
                     break
                 elif data.find('plage libre') != -1:
