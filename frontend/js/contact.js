@@ -9,16 +9,18 @@
   );
 })();
           
-function getTemplate() {
-  return "contact_template";
+function getTemplate () {
+    return 'commissionmedicale_template';
 }
 
-function getParams(form) {
+function getParams (form) {
   var email = form.email.value;
   var firstname = form.firstname.value;
+  var message = form.message.value;
 
-  var params = {
+    params = {
     email: email,
     firstname: firstname,
+    message: message
   };
 }
