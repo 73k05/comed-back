@@ -11,9 +11,9 @@
     <meta property="og:site_name" content="Commission Médicale Permis de Conduire Réservation" />
     <meta property="og:title" content="Commission Médicale Permis de Conduire Réservation" />
     <meta property="og:description"
-    content="Commission Médicale au Permis de Conduire. Réservation en ligne dans votre département" />
+        content="Commission Médicale au Permis de Conduire. Réservation en ligne dans votre département" />
     <meta name="description"
-    content="Commission Médicale au Permis de Conduire. Réservation en ligne dans votre département">
+        content="Commission Médicale au Permis de Conduire. Réservation en ligne dans votre département">
     <meta property="og:image" content="https://commissionmedicale.fr/resources/images/preview.jpg" />
     <meta property="og:url" content="https://commissionmedicale.fr">
     <meta name="author" content="73k05">
@@ -24,25 +24,46 @@
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <link rel="stylesheet" type="text/css" href="./libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./libs/jquery-ui-1.12.1/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="./libs/bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.standalone.css"/>
+    <link rel="stylesheet" type="text/css"
+        href="./libs/bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.standalone.css" />
 </head>
 
 <body>
+
     <div class="container">
 
         <div class="banner-container">
-            <img  class="banner" alt="Les services de l'État" src="./resources/images/banner.jpg" />
+            <img class="banner" alt="Les services de l'État" src="./resources/images/banner.jpg" />
             <div class="stamp">
                 <img alt="Les services de l'État" src="./resources/images/stamp-mobile.png" />
             </div>
         </div>
 
-        <h1 class="title-h1">Réservation de commission médicale des permis de conduire sans attendre</h1></h1>
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <a href="#" class="navbar-brand">Commission Médicale</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1 class="title-h1">Réservation de commission médicale des permis de conduire sans attendre</h1>
+        </h1>
         <h2 class="header-comed">
-            /!\ Actuellement les réservations aux commissions médicales ne sont plus garanties. Les préfectures sont fermées du fait de la crise sanitaire #covid19. Inscrivez vous quand même sur commissionmedicale.fr et soyez les premiers informés au moment des réouvertures #comed. Les réservations risquent d'être engorgés après la réouverture et nous ferons notre possible pour vous prendre le meilleur créneau /!\
+            /!\ Actuellement les réservations aux commissions médicales ne sont plus garanties. Les préfectures sont
+            fermées du fait de la crise sanitaire #covid19. Inscrivez vous quand même sur commissionmedicale.fr et soyez
+            les premiers informés au moment des réouvertures #comed. Les réservations risquent d'être engorgés après la
+            réouverture et nous ferons notre possible pour vous prendre le meilleur créneau /!\
         </h2>
         <h2 class="header-desc">
-            <br />Vous subissez une supension de permis de conduire après avoir consommé de l'alcool ou des stupéfiants. Prenez rendez-vous dans votre département et préfecture même complet. La commission médicale au permis de conduire est obligatoire suite à une suspension de permis pour alcoolémie ou stupéfiant. Sans le passage en commission médicale avec les documents et analyses requis, votre suspension de permis restera effective et vous ne pourrez pas reconduire avant de l'avoir passé<br />
+            <br />Vous subissez une supension de permis de conduire après avoir consommé de l'alcool ou des stupéfiants.
+            Prenez rendez-vous dans votre département et préfecture même complet. La commission médicale au permis de
+            conduire est obligatoire suite à une suspension de permis pour alcoolémie ou stupéfiant. Sans le passage en
+            commission médicale avec les documents et analyses requis, votre suspension de permis restera effective et
+            vous ne pourrez pas reconduire avant de l'avoir passé<br />
         </h2>
         <h2 class="header-info">
             <b>Vous êtes au bon endroit si:</b>
@@ -59,7 +80,11 @@
                 <li>Tous les créneaux sont pris et votre renouvellement de permis est imminent</li>
                 <li>Vous devez annuler votre rendez-vous pour raison personnelle</li>
             </ul>
-            Remplissez les informations avec soin et choisissez un  créneau le plus éloigné possible et nous reviendrons vers vous avec un rendez-vous pour votre commission médicale des permis de conduire. Pour plus d'infos sur les commissions médicales<a href="https://www.visite-medicale-permis-conduire.org/visites-medicales/visites-medecins-prefecture" target="_blank"> <b>cliquez ici</b></a>
+            Remplissez les informations avec soin et choisissez un créneau le plus éloigné possible et nous reviendrons
+            vers vous avec un rendez-vous pour votre commission médicale des permis de conduire. Pour plus d'infos sur
+            les commissions médicales<a
+                href="https://www.visite-medicale-permis-conduire.org/visites-medicales/visites-medecins-prefecture"
+                target="_blank"> <b>cliquez ici</b></a>
         </h2>
 
         <form id="booking-form" class="main-form needs-validation" novalidate>
@@ -67,14 +92,14 @@
                 <div class="col">
                     <div class="form-group">
                         <input type="text" name="firstname" id="firstname" placeholder="Prénom permis" minlength="2"
-                        maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
+                            maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
                         <div class="invalid-feedback">Prénom obligatoire entre 2 et 30 lettres</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="text" name="lastname" id="lastname" placeholder="Nom permis" minlength="2" maxlength="30"
-                        pattern="[a-zA-Z- ]*" class="form-control" required>
+                        <input type="text" name="lastname" id="lastname" placeholder="Nom permis" minlength="2"
+                            maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
                         <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
                     </div>
                 </div>
@@ -82,26 +107,26 @@
 
             <div class="form-group">
                 <input type="text" name="birthname" id="birthname" placeholder="Nom de naissance" minlength="2"
-                maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
+                    maxlength="30" pattern="[a-zA-Z- ]*" class="form-control" required>
                 <div class="invalid-feedback">Nom obligatoire entre 2 et 30 lettres</div>
             </div>
 
             <div class="form-group">
                 <input id="email" name="email" type="email" placeholder="Email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required>
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required>
                 <div class="invalid-feedback">Email obligatoire</div>
             </div>
 
 
             <div class="form-group">
                 <input id="phone" minlength="10" maxlength="10" name="phone" type="tel" placeholder="Téléphone"
-                pattern="0[0-9]{9}" class="form-control" required>
+                    pattern="0[0-9]{9}" class="form-control" required>
                 <div class="invalid-feedback">Le numéro doit être français</div>
             </div>
 
             <div class="form-group" id="birthdate-form">
-                <input id="birthDatePicker" placeholder="Date de naissance" type="text"
-                name="bday" class="form-control" required>
+                <input id="birthDatePicker" placeholder="Date de naissance" type="text" name="bday" class="form-control"
+                    required>
                 <div id="age-error-message" class="invalid-feedback">Date de naissance obligatoire 18+</div>
             </div>
 
@@ -119,13 +144,15 @@
                     <option>Alcool et stupéfiant</option>
                     <option>Autre</option>
                 </select>
-                <div id="age-error-message" class="invalid-feedback">Veuillez sélectionner votre type de commission médicale</div>
+                <div id="age-error-message" class="invalid-feedback">Veuillez sélectionner votre type de commission
+                    médicale</div>
             </div>
 
             <div class="form-group" id="bookingDate-form">
-                <input id="bookingDatePicker" placeholder="Date de réservation" type="text"
-                name="bookingdate" class="form-control" required>
-                <div id="bookingDate-error-message" class="invalid-feedback">Sélectionnez un rendez-vous de commission médicale</div>
+                <input id="bookingDatePicker" placeholder="Date de réservation" type="text" name="bookingdate"
+                    class="form-control" required>
+                <div id="bookingDate-error-message" class="invalid-feedback">Sélectionnez un rendez-vous de commission
+                    médicale</div>
             </div>
 
 
@@ -140,7 +167,8 @@
         <div class="alert alert-success alert-dismissible fade show" id="success-message">
             <h4 class="alert-heading">Demande bien prise en compte</h4>
             <p>Merci d'avoir réservé sur <a href="https://commissionmedicale.fr">commissionmedicale.fr</a></p>
-            <p>Nous reviendrons vers vous lorsque la demande de rendez-vous de la commission médicale aura été confirmée. N\'oubliez votre permis de conduire, le cerfa et le questionnaire ainsi que vos analyses</p>
+            <p>Nous reviendrons vers vous lorsque la demande de rendez-vous de la commission médicale aura été
+                confirmée. N\'oubliez votre permis de conduire, le cerfa et le questionnaire ainsi que vos analyses</p>
             <hr>
 
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -148,7 +176,8 @@
 
         <div class="alert alert-danger alert-dismissible fade show" id="error-message">
             <h4 class="alert-heading">Erreur de réservation</h4>
-            <p>La réservation de commission médicale n'a pu être réalisée comme il faut veuillez réessayer plus tard ou nous contacter à contact [*at*] commissionmedicale [*point*] fr</p>
+            <p>La réservation de commission médicale n'a pu être réalisée comme il faut veuillez réessayer plus tard ou
+                nous contacter à contact [*at*] commissionmedicale [*point*] fr</p>
             <hr>
             <button type="button" class="close" data-dismiss="alert">&times;</button>
         </div>
@@ -157,14 +186,19 @@
         <div class="footer-price-rgpd">
             <p>
                 Choisissez une date de commission éloignée pour augmenter vos chances d'obtenir la
-                réservation. La prise de rendez-vous de commission médicale au permis de conduire s'avere fructueuse et parfois impossible. Nous avons automatisé la procédure pour vous. Qu'il s'agisse d'alcool ou de stupéfiant la commission médicale doit être réservé au plus tot après la suspension du permis. 
+                réservation. La prise de rendez-vous de commission médicale au permis de conduire s'avere fructueuse et
+                parfois impossible. Nous avons automatisé la procédure pour vous. Qu'il s'agisse d'alcool ou de
+                stupéfiant la commission médicale doit être réservé au plus tot après la suspension du permis.
             </p>
             <p>
-                Ce service est gratuit, cependant des frais de gestion de 5 euros vous serons demandés lors de la validation du rendez-vous. Pour toute question sur le traitement de vos informations personnelles: contact [*at*] commissionmedicale [*point*] fr
+                Ce service est gratuit, cependant des frais de gestion de 5 euros vous serons demandés lors de la
+                validation du rendez-vous. Pour toute question sur le traitement de vos informations personnelles:
+                contact [*at*] commissionmedicale [*point*] fr
             </p>
             <p>
-                <a href="https://www.facebook.com/commissionmedicale/" target="_blank" class="link-block-3 link-block-3 link-block-3 link-block-3 link-block-3 social-link w-inline-block">
-                    <img height="25px" src="resources/images/facebook.svg" alt="Facebook Commission Medicale"/>
+                <a href="https://www.facebook.com/commissionmedicale/" target="_blank"
+                    class="link-block-3 link-block-3 link-block-3 link-block-3 link-block-3 social-link w-inline-block">
+                    <img height="25px" src="resources/images/facebook.svg" alt="Facebook Commission Medicale" />
                 </a>
             </p>
         </div>
@@ -181,12 +215,17 @@
     <script type="text/javascript" src="./libs/emailjs-2.4.1.min.js"></script>
     <script type="text/javascript" src="./js/medical.js"></script>
     <script type="text/javascript" src="./js/departments.js"></script>
+    <script type="text/javascript" src="./js/booking.js"></script>
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="./libs/analytics.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
         gtag('config', 'UA-85193412-12');
     </script>
