@@ -13,32 +13,47 @@
         $.getJSON("./resources/depmaps/departements.geojson", function (departmentJson) {
             L.geoJSON(departmentJson, {
                 style: function (feature) {
-                    var departmentAvailability = getDepartment(feature.properties.code, departmentAvailabilityList["departments"]);
-                    var firstOpenSlot = departmentAvailability ? departmentAvailability["bookingFirstOpenSlotDate"] : "";
+                    let departmentAvailability = getDepartment(feature.properties.code, departmentAvailabilityList["departments"]);
+                    let firstOpenSlot = "";
+                    let isBookingOpen = false;
+                    if (departmentAvailability) {
+                        firstOpenSlot = departmentAvailability["bookingFirstOpenSlotDate"];
+                        isBookingOpen = departmentAvailability["bookingOpen"];
+                    }
                     var todayDate = new Date();
                     var openSlotDate = Date.parse(firstOpenSlot);
-
-                    if (openSlotDate >= todayDate) {
+                    if (openSlotDate >= todayDate && isBookingOpen) {
                         return {color: "#78995D"};
-                    } else {
-                        //Booking closed
-                        return {color: "#ff0000"};
                     }
+                    //Booking closed but date open
+                    if (openSlotDate >= todayDate || isBookingOpen) {
+                        return {color: "#28499B"};
+                    }
+                    //Booking closed
+                    return {color: "#ff0000"};
                 }, onEachFeature: onEachFeature
             }).addTo(map);
 
             //Bind popup to display name & availability
             function onEachFeature(feature, layer) {
-                var departmentAvailability = getDepartment(feature.properties.code, departmentAvailabilityList["departments"]);
-                var popupText = "<b>"+feature.properties.nom + "</b><br>";
-                var firstOpenSlot = departmentAvailability ? departmentAvailability["bookingFirstOpenSlotDate"] : "";
+                const departmentAvailability = getDepartment(feature.properties.code, departmentAvailabilityList["departments"]);
+                let popupText = `<p><b> ${feature.properties.nom} (${feature.properties.code})</b><br/>`;
+                let firstOpenSlot = departmentAvailability ? departmentAvailability["bookingFirstOpenSlotDate"] : "";
                 if (firstOpenSlot) {
-                    popupText = popupText + " Ouvert le: " + firstOpenSlot;
+                    console.log(firstOpenSlot);
+                    firstOpenSlot = new Date(firstOpenSlot);
+                    firstOpenSlot = ((firstOpenSlot.getDate() > 9) ? firstOpenSlot.getDate() : ('0' + firstOpenSlot.getDate())) + '/' + ((firstOpenSlot.getMonth() > 8) ? (firstOpenSlot.getMonth() + 1) : ('0' + (firstOpenSlot.getMonth() + 1))) + '/' + firstOpenSlot.getFullYear();
+                }
+                if (firstOpenSlot && departmentAvailability["bookingOpen"] === true) {
+                    popupText = `${popupText}<b style='color:#78995D;'>Ouvert</b> prochain créneau le <b>${firstOpenSlot}</b></p>`;
+                } else if (firstOpenSlot) {
+                    popupText = `${popupText}<b style='color:#28499B;'>Fermé</b>  prochain créneau le <b>${firstOpenSlot}</b></p>`;
                 } else {
-                    popupText = popupText + " Fermé ";
+                    popupText = `${popupText}<b style='color:#ff0000;'>Fermé</b></p>`;
                 }
                 var departmentBookUrl = departmentAvailability ? departmentAvailability["departmentBookUrl"] : "";
-                var popupText = popupText + " réserver sur <a href='" + departmentBookUrl + "' target='_blank'>gouv</a>";
+                popupText = `${popupText}<p> Réserver sur <b><a href='https://www.commissionmedicale.fr' target='_blank'>CoMed</a></b><br/>`;
+                popupText = `${popupText}Réserver sur <a href='${departmentBookUrl}' target='_blank'>gouv</a></p>`;
                 layer.bindPopup(popupText);
             }
         });
