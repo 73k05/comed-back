@@ -8,10 +8,12 @@ def write_department_availability(departments):
         json.dump(json_data, json_file)
 
 
-def add_department_to_list(department_code, department_name, date, department_availability_list):
+def add_department_to_list(department_code, department_name, booking_open,date, departmentBookUrl, department_availability_list):
     date_free_slot = "" if not date else date.strftime("%Y-%m-%d")
     department_availability_list.append({
         "departmentCode": department_code,
         "departmentName": department_name,
-        "bookingFirstOpenSlotDate": date_free_slot
+        "bookingOpen": booking_open,
+        "bookingFirstOpenSlotDate": date_free_slot,
+        "departmentBookUrl": departmentBookUrl
     })
