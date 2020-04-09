@@ -1,26 +1,22 @@
 (function () {
-  "use strict";
-  window.addEventListener(
-    "load",
-    function () {
-      initEventListener();
-    },
-    false
-  );
+    "use strict";
+    window.addEventListener(
+        "load",
+        function () {
+            initEventListener();
+        },
+        false
+    );
 })();
-          
-function getTemplate () {
+
+function getTemplate() {
     return 'commissionmedicale_template';
 }
 
-function getParams (form) {
-  var email = form.email.value;
-  var firstname = form.firstname.value;
-  var message = form.message.value;
-
-    params = {
-    email: email,
-    firstname: firstname,
-    message: message
-  };
+function getParams(form) {
+    return {
+        email: form.email.value,
+        firstname: form.firstname.value,
+        message: form.message.value
+    };
 }

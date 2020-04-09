@@ -1,10 +1,10 @@
 (function () {
     'use strict';
     window.addEventListener('load', function () {
-        initEventListener ();
+        initEventListener();
         populateSelect();
         initBookDatePickers();
-         
+
     }, false);
 })();
 
@@ -14,7 +14,7 @@ function initBookDatePickers() {
     let nextWeekDate = new Date();
     nextWeekDate.setDate(nextWeekDate.getDate() + minimumDelayBook);
     $("#bookingDatePicker").datepicker({
-        onSelect: function(date) {
+        onSelect: function (date) {
         },
         format: "dd/mm/yyyy",
         startDate: nextWeekDate,
@@ -23,45 +23,31 @@ function initBookDatePickers() {
 
     // Calculating the actual day date - 18 years behind
     let minBirthDate = new Date()
-    minBirthDate.setFullYear(new Date().getFullYear() - 18);    
+    minBirthDate.setFullYear(new Date().getFullYear() - 18);
     $("#birthDatePicker").datepicker({
-        onSelect: function(date) {
+        onSelect: function (date) {
         },
         format: "dd/mm/yyyy",
         endDate: minBirthDate,
         firstDay: 1,
     });
-};
+}
 
-function getTemplate(){
+function getTemplate() {
     return 'commissionmedicale_template';
 }
 
-function getParams (form) {
-    var email = form.email.value
-    var firstname = form.firstname.value
-    var lastname = form.lastname.value
-    var phone = form.phone.value
-    var birthdate = form.bday.value
-    var birthname = form.birthname.value
-    var region = form.selectregion.value
-    var selectcase = form.selectcase.value
-    var bookingdate = form.bookingdate.value
-
-    // generate the contact number value
-    var number = Math.random() * 100000 | 0;
-
-    var params = {
-        email: email,
-        firstname: firstname,
-        lastname: lastname,
-        phone: phone,
-        number: number,
-        birthdate: birthdate,
-        birthname: birthname,
-        region: region,
-        typevisit: selectcase,
-        datebooking: bookingdate 
+function getParams(form) {
+    return {
+        email: form.email.value,
+        firstname: form.firstname.value,
+        lastname: form.lastname.value,
+        phone: form.phone.value,
+        number: Math.random() * 100000 | 0,
+        birthdate: form.birthdate.value,
+        birthname: form.birthname.value,
+        region: form.region.value,
+        typevisit: form.selectcase.value,
+        datebooking: form.bookingdate.value
     };
-    return params;
 }
