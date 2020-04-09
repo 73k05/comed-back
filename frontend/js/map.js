@@ -52,7 +52,7 @@
                     popupText = `${popupText}<b style='color:#ff0000;'>Fermé</b></p>`;
                 }
                 var departmentBookUrl = departmentAvailability ? departmentAvailability["departmentBookUrl"] : "";
-                popupText = `${popupText}<p> Réserver sur <b><a href='https://www.commissionmedicale.fr' target='_blank'>CoMed</a></b><br/>`;
+                popupText = `${popupText}<p> Réserver sur <b><a href='./index.html'>CoMed</a></b><br/>`;
                 popupText = `${popupText}Réserver sur <a href='${departmentBookUrl}' target='_blank'>gouv</a></p>`;
                 layer.bindPopup(popupText);
             }
