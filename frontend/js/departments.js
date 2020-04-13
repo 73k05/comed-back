@@ -99,7 +99,7 @@ function populateSelect() {
         { "Department_Name": "Mayotte" }
     ];
 
-    let element = document.getElementById('selectRegion');
+    let element = document.getElementById('region');
     for (var i = 0; i < departments.length; i++) {
         // POPULATE SELECT ELEMENT WITH JSON.
         element.innerHTML = element.innerHTML +

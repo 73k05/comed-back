@@ -24,7 +24,7 @@ function initBookDatePickers() {
     // Calculating the actual day date - 18 years behind
     let minBirthDate = new Date()
     minBirthDate.setFullYear(new Date().getFullYear() - 18);
-    $("#birthDatePicker").datepicker({
+    $("#birthdate").datepicker({
         onSelect: function (date) {
         },
         format: "dd/mm/yyyy",
@@ -47,7 +47,7 @@ function getParams(form) {
         birthdate: form.birthdate.value,
         birthname: form.birthname.value,
         region: form.region.value,
-        typevisit: form.selectcase.value,
-        datebooking: form.bookingdate.value
+        typevisit: form.typevisit.value,
+        bookingdate: form.bookingdate.value
     };
 }
