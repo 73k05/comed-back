@@ -17,9 +17,9 @@ sys.path.insert(1, '../utils')
 nbRequestSent = 0
 urlDepartmentList = {}
 # Set it to zero to update all departments
-departmentStartIndex = 23
+departmentStartIndex = 0
 # Set it to high value to update all departments
-departmentStopIndex = 23
+departmentStopIndex = 150
 maxDayToLookForward = 60
 
 while 1 == 1:
@@ -30,10 +30,10 @@ while 1 == 1:
 
     departmentAvailabilityList = []
 
-    nbRequestSent += 1
-
     # Check all prefs
     for departmentInfos in urlDepartmentList:
+        nbRequestSent += 1
+
         departmentCode = departmentInfos["departmentCode"]
         departmentName = departmentInfos["departmentName"]
         endPointUrl = departmentInfos["endPointUrl"]
@@ -43,8 +43,10 @@ while 1 == 1:
         now = datetime.datetime.now()
         writeLog("[" + now.strftime("%H:%M") + "] Department " + str(departmentName) + " availability update...")
 
-        if departmentInfos[
-            "bypass"] or int(departmentCode) < departmentStartIndex or int(departmentCode) > departmentStopIndex:
+        depCodeIndex = nbRequestSent
+        if isinstance(departmentCode, int):
+            depCodeIndex = int(departmentCode)
+        if departmentInfos["bypass"] or depCodeIndex < departmentStartIndex or depCodeIndex > departmentStopIndex:
             writeLog("Skip dep!")
             add_department_to_list(departmentCode, departmentName, False, "", departmentBookUrl,
                                    departmentAvailabilityList)
@@ -84,10 +86,13 @@ while 1 == 1:
         if isSlotAvailableFound:
             data = send_post_request(departmentBookUrl,
                                      {"condition": "on", "nextButton": 'Effectuer une demande de rendez-vous'})
-            indexFooter = data.find('<footer>')
-            closed_sentence = "Attention : Cette page n'est pas disponible pour le moment !"
-            closed = data.find('ultérieurement', 0, indexFooter) != -1 or data.find(closed_sentence, 0,
-                                                                                    indexFooter) != -1
+            if data != -1:
+                indexFooter = data.find('<footer>')
+                closed_sentence = "Attention : Cette page n'est pas disponible pour le moment !"
+                closed = data.find('ultérieurement', 0, indexFooter) != -1 or data.find(closed_sentence, 0,
+                                                                                        indexFooter) != -1
+            else:
+                closed = True
             if closed:
                 isSlotAvailableFound = False
         else:

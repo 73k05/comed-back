@@ -155,7 +155,7 @@
     {
       "departmentCode": "20",
       "departmentName": "Cote-Dor",
-      "bypass": true,
+      "bypass": false,
       "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::",
       "indexDayZero": 84,
       "bookUrl": "http://www.rdv.cote-dor.gouv.fr/booking/create/942/4",
@@ -773,7 +773,7 @@
     {
       "departmentCode": "2A",
       "departmentName": "corse-du-sud",
-      "bypass": true,
+      "bypass": false,
       "endPointUrl": "http://www.rdv.corse-du-sud.gouv.fr/ezjscore/call/bookingserver::planning::assign::742::751::",
       "indexDayZero": 42,
       "bookUrl": "http://www.rdv.corse-du-sud.gouv.fr/booking/create/742"
@@ -781,9 +781,9 @@
     {
       "departmentCode": "2B",
       "departmentName": "haute-corse",
-      "bypass": true,
-      "endPointUrl": "http://www.rdv.haute-corse.gouv.fr/ezjscore/call/bookingserver::planning::assign::757::758::",
-      "indexDayZero": 365,
+      "bypass": false,
+      "endPointUrl": "http://www.rdv.haute-corse.gouv.fr/ezjscore/call/bookingserver::planning::assign::757::775::",
+      "indexDayZero": 364,
       "bookUrl": "http://www.rdv.haute-corse.gouv.fr/booking/create/757"
     }
   ]
