@@ -24,7 +24,7 @@ while 1 == 1:
         urlDepartmentList = json.load(json_data)["gouvUrlList"]
 
     # Load Booking Ongoing List
-    with open('../../frontend/resources/bookingongoing.json') as json_data:
+    with open('../../frontend/resources/json/bookingongoing.json') as json_data:
         bookingList = json.load(json_data)["bookings"]
 
     nbRequestSent += 1
