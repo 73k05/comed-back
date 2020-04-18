@@ -3,25 +3,20 @@ import json
 # importing the requests library
 import sys
 import time
-
-# Time lib to sleep
-
-sys.path.insert(1, '../utils')
 from log import writeLog
-from dateutils import get_date_from_data
-from requestsender import send_get_request
+from bookingutils import get_open_slot
 from mail import sendMail
+# Time lib to sleep
+sys.path.insert(1, '../utils')
+
 
 # Count number of request sent
 nbRequestSent = 0
 urlDepartmentList = {}
 bookingOngoingList = {}
+maxDayToLookForward = 60
 
 while 1 == 1:
-
-    # Load dep list
-    with open('../json/gouvendpoints.json') as json_data:
-        urlDepartmentList = json.load(json_data)["gouvUrlList"]
 
     # Load Booking Ongoing List
     with open('../../frontend/resources/json/bookingongoing.json') as json_data:
@@ -35,56 +30,16 @@ while 1 == 1:
         writeLog("[" + now.strftime("%H:%M") + "] Booking...")
 
         code = booking["departmentCode"]
-        bookingChooseDate = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
-        bookedDateStr = booking["bookedCurrentDate"]
+        booking_choose_date = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
+        booked_date = datetime.datetime.now() if not booking["bookedCurrentDate"] else datetime.datetime.strptime(booking["bookedCurrentDate"], "%d/%m/%Y")
         email = booking["email"]
+        book_url = booking["bookUrl"]
 
-        if bookedDateStr:
-            bookedMaxDate = datetime.datetime.strptime(bookedDateStr, "%d/%m/%Y")
-        else:
-            bookedMaxDate = ""
-
-        department = urlDepartmentList[code - 1]
-        endPointUrl = department["endPointUrl"]
-        bookUrl = department["bookUrl"]
-        indexDayZero = department["indexDayZero"]
-
-        writeLog("Booking of: " + email + " code: " + str(
-            code) + " request: " + endPointUrl + str(indexDayZero))
-
-        # extracting data in raw text format
-        data = send_get_request(endPointUrl + str(indexDayZero))
-        if data == -1:
-            continue
-
-        dateZero = get_date_from_data(data)
-        maxDate = max([now, dateZero, bookingChooseDate])
-
-        if dateZero + datetime.timedelta(days=7) >= maxDate and data.find('plage libre') != -1:
-            writeLog("/!\\ Free slot Bingo /!\\")
-            # TODO: Make booking system
-            # params = getParamsFromUser(booking)
-            # sendPostRequest(bookUrl, params)
-            sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
-            continue
-        else:
-            bookingTryDate = maxDate
-            dayDelta = indexDayZero + (maxDate - dateZero).days
-            # If not already booked slot for this booking
-            # we set it to 1 month max ahead from now to avoid forever tries
-            if not bookedMaxDate:
-                bookedMaxDate = bookingTryDate + datetime.timedelta(days=30)
-            while bookedMaxDate > bookingTryDate:
-                data = send_get_request(endPointUrl + str(dayDelta))
-                if data == -1:
-                    break
-                elif data.find('plage libre') != -1:
-                    writeLog("/!\\ Free slot Bingo /!\\")
-                    # TODO: Make booking system
-                    sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", bookUrl)
-                    break
-                bookingTryDate = bookingTryDate + datetime.timedelta(days=7)
-                dayDelta += 7
+        booking_slot = get_open_slot(booking, maxDayToLookForward, booking_choose_date)
+        writeLog(f"Department availability: {booking_slot}")
+        date_free_slot = "" if not booking_slot["date"] else booking_slot["date"].strftime("%Y-%m-%d")
+        if booking_slot["is_open"] and date_free_slot < booked_date:
+            sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", book_url)
 
     # Sleeping time in minutes
     sleeptime = 60
