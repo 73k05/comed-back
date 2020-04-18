@@ -2,12 +2,12 @@ import datetime
 import json
 # importing the requests library
 import sys
+sys.path.insert(1, '../utils')
 import time
-from log import writeLog
 from bookingutils import get_open_slot
 from mail import sendMail
 # Time lib to sleep
-sys.path.insert(1, '../utils')
+from log import writeLog
 
 
 # Count number of request sent
