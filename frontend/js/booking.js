@@ -4,6 +4,7 @@
         initEventListener();
         populateSelect();
         initBookDatePickers();
+        addressAutoComplete();
 
     }, false);
 })();
@@ -48,6 +49,31 @@ function getParams(form) {
         birthname: form.birthname.value,
         region: form.region.value,
         typevisit: form.typevisit.value,
-        bookingdate: form.bookingdate.value
+        bookingdate: form.bookingdate.value,
+        addressStreet: form.address.value,
+        addressZip: form.zip.value,
+        addressCity: form.city.value
     };
+}
+
+function addressAutoComplete() {
+    var placesAutocomplete = places({
+        appId: 'pl9H5MQZCSC6',
+        apiKey: 'ee11756711dbc7e6d011b9bc6e8bf981',
+        container: document.getElementById('address'),
+        countries:['fr'],
+        language:'fr',
+
+        templates: {
+          value: function(suggestion) {
+            return suggestion.name;
+          }
+        }
+      }).configure({
+        type: 'address'
+      });
+      placesAutocomplete.on('change', function resultSelected(e) {
+        document.getElementById('city').value = e.suggestion.city || '';
+        document.getElementById('zip').value = e.suggestion.postcode || '';
+      });
 }
