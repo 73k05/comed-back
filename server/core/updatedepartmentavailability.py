@@ -52,6 +52,6 @@ while 1 == 1:
     # Sleeping time in minutes
     sleep_time = 60
 
-    writeLog(f"============ 73kBot will sleep {str(sleep_time)} minutes _o/ {str(nbRequestSent)} ============\r\n")
+    writeLog(f"============ 73kBot will sleep {str(sleep_time)} minutes _o/ {str(nbRequestSent)} ============")
 
     time.sleep(sleep_time * 60)
