@@ -34,7 +34,7 @@ function sendMail(form) {
         );
         return;
     }
-
+    
     showProgressBar();
 
     emailjs.send("commissionmedicale", getTemplate(), getParams(form)).then(
