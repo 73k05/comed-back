@@ -1,6 +1,6 @@
-import psutil
 from subprocess import Popen
-import subprocess
+
+import psutil
 
 for process in psutil.process_iter():
     if process.cmdline() == ['python', 'checkonlinebooking.py']:
@@ -8,7 +8,8 @@ for process in psutil.process_iter():
         process.terminate()
         break
 
-subprocess.call(["git", "pull"])
+git_pull_process = Popen(["git", "pull"])
+git_pull_process.wait()
 
 print('Process not found or stopped: starting it.')
-Popen(['python', 'checkonlinebooking.py'])
+Popen(['nohup', 'python3.7', 'checkonlinebooking.py', '&'])
