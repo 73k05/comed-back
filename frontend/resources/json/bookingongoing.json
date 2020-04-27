@@ -277,6 +277,26 @@
       "endPointUrl": "",
       "indexDayZero": 0,
       "bookUrl": "http://www.gironde.gouv.fr/booking/create/24775"
+    },
+    {
+      "firstname": "Jean-Charles",
+      "lastname": "RISAL",
+      "birthName": "Jean-Charles",
+      "email": "citte35@gmail.com",
+      "phone": "0650974534",
+      "birthdate": "20/11/1972",
+      "addressStreet": "91 Boulevard Jean Jaurès",
+      "addressZip": "13340",
+      "addressCity": "Rognac",
+      "typeVisit": "Stupéfiant",
+      "bookingChooseDate": "21/05/2020",
+      "bookedCurrentDate": "",
+      "departmentCode": "13",
+      "departmentName": "Bouches-Du-Rhone",
+      "bypass": false,
+      "endPointUrl": "http://www.bouches-du-rhone.gouv.fr/ezjscore/call/bookingserver::planning::assign::25519::25520::",
+      "indexDayZero": 364,
+      "bookUrl": "http://www.bouches-du-rhone.gouv.fr/booking/create/25519"
     }
   ]
 }

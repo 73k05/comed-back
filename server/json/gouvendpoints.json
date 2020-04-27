@@ -267,7 +267,7 @@
     },
     {
       "departmentCode": "33",
-      "departmentName": "",
+      "departmentName": "gironde",
       "bypass": true,
       "endPointUrl": "",
       "indexDayZero": 0,
@@ -275,7 +275,7 @@
     },
     {
       "departmentCode": "34",
-      "departmentName": "",
+      "departmentName": "herault",
       "bypass": true,
       "endPointUrl": "",
       "indexDayZero": 0,
