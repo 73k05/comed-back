@@ -508,7 +508,7 @@
     },
     {
       "departmentCode": "63",
-      "departmentName": "",
+      "departmentName": "Puy-de-Dôme",
       "bypass": false,
       "endPointUrl": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::",
       "indexDayZero": 98,
@@ -612,7 +612,7 @@
     },
     {
       "departmentCode": "76",
-      "departmentName": "",
+      "departmentName": "Seine-Maritime",
       "bypass": true,
       "endPointUrl": "",
       "indexDayZero": 0,
