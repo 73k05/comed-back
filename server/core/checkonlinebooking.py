@@ -37,8 +37,8 @@ while 1 == 1:
 
         booking_slot = get_open_slot(booking, maxDayToLookForward, booking_choose_date)
         writeLog(f"Department availability: {booking_slot}")
-        date_free_slot = -1 if not booking_slot["date"] else booking_slot["date"].strftime("%Y-%m-%d")
-        if booking_slot["is_open"] and (date_free_slot == -1 or date_free_slot < booked_date):
+        date_free_slot = -1 if not booking_slot["date"] else booking_slot["date"]
+        if booking_slot["is_open"] and date_free_slot != -1 and date_free_slot < booked_date:
             sendMail("[73b07] /!\\ Free slot for " + email + " /!\\", book_url)
 
     # Sleeping time in minutes

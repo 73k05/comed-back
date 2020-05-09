@@ -4,7 +4,7 @@ import psutil
 
 for process in psutil.process_iter():
     if process.cmdline() == ['python', 'checkonlinebooking.py']:
-        print('Process found. Terminating it.')
+        print('Process found. Terminating it. -Sarah Conor-')
         process.terminate()
         break
 

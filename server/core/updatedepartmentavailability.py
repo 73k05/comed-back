@@ -19,39 +19,37 @@ departmentStartIndex = 0
 departmentStopIndex = 150
 maxDayToLookForward = 60
 
-while 1 == 1:
 
-    # Load dep list
-    with open('../json/gouvendpoints.json') as json_data:
-        urlDepartmentList = json.load(json_data)["gouvUrlList"]
+# Load dep list
+with open('../json/gouvendpoints.json') as json_data:
+    urlDepartmentList = json.load(json_data)["gouvUrlList"]
 
-    departmentAvailabilityList = []
+departmentAvailabilityList = []
 
-    # Check all prefs
-    for department in urlDepartmentList:
-        nbRequestSent += 1
+# Check all prefs
+for department in urlDepartmentList:
+    nbRequestSent += 1
 
-        departmentCode = department["departmentCode"]
-        departmentName = department["departmentName"]
-        departmentBookUrl = department["bookUrl"]
+    departmentCode = department["departmentCode"]
+    departmentName = department["departmentName"]
+    departmentBookUrl = department["bookUrl"]
 
-        # Bypass this department if needed for efficient testing sometimes
-        if department["bypass"] or nbRequestSent < departmentStartIndex or nbRequestSent > departmentStopIndex:
-            writeLog("Skip dep!")
-            add_department_to_list(departmentCode, departmentName, {"is_open": False, "date": ""}, departmentBookUrl,
-                                   departmentAvailabilityList)
-            continue
-
-        booking = get_open_slot(department, maxDayToLookForward, datetime.datetime.now())
-        writeLog(f"Department availability: {booking}")
-        add_department_to_list(departmentCode, departmentName, booking, departmentBookUrl,
+    # Bypass this department if needed for efficient testing sometimes
+    if department["bypass"] or nbRequestSent < departmentStartIndex or nbRequestSent > departmentStopIndex:
+        writeLog("Skip dep!")
+        add_department_to_list(departmentCode, departmentName, {"is_open": False, "date": ""}, departmentBookUrl,
                                departmentAvailabilityList)
+        continue
 
-    write_department_availability(departmentAvailabilityList)
+    booking = get_open_slot(department, maxDayToLookForward, datetime.datetime.now())
+    writeLog(f"Department availability: {booking}")
+    add_department_to_list(departmentCode, departmentName, booking, departmentBookUrl,
+                           departmentAvailabilityList)
 
-    # Sleeping time in minutes
-    sleep_time = 60
+write_department_availability(departmentAvailabilityList)
 
-    writeLog(f"============ 73kBot will sleep {str(sleep_time)} minutes _o/ {str(nbRequestSent)} ============")
+# Sleeping time in minutes
+sleep_time = 60
 
-    time.sleep(sleep_time * 60)
+writeLog(f"============ 73kBot will sleep {str(sleep_time)} minutes _o/ {str(nbRequestSent)} ============")
+
