@@ -98,7 +98,7 @@
     },
     {
       "departmentCode": "13",
-      "departmentName": "Bouches-Du-Rhone",
+      "departmentName": "Bouches-du-Rhône",
       "bypass": false,
       "endPointUrl": "http://www.bouches-du-rhone.gouv.fr/ezjscore/call/bookingserver::planning::assign::25519::25520::",
       "indexDayZero": 364,
@@ -363,7 +363,7 @@
     },
     {
       "departmentCode": "45",
-      "departmentName": "",
+      "departmentName": "Loiret",
       "bypass": true,
       "endPointUrl": "",
       "indexDayZero": 0,
@@ -452,7 +452,7 @@
     },
     {
       "departmentCode": "56",
-      "departmentName": "",
+      "departmentName": "Morbihan",
       "bypass": true,
       "endPointUrl": "",
       "indexDayZero": 0,
@@ -500,7 +500,7 @@
     },
     {
       "departmentCode": "62",
-      "departmentName": "pas-de-calais",
+      "departmentName": "Pas-de-Calais",
       "bypass": false,
       "endPointUrl": "http://www.pas-de-calais.gouv.fr/ezjscore/call/bookingserver::planning::assign::29846::29858::",
       "indexDayZero": 364,
