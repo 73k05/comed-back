@@ -382,15 +382,14 @@
       "departmentName": "lot-et-garonne",
       "bypass": false,
       "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::0::812::",
-      "indexDayZero": 1197,
       "indexDayZero": 0,
       "bookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
     },
     {
       "departmentCode": "48",
-      "departmentName": "",
+      "departmentName": "Lozere",
       "bypass": true,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.lozere.gouv.fr/ezjscore/call/bookingserver::planning::assign::19837::19842::",
       "indexDayZero": 0,
       "bookUrl": "http://www.lozere.gouv.fr/booking/create/19837"
     },
