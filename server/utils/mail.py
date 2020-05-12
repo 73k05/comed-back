@@ -5,11 +5,17 @@ from email.mime.text import MIMEText
 
 def createBody(date_free_slot, booking):
     content = f"Bonjour {booking['firstname']},<br/><br/>"
-    content += f"Nous avons trouvé un créneau pouvant t'interesser. "
-    content += f"Rends toi au plus vite sur {booking['bookUrl']}, la date {date_free_slot} est disponible. "
-    content += f"Nous avons enregistré cette date elle ne te sera plus proposée. Par contre si on trouve un créneau plus proche " \
+    content += f"Merci d'avoir réservé sur <a href='https://www.commissionmedicale.fr'>CommissionMedicale</a>. Nous avons trouvé un créneau pouvant t'interesser. "
+    content += f"Rends toi au plus vite sur <a href={booking['bookUrl']}>gouv</a>, la date {date_free_slot.strftime('%d/%m/%Y')} est disponible. " \
+               f"Si le créneau {date_free_slot.strftime('%d/%m/%Y')} n'est plus disponible, pas de panique notre outil est déjà en train de chercher une meilleure date pour toi.<br/><br/>" \
+               f"Dans le cas ou le créneau {date_free_slot.strftime('%d/%m/%Y')} est trop proche de la date de souhaitée, " \
+               f"moins d'une semaine par exemple il sera difficile de t'en trouver un mieux. " \
+               f"Dans ce cas tu peux réserver à nouveau un créneau plus éloigné pour maximiser tes chances d'obtenir une réservation " \
+               f"sur <a href='https://www.commissionmedicale.fr'>CommissionMedicale</a> "
+    content += f"Nous avons enregistré cette date et elle ne te sera plus proposée. Par contre si nous te trouvons un créneau plus proche " \
                f"de la date que tu as choisi, on te renverra un email.<br/><br/>"
-    content += f"Si tu es satisfait de nos services, on te propose de nous faire un don de 5euros ou plus sur https://www.helloasso.com/associations/commissionmedicale/formulaires/1<br/><br/>"
+    content += f"Si tu es satisfait de nos services, on te propose de nous faire un don de 5euros ou plus, sur notre " \
+               f"<a href='https://www.helloasso.com/associations/commissionmedicale/formulaires/1'>cagnotte</a><br/><br/>"
     content += f"Bonne conduite<br/>Bob"
     return content
 
