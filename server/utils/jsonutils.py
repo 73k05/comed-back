@@ -10,6 +10,13 @@ def write_department_availability(departments):
         json_data = {"departments": departments}
         json.dump(json_data, json_file)
 
+# Write in json file
+def write_ongoing_booking(bookings):
+    bookings_json = '../../frontend/resources/json/bookingongoing.json'
+    with open(bookings_json, "w+", encoding='utf-8') as json_file:
+        json_data = {"bookings": bookings}
+        json.dump(json_data, json_file)
+
 
 def add_department_to_list(department_code, department_name, booking, department_book_url,
                            department_availability_list):

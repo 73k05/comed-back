@@ -1,7 +1,6 @@
+import datetime
 import json
 import sys
-import time
-import datetime
 
 from bookingutils import get_open_slot
 from jsonutils import add_department_to_list
@@ -18,7 +17,6 @@ departmentStartIndex = 0
 # Set it to high value to update all departments
 departmentStopIndex = 150
 maxDayToLookForward = 60
-
 
 # Load dep list
 with open('../json/gouvendpoints.json') as json_data:
@@ -48,8 +46,4 @@ for department in urlDepartmentList:
 
 write_department_availability(departmentAvailabilityList)
 
-# Sleeping time in minutes
-sleep_time = 60
-
-writeLog(f"============ 73kBot will sleep {str(sleep_time)} minutes _o/ {str(nbRequestSent)} ============")
-
+writeLog(f"============ 73kBot will sleep forever _o/ {str(nbRequestSent)} ============")
