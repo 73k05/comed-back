@@ -3,7 +3,7 @@ from subprocess import Popen
 import psutil
 
 for process in psutil.process_iter():
-    if process.cmdline() == ['python', 'checkonlinebooking.py']:
+    if process.cmdline() == ['nohup', 'python3.7', 'checkonlinebooking.py', '&']:
         print('Process found. Terminating it. -Sarah Conor-')
         process.terminate()
         break
