@@ -77,12 +77,12 @@ function addressAutoComplete() {
         document.getElementById('zip').value = e.suggestion.postcode || '';
     });
 }
-//'http://73K05.xyz:9001/booking/new'
+
 function onBookingSuccess(form) {
-    $.ajax('http://localhost:9001/booking/new',{
+    $.ajax('http://73K05.xyz:9001/booking/new',{
         data: JSON.stringify(getParams(form)),
         contentType: 'application/json',
         type: 'POST',
-        url: 'http://localhost:9001/booking/new'
+        url: 'http://73K05.xyz:9001/booking/new'
     });
 }
