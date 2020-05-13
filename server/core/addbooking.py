@@ -25,4 +25,5 @@ def add_endpoint_to_booking(booking):
                 booking["bookUrl"] = department["bookUrl"]
                 booking["endPointUrl"] = department["endPointUrl"]
                 booking["indexDayZero"] = department["indexDayZero"]
-                return booking
+                break
+    return booking

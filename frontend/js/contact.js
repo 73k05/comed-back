@@ -13,6 +13,10 @@ function getTemplate() {
     return 'commissionmedicale_template';
 }
 
+function onBookingSuccess() {
+
+}
+
 function getParams(form) {
     return {
         email: form.email.value,

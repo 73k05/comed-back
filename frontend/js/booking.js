@@ -61,19 +61,28 @@ function addressAutoComplete() {
         appId: 'pl9H5MQZCSC6',
         apiKey: 'ee11756711dbc7e6d011b9bc6e8bf981',
         container: document.getElementById('address'),
-        countries:['fr'],
-        language:'fr',
+        countries: ['fr'],
+        language: 'fr',
 
         templates: {
-          value: function(suggestion) {
-            return suggestion.name;
-          }
+            value: function (suggestion) {
+                return suggestion.name;
+            }
         }
-      }).configure({
+    }).configure({
         type: 'address'
-      });
-      placesAutocomplete.on('change', function resultSelected(e) {
+    });
+    placesAutocomplete.on('change', function resultSelected(e) {
         document.getElementById('city').value = e.suggestion.city || '';
         document.getElementById('zip').value = e.suggestion.postcode || '';
-      });
+    });
+}
+//'http://73K05.xyz:9001/booking/new'
+function onBookingSuccess(form) {
+    $.ajax('http://localhost:9001/booking/new',{
+        data: JSON.stringify(getParams(form)),
+        contentType: 'application/json',
+        type: 'POST',
+        url: 'http://localhost:9001/booking/new'
+    });
 }

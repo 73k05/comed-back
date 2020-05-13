@@ -36,20 +36,22 @@ function sendMail(form) {
     }
     
     showProgressBar();
+    onBookingSuccess(form);
 
-    emailjs.send("commissionmedicale", getTemplate(), getParams(form)).then(
-        function (response) {
-            console.log("SUCCESS!", response.status, response.text);
-            hideProgressBar();
-            showSuccesMessage();
-        },
-        function (error) {
-            enableBookButton(form);
-            console.log("FAILED...", error);
-            hideProgressBar();
-            showErrorMEssage();
-        }
-    );
+    // emailjs.send("commissionmedicale", getTemplate(), getParams(form)).then(
+    //     function (response) {
+    //         console.log("SUCCESS!", response.status, response.text);
+    //         hideProgressBar();
+    //         showSuccesMessage();
+    //         onBookingSuccess(form);
+    //     },
+    //     function (error) {
+    //         enableBookButton(form);
+    //         console.log("FAILED...", error);
+    //         hideProgressBar();
+    //         showErrorMEssage();
+    //     }
+    // );
 }
 
 function disableBookButton(form) {
