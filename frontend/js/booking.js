@@ -83,6 +83,10 @@ function onBookingSuccess(form) {
         data: JSON.stringify(getParams(form)),
         contentType: 'application/json',
         type: 'POST',
-        url: 'http://73K05.xyz:9001/booking/new'
+        success: onBookingAddSuccess
     });
+}
+
+function onBookingAddSuccess() {
+    console.log("Added to BOoked _o/")
 }

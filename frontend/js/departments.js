@@ -79,7 +79,7 @@ function populateSelect() {
         { "Department_Name": "Yvelines" },
         { "Department_Name": "Deux-Sèvres" },
         { "Department_Name": "Somme" },
-        { "Department_Name": "Tarn	" },
+        { "Department_Name": "Tarn" },
         { "Department_Name": "Tarn-et-Garonne" },
         { "Department_Name": "Var" },
         { "Department_Name": "Vaucluse" },
