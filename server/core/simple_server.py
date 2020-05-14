@@ -34,4 +34,6 @@ def hello():
 
 
 app.install(EnableCors())
-run(app, host='localhost', port=9001)
+run(app, host='127.0.0.1', port=9001)
+
+print('Server {{host}}:{{port}} running...')
