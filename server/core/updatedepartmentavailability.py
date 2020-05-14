@@ -1,13 +1,13 @@
 import datetime
 import json
 import sys
-
+sys.path.insert(1, '../utils')
 from bookingutils import get_open_slot
 from jsonutils import add_department_to_list
 from jsonutils import write_department_availability
 from log import writeLog
 
-sys.path.insert(1, '../utils')
+
 
 # Count number of request sent
 nbRequestSent = 0
