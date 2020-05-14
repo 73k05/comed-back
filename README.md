@@ -2,13 +2,21 @@
 check if a slot is libre in for visite medical http://www.rdv.puy-de-dome.gouv.fr/booking/create/801
 
 # start
-Change pwd and/or smtp config in rendev.py password = "***" and run
+## Change pwd and/or smtp config in rendev.py password = "***" and run
 ```
-python3.7 rendev.py
+python3.7 checkonlinebooking.py
 ```
-Or if you want to start and quit
+## Or if you want to start and quit
 ```
-nohup python3.7 rendev.py &
+nohup python3.7 checkonlinebooking.py &
+```
+## Update repo and restart
+```
+python3.7 restart.py
+```
+
+## Start server for autoadding ongoing booking
+```
 ```
 
 # after start
@@ -21,4 +29,10 @@ tail -f output.txt
 ```
 curl --data "condition=on&nextButton='Effectuer une demande de rendez-vous'" http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795/0 | grep ultérieurement
 python3.7 checkonlinebooking.py
-``
+```
+
+# Install dep
+## HTTP Bottle Server
+```
+pip3 install bottle
+```

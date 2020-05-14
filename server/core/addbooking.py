@@ -1,6 +1,9 @@
 # Add a new booking to the JSON ongoing
 import json
 
+import sys
+
+sys.path.insert(1, '../utils')
 # Load Booking Ongoing List
 from jsonutils import write_ongoing_booking
 
