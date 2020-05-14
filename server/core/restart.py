@@ -4,12 +4,15 @@ import psutil
 
 for process in psutil.process_iter():
     if process.cmdline() == ['python3.7', 'checkonlinebooking.py', '&']:
-        print('Process found. Terminating it. -Sarah Conor-')
+        print('Process found kill checkonlinebooking.py Terminating it. -Sarah Conor-')
         process.terminate()
-        break
+    if process.cmdline() == ['python3.7', 'simple_server.py', '&']:
+        print('Process found kill simple_server.py Terminating it. -Sarah Conor-')
+        process.terminate()
 
 git_pull_process = Popen(["git", "pull"])
 git_pull_process.wait()
 
-print('Process not found or stopped: starting it.')
+print('Starting servers...')
 Popen(['nohup', 'python3.7', 'checkonlinebooking.py', '&'])
+Popen(['nohup', 'python3.7', 'simple_server.py', '&'])
