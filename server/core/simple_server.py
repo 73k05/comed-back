@@ -96,35 +96,30 @@ class SSLCherryPyServer(ServerAdapter):
             server.stop()
 
 
-app = Bottle()
-app.install(EnableCors())
-app.install(log_to_logger)
+# app = Bottle()
+bottle_app = default_app()
 
-
-@app.route('/booking/new', method=['OPTIONS', 'POST'])
-def hello():
-    write_server_log('------------Add new booking ------------\r\n')
-    write_server_log(request.json)
-    add_ongoing_booking(request.json)
-    write_server_log('------------Booking added------------ \r\n')
-
-
-# define beaker options
-# -Each session data is stored inside a file located inside a
-#  folder called data that is relative to the working directory
-# -The cookie expires at the end of the browser session
-# -The session will save itself when accessed during a request
-#  so save() method doesn't need to be called
+# Create the default bottle app and then wrap it around
+# a beaker middleware and send it back to bottle to run
 session_opts = {
     "session.type": "file",
     "session.cookie_expires": True,
     "session.data_dir": "./data",
     "session.auto": True,
 }
+bottle_app.install(EnableCors())
 
-# Create the default bottle app and then wrap it around
-# a beaker middleware and send it back to bottle to run
-app = SessionMiddleware(default_app(), session_opts)
+app = SessionMiddleware(bottle_app, session_opts)
+# app.install(log_to_logger)
+
+
+@bottle.route('/booking/new', method=['OPTIONS', 'POST'])
+def hello():
+    write_server_log('------------Add new booking ------------\r\n')
+    write_server_log(request.json)
+    add_ongoing_booking(request.json)
+    write_server_log('------------Booking added------------ \r\n')
+
 
 port = 443
 host = '0.0.0.0'
