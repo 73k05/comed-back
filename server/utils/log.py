@@ -1,9 +1,9 @@
 # Write in Log file
-def write_log(logmessage):
-    print(logmessage)
-    if isinstance(logmessage, str):
+def write_log(log_message):
+    # print(logmessage)
+    if isinstance(log_message, str):
         f = open("output.txt", "a+")
-        f.write(logmessage)
+        f.write(log_message)
         f.write("\r\n")
         f.close()
     return

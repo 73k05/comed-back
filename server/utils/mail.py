@@ -14,7 +14,7 @@ def createBody(date_free_slot, booking):
                f"sur <a href='https://www.commissionmedicale.fr'>CommissionMedicale</a> "
     content += f"Nous avons enregistré cette date et elle ne te sera plus proposée. Par contre si nous te trouvons un créneau plus proche " \
                f"de la date que tu as choisi, on te renverra un email.<br/><br/>"
-    content += f"Si tu es satisfait de nos services, fais nous part de ton expérience et parles-en autours de toi :-)"
+    content += f"Si tu es satisfait de nos services, fais nous part de ton expérience et parles-en autours de toi :-)<br/>"
     content += f"Bonne conduite<br/>Bob"
     return content
 
