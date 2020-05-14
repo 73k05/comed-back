@@ -2,7 +2,7 @@ import datetime
 
 from dateutils import get_date_from_data
 from dateutils import update_index_day_zero_to_today
-from log import writeLog
+from log import write_log
 from requestsender import send_get_request
 from requestsender import send_post_request
 
@@ -40,10 +40,10 @@ def get_open_slot(department, max_day_to_look_forward, date_wanted):
     departmentBookUrl = department["bookUrl"]
     day_zero = department["indexDayZero"]
 
-    writeLog("[" + date_wanted.strftime("%H:%M") + "] Department " + str(department_name) + " availability update...")
+    write_log("[" + date_wanted.strftime("%H:%M") + "] Department " + str(department_name) + " availability update...")
 
     if not end_point_url:
-        writeLog("EndPoint null!")
+        write_log("EndPoint null!")
         return {"is_open": False, "date": ""}
 
     is_slot_available_found = False
@@ -83,7 +83,7 @@ def get_open_slot(department, max_day_to_look_forward, date_wanted):
             if closed:
                 return {"is_open": False, "date": bookingTryDate}
             else:
-                writeLog("/!\\ BINGO/!\\")
+                write_log("/!\\ BINGO/!\\")
                 return {"is_open": True, "date": bookingTryDate}
         else:
             return {"is_open": False, "date": bookingTryDate}

@@ -1,7 +1,7 @@
 import requests
 from requests.exceptions import HTTPError
 
-from log import writeLog
+from log import write_log
 
 # fake header to bypass security
 headers = {
@@ -13,16 +13,16 @@ headers = {
 # Return -1 if errors data otherwise
 def send_get_request(url):
     try:
-        writeLog(f"Send Get Request: {url}")  # Python 3.6
+        write_log(f"Send Get Request: {url}")  # Python 3.6
 
         response = requests.get(url, headers=headers)
         # If the response was successful, no Exception will be raised
         response.raise_for_status()
     except HTTPError as http_err:
-        writeLog(f"Request HTTP error occurred: {http_err}")
+        write_log(f"Request HTTP error occurred: {http_err}")
         return -1
     except Exception as err:
-        writeLog(f"Request Other error occurred: {err}")
+        write_log(f"Request Other error occurred: {err}")
         return -1
     else:
         return response.text
@@ -33,16 +33,16 @@ def send_get_request(url):
 # Return -1 if errors data otherwise
 def send_post_request(url, params):
     try:
-        writeLog(f"Send Post Request: {url}")  # Python 3.6
+        write_log(f"Send Post Request: {url}")  # Python 3.6
 
         response = requests.post(url, data=params, headers=headers)
         # If the response was successful, no Exception will be raised
         response.raise_for_status()
     except HTTPError as http_err:
-        writeLog(f"Request HTTP error occurred: {http_err}")
+        write_log(f"Request HTTP error occurred: {http_err}")
         return -1
     except Exception as err:
-        writeLog(f"Request Other error occurred: {err}")
+        write_log(f"Request Other error occurred: {err}")
         return -1
     else:
         return response.text
