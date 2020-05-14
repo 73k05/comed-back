@@ -6,7 +6,7 @@ sys.path.insert(1, '../utils')
 from bookingutils import get_open_slot
 from jsonutils import add_department_to_list
 from jsonutils import write_department_availability
-from log import writeLog
+from log import write_log
 
 # Count number of request sent
 nbRequestSent = 0
@@ -33,16 +33,16 @@ for department in urlDepartmentList:
 
     # Bypass this department if needed for efficient testing sometimes
     if department["bypass"] or nbRequestSent < departmentStartIndex or nbRequestSent > departmentStopIndex:
-        writeLog("Skip dep!")
+        write_log("Skip dep!")
         add_department_to_list(departmentCode, departmentName, {"is_open": False, "date": ""}, departmentBookUrl,
                                departmentAvailabilityList)
         continue
 
     booking = get_open_slot(department, maxDayToLookForward, datetime.datetime.now())
-    writeLog(f"Department availability: {booking}")
+    write_log(f"Department availability: {booking}")
     add_department_to_list(departmentCode, departmentName, booking, departmentBookUrl,
                            departmentAvailabilityList)
 
 write_department_availability(departmentAvailabilityList)
 
-writeLog(f"============ 73kBot will sleep forever _o/ {str(nbRequestSent)} ============")
+write_log(f"============ 73kBot will sleep forever _o/ {str(nbRequestSent)} ============")

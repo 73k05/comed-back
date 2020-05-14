@@ -4,7 +4,7 @@ import json
 import requests
 from requests.exceptions import HTTPError
 
-from log import writeLog
+from log import write_log
 
 nbMaxRequestPerDepartement = 200
 boundariesMin = 0
@@ -25,7 +25,7 @@ headers = {
 }
 
 now = datetime.datetime.now()
-writeLog(f"[{now.strftime('%H:%M')}] Starting cracking endpoints")
+write_log(f"[{now.strftime('%H:%M')}] Starting cracking endpoints")
 
 # Check all prefs
 for departmentUrl in urlDepartmentList:
@@ -58,7 +58,7 @@ for departmentUrl in urlDepartmentList:
 			# http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::802::802::365
 			departmentEndPointUrl = departmentUrl + "::" + str(id1Bis) + "::" + str(id2) + "::" + str(dayOfTheYear)
 
-			writeLog(f"[EndPoint] Trying: {departmentEndPointUrl} ...")
+			write_log(f"[EndPoint] Trying: {departmentEndPointUrl} ...")
 
 			# Send request to gouv
 			# sending get request and saving the response as response object
@@ -67,16 +67,16 @@ for departmentUrl in urlDepartmentList:
 				# If the response was successful, no Exception will be raised
 				response.raise_for_status()
 			except HTTPError as http_err:
-				writeLog(f"[EndPoint Cracking] Request HTTP error occurred: {http_err}")  # Python 3.6
+				write_log(f"[EndPoint Cracking] Request HTTP error occurred: {http_err}")  # Python 3.6
 				id2 += 1
 				if id2 > id1 + boundariesMax:
-					writeLog(f"[EndPoint Crak Failed] After {nbRequestSent} tries")
+					write_log(f"[EndPoint Crak Failed] After {nbRequestSent} tries")
 				continue
 			except Exception as err:
-				writeLog(f"[EndPoint Cracking] Request Other error occurred: {err}")  # Python 3.6
+				write_log(f"[EndPoint Cracking] Request Other error occurred: {err}")  # Python 3.6
 				id2 += 1
 				if id2 > id1 + boundariesMax:
-					writeLog(f"[EndPoint Crak Failed] After {nbRequestSent} tries")
+					write_log(f"[EndPoint Crak Failed] After {nbRequestSent} tries")
 				continue
 			else:
 				# extracting data in raw text format
@@ -87,19 +87,19 @@ for departmentUrl in urlDepartmentList:
 
 				# Send email when slot found
 				if found:
-					writeLog("[EndPoint Cracked] =============================================")
-					writeLog(f"[EndPoint Cracked] After {nbRequestSent} tries: {departmentEndPointUrl}")
+					write_log("[EndPoint Cracked] =============================================")
+					write_log(f"[EndPoint Cracked] After {nbRequestSent} tries: {departmentEndPointUrl}")
 					nbEndPointsCracked += 1
-					writeLog("[EndPoint Cracked] =============================================")
+					write_log("[EndPoint Cracked] =============================================")
 					endPointCraked = True
 				else:
-					writeLog(f"[EndPoint Crak Failed] Continue searching trying {nbRequestSent}")
+					write_log(f"[EndPoint Crak Failed] Continue searching trying {nbRequestSent}")
 
 			id2 += 1
 			if id2 > id1 + boundariesMax:
-				writeLog(f"[EndPoint Crak Failed] After {nbRequestSent} tries")
+				write_log(f"[EndPoint Crak Failed] After {nbRequestSent} tries")
 		id1Bis += 1
-writeLog(f"[{now.strftime('%H:%M')}] Cracking finished")
-writeLog(f"[Craked Stats] Number of endpoints successfully cracked: {nbEndPointsCracked}")
-writeLog(f"[Craked Stats] Number of total tries: {nbTotalTries}")
-writeLog(f"[Craked Stats] Number of endpoints NOT cracked: {len(urlDepartmentList) - nbEndPointsCracked}")
+write_log(f"[{now.strftime('%H:%M')}] Cracking finished")
+write_log(f"[Craked Stats] Number of endpoints successfully cracked: {nbEndPointsCracked}")
+write_log(f"[Craked Stats] Number of total tries: {nbTotalTries}")
+write_log(f"[Craked Stats] Number of endpoints NOT cracked: {len(urlDepartmentList) - nbEndPointsCracked}")
