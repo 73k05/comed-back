@@ -81,7 +81,9 @@ class SSLCherryPyServer(ServerAdapter):
 
     def run(self, handler):
         server = wsgi.Server((self.host, self.port), handler)
-        server.ssl_adapter = BuiltinSSLAdapter("./ssl/cacert.pem", "./ssl/privkey.pem")
+        # server.ssl_adapter = BuiltinSSLAdapter("./ssl/cacert.pem", "./ssl/privkey.pem")
+        server.ssl_adapter = BuiltinSSLAdapter("/etc/letsencrypt/live/73k05.xyz/cert.pem",
+                                               "/etc/letsencrypt/live/73k05.xyz/privkey.pem")
 
         # By default, the server will allow negotiations with extremely old protocols
         # that are susceptible to attacks, so we only allow TLSv1.2
@@ -105,6 +107,7 @@ def hello():
     write_server_log(request.json)
     add_ongoing_booking(request.json)
     write_server_log('------------Booking added------------ \r\n')
+
 
 # define beaker options
 # -Each session data is stored inside a file located inside a
