@@ -108,9 +108,10 @@ session_opts = {
     "session.auto": True,
 }
 bottle_app.install(EnableCors())
+bottle_app.install(log_to_logger)
 
 app = SessionMiddleware(bottle_app, session_opts)
-# app.install(log_to_logger)
+
 
 
 @bottle.route('/booking/new', method=['OPTIONS', 'POST'])

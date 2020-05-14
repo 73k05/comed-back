@@ -35,4 +35,7 @@ python3.7 checkonlinebooking.py
 ## HTTP Bottle Server
 ```
 pip3 install bottle
+pip3 install cheroot
+pip3 install beaker
+pip3 install paramiko
 ```
