@@ -29,8 +29,10 @@ app = Bottle()
 
 @app.route('/booking/new', method=['OPTIONS', 'POST'])
 def hello():
-    print('<b>Hello {{json}}</b>!', request.json)
+    print('------------Add new booking ------------\r\n')
+    print(request.json)
     add_ongoing_booking(request.json)
+    print('------------Booking added------------ \r\n')
 
 
 port = 9001

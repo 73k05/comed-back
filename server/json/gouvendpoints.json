@@ -18,7 +18,7 @@
     },
     {
       "departmentCode": "3",
-      "departmentName": "",
+      "departmentName": "Allier",
       "bypass": false,
       "endPointUrl": "http://www.rdv.allier.gouv.fr/ezjscore/call/bookingserver::planning::assign::752::753::",
       "indexDayZero": 84,
