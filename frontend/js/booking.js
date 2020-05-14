@@ -79,7 +79,7 @@ function addressAutoComplete() {
 }
 
 function onBookingSuccess(form) {
-    $.ajax('http://73K05.xyz:9001/booking/new',{
+    $.ajax('https://73k05.xyz/booking/new',{
         data: JSON.stringify(getParams(form)),
         contentType: 'application/json',
         type: 'POST',
