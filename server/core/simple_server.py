@@ -33,7 +33,9 @@ def hello():
     add_ongoing_booking(request.json)
 
 
+port = 9001
+host = '0.0.0.0'
 app.install(EnableCors())
-run(app, host='127.0.0.1', port=9001)
+print('Server running...', host, port)
+run(app, host=host, port=port)
 
-print('Server {{host}}:{{port}} running...')
