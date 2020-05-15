@@ -731,7 +731,7 @@
     },
     {
       "departmentCode": "91",
-      "departmentName": "Essonne ",
+      "departmentName": "Essonne",
       "bypass": false,
       "endPointUrl": "",
       "indexDayZero": 0,
@@ -779,7 +779,7 @@
     },
     {
       "departmentCode": "2B",
-      "departmentName": "Haute-Corse ",
+      "departmentName": "Haute-Corse",
       "bypass": false,
       "endPointUrl": "http://www.rdv.haute-corse.gouv.fr/ezjscore/call/bookingserver::planning::assign::757::775::",
       "indexDayZero": 364,
