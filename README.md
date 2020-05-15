@@ -47,6 +47,12 @@ tail -f output.txt
 curl --data "condition=on&nextButton='Effectuer une demande de rendez-vous'" http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795/0 | grep ultérieurement
 python3.7 checkonlinebooking.py
 ```
+# Test add booking curl
+```
+curl -X POST -H "content-type: application/json" \
+  -d '{"firstname": "Jean Noel", "lastname": "WEICK", "birthName": "", "email": "jnweick@aol.com", "phone": "0634010170", "birthdate": "31/12/1970", "addressStreet": "275 e Rue Victor Estienne", "addressZip": "13680", "addressCity": "Lançon-Provence", "typeVisit": "alcool", "bookingChooseDate": "25/05/2020", "bookedCurrentDate": "", "departmentCode": "", "departmentName": "Puy-de-Dôme", "endPointUrl": "",  "bookUrl": "" }' \
+ --insecure https://0.0.0.0:443/booking/new
+```
 
 # Install dep
 ## HTTP Bottle Server

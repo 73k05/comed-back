@@ -1,23 +1,19 @@
 import logging
+import ssl
 from datetime import datetime
 from functools import wraps
 
 import bottle
-from bottle import Bottle, run, request, response
+from beaker.middleware import SessionMiddleware
 from bottle import (
-    route,
     response,
     run,
-    redirect,
     request,
-    static_file,
     ServerAdapter,
     default_app,
 )
-from beaker.middleware import SessionMiddleware
 from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
-import ssl
 
 from addbooking import add_ongoing_booking
 from log import write_server_log
@@ -113,10 +109,10 @@ bottle_app.install(log_to_logger)
 app = SessionMiddleware(bottle_app, session_opts)
 
 
-
-@bottle.route('/booking/new', method=['OPTIONS', 'POST'])
-def hello():
+@bottle.route('/booking/new', method=['POST'])
+def new_booking():
     write_server_log('------------Add new booking ------------\r\n')
+    write_server_log(request)
     write_server_log(request.json)
     add_ongoing_booking(request.json)
     write_server_log('------------Booking added------------ \r\n')
