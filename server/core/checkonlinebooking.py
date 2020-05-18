@@ -32,7 +32,12 @@ while 1 == 1:
         write_log("[" + now.strftime("%H:%M") + "] Booking...")
 
         code = booking["departmentCode"]
-        booking_choose_date = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
+        booking_choose_date = booking["bookingChooseDate"]
+        if not booking_choose_date:
+            write_log(f"[{now.strftime('%H:%M')}] Error bookingChooseDate empty, skip this booking -_-")
+            continue
+
+        booking_choose_date = datetime.datetime.strptime(booking_choose_date, "%d/%m/%Y")
         booked_date = datetime.datetime.now() + datetime.timedelta(days=maxDayToLookForward) if not booking[
             "bookedCurrentDate"] else datetime.datetime.strptime(booking["bookedCurrentDate"], "%d/%m/%Y")
         email = booking["email"]
