@@ -10,7 +10,6 @@ from bottle import (
     run,
     request,
     ServerAdapter,
-    default_app,
 )
 from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
@@ -50,24 +49,24 @@ def log_to_logger(fn):
     return _log_to_logger
 
 
-class EnableCors(object):
-    name = 'enable_cors'
-    api = 2
-
-    @staticmethod
-    def apply(fn, context):
-        def _enable_cors(*args, **kwargs):
-            # set CORS headers
-            response.headers['Access-Control-Allow-Origin'] = 'https://www.commissionmedicale.fr'
-            response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, OPTIONS'
-            response.headers[
-                'Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
-
-            if bottle.request.method != 'OPTIONS':
-                # actual request; reply with the actual response
-                return fn(*args, **kwargs)
-
-        return _enable_cors
+# class EnableCors(object):
+#     name = 'enable_cors'
+#     api = 2
+#
+#     @staticmethod
+#     def apply(fn, context):
+#         def _enable_cors(*args, **kwargs):
+#             # set CORS headers
+#             response.headers['Access-Control-Allow-Origin'] = 'https://www.commissionmedicale.fr, https://localhost'
+#             response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, OPTIONS'
+#             response.headers[
+#                 'Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
+#
+#             if bottle.request.method != 'OPTIONS':
+#                 # actual request; reply with the actual response
+#                 return fn(*args, **kwargs)
+#
+#         return _enable_cors
 
 
 # Create our own sub-class of Bottle's ServerAdapter
@@ -91,9 +90,7 @@ class SSLCherryPyServer(ServerAdapter):
         finally:
             server.stop()
 
-
-# app = Bottle()
-bottle_app = default_app()
+bottle_app = bottle.app()
 
 # Create the default bottle app and then wrap it around
 # a beaker middleware and send it back to bottle to run
@@ -103,10 +100,40 @@ session_opts = {
     "session.data_dir": "./data",
     "session.auto": True,
 }
-bottle_app.install(EnableCors())
+# bottle_app.install(EnableCors())
 bottle_app.install(log_to_logger)
 
 app = SessionMiddleware(bottle_app, session_opts)
+
+
+@bottle.route('/<:re:.*>', method='OPTIONS')
+def enable_cors_generic_route():
+    """
+    This route takes priority over all others. So any request with an OPTIONS
+    method will be handled by this function.
+
+    See: https://github.com/bottlepy/bottle/issues/402
+
+    NOTE: This means we won't 404 any invalid path that is an OPTIONS request.
+    """
+    add_cors_headers()
+
+
+@bottle.hook('after_request')
+def enable_cors_after_request_hook():
+    """
+    This executes after every route. We use it to attach CORS headers when
+    applicable.
+    """
+    add_cors_headers()
+
+
+def add_cors_headers():
+    bottle.response.headers['Access-Control-Allow-Origin'] = 'https://www.commissionmedicale.fr'
+    bottle.response.headers['Access-Control-Allow-Methods'] = \
+        'GET, POST, PUT, OPTIONS'
+    bottle.response.headers['Access-Control-Allow-Headers'] = \
+        'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
 
 
 @bottle.route('/booking/new', method=['POST'])
@@ -123,4 +150,3 @@ host = '0.0.0.0'
 if __name__ == "__main__":
     write_server_log(f'Server https://{host}:{port} running...')
     run(app=app, host=host, port=port, server=SSLCherryPyServer)
-# run(app, host=host, port=port, server='cheroot', options=options)
