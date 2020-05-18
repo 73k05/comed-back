@@ -171,7 +171,7 @@
       "addressCity": "",
       "typeVisit": "Stupéfiant",
       "bookingChooseDate": "29/05/2020",
-      "bookedCurrentDate": "",
+      "bookedCurrentDate": "01/06/2020",
       "departmentCode": "17",
       "departmentName": "Charente-Maritime",
       "endPointUrl": "http://www.charente-maritime.gouv.fr/ezjscore/call/bookingserver::planning::assign::27136::27137::",
@@ -969,13 +969,33 @@
       "addressCity": "Lançon-Provence",
       "typeVisit": "alcool",
       "bookingChooseDate": "25/05/2020",
-      "bookedCurrentDate": "",
+      "bookedCurrentDate": "14/09/2020",
       "departmentCode": "63",
       "departmentName": "Puy-de-Dôme",
       "bypass": false,
       "endPointUrl": "http://www.rdv.puy-de-dome.gouv.fr/ezjscore/call/bookingserver::planning::assign::801::809::",
       "indexDayZero": 0,
       "bookUrl": "http://www.rdv.puy-de-dome.gouv.fr/booking/create/801/0"
+    },
+    {
+      "email": "gizmogrosbob8@hotmail.com",
+      "firstname": "Giz",
+      "lastname": "Bolet",
+      "phone": "0781335930",
+      "number": 4532,
+      "birthdate": "25/04/1990",
+      "birthname": "Giz",
+      "region": "Ain",
+      "typevisit": "alcool",
+      "bookingdate": "28/05/2020",
+      "addressStreet": "4B avenue Pasteur",
+      "addressZip": "63400",
+      "addressCity": "Chamalieres",
+      "departmentName": "Ain",
+      "departmentCode": "1",
+      "bookUrl": "http://www.rdv.ain.gouv.fr/booking/create/804/4",
+      "endPointUrl": "http://www.rdv.ain.gouv.fr/ezjscore/call/bookingserver::planning::assign::806::807::",
+      "indexDayZero": 0
     }
   ]
 }
