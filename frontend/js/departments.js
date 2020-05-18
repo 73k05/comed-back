@@ -34,7 +34,7 @@ function populateSelect() {
         { "Department_Name": "Gers" },
         { "Department_Name": "Gironde" },
         { "Department_Name": "Hérault" },
-        { "Department_Name": "Ille-et-Vilaine	" },
+        { "Department_Name": "Ille-et-Vilaine" },
         { "Department_Name": "Indre" },
         { "Department_Name": "Indre-et-Loire" },
         { "Department_Name": "Isère" },
@@ -95,6 +95,8 @@ function populateSelect() {
         { "Department_Name": "Val-de-Marne" },
         { "Department_Name": "Val-d’Oise" },
         { "Department_Name": "Guadeloupe" },
+        { "Department_Name": "Martinique" },
+        { "Department_Name": "Guyane" },
         { "Department_Name": "La Réunion" },
         { "Department_Name": "Mayotte" }
     ];
