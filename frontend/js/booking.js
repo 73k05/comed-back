@@ -49,7 +49,8 @@ function getParams(form) {
         birthname: form.birthname.value,
         region: form.region.value,
         typevisit: form.typevisit.value,
-        bookingdate: form.bookingdate.value,
+        bookingChooseDate: form.bookingdate.value,
+        bookedCurrentDate: "",
         addressStreet: form.address.value,
         addressZip: form.zip.value,
         addressCity: form.city.value
