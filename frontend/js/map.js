@@ -21,27 +21,16 @@
                         isBookingOpen = departmentAvailability["bookingOpen"];
                     }
                     var todayDate = new Date();
-                    var twoWeeks = new Date();
-                    var oneMonth = new Date();
-                    var twoMonths = new Date();
-                    twoWeeks.setDate(todayDate.getDate()+14);
-                    oneMonth.setDate(todayDate.getDate()+30);
-                    twoMonths.setDate(todayDate.getDate()+60);
                     var openSlotDate = Date.parse(firstOpenSlot);
-                    // Book in 2 weeks
-                    if (openSlotDate <= twoWeeks && isBookingOpen) {
-                        return {color: "#9DE0AD"};
+                    if (openSlotDate >= todayDate && isBookingOpen) {
+                        return {color: "#78995D"};
                     }
-                    // Book between 2 weeks & 1 month
-                    if ((openSlotDate > twoWeeks) && (openSlotDate <= oneMonth) && (isBookingOpen)) {
-                        return {color: "#355C7D"};
-                    }
-                    // Book in 2 months
-                    if (openSlotDate >= twoMonths && isBookingOpen) {
-                        return {color: "#F26B38"};
+                    //Booking closed but date open
+                    if (openSlotDate >= todayDate || isBookingOpen) {
+                        return {color: "#28499B"};
                     }
                     //Booking closed
-                    return {color: "#FE4365"};
+                    return {color: "#ff0000"};
                 }, onEachFeature: onEachFeature
             }).addTo(map);
 
