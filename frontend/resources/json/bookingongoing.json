@@ -1558,6 +1558,10 @@
       "bookUrl": "http://www.herault.gouv.fr/booking/create/15245",
       "endPointUrl": "http://www.herault.gouv.fr/ezjscore/call/bookingserver::planning::assign::15245::30030::",
       "indexDayZero": 0
+    },
+    {
+      "email": "kervin.somville@gmail.com",
+      "firstname": "Kervin",
       "lastname": "SOMVILLE",
       "phone": "0669652167",
       "number": 8194,
