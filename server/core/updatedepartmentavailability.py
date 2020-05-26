@@ -15,7 +15,7 @@ urlDepartmentList = {}
 departmentStartIndex = 0
 # Set it to high value to update all departments
 departmentStopIndex = 150
-maxDayToLookForward = 60
+maxDayToLookForward = 120
 
 # Load dep list
 with open('../json/gouvendpoints.json') as json_data:

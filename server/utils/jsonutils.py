@@ -1,7 +1,6 @@
 import json
 from shutil import copyfile
 
-
 # Write in json file
 from log import write_server_log
 
@@ -14,10 +13,21 @@ def write_department_availability(departments):
         json.dump(json_data, json_file, ensure_ascii=False, indent=2)
 
 
-# Write in json file
+# Write backup in json file
+def write_bk_booking(bookings):
+    bookings_json = '../json/bk_booking.json'
+    write_booking(bookings, bookings_json)
+
+
+# Write ongoing in json file
 def write_ongoing_booking(bookings):
-    write_server_log(f"write_ongoing_booking...")
     bookings_json = '../../frontend/resources/json/bookingongoing.json'
+    write_booking(bookings, bookings_json)
+
+
+# Write in json file
+def write_booking(bookings, bookings_json):
+    write_server_log(f"write_ongoing_booking...")
     with open(bookings_json, "w", encoding='utf-8') as json_file:
         json_data = {"bookings": bookings}
         json.dump(json_data, json_file, ensure_ascii=False, indent=2)
