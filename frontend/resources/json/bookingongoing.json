@@ -1621,6 +1621,27 @@
       "bookUrl": "http://www.charente-maritime.gouv.fr/booking/create/27136",
       "endPointUrl": "http://www.charente-maritime.gouv.fr/ezjscore/call/bookingserver::planning::assign::27136::27137::",
       "indexDayZero": 364
+    },
+    {
+      "email": "davidchassier41@gmail.com",
+      "firstname": "david",
+      "lastname": "chassier",
+      "phone": "0608924831",
+      "number": 79839,
+      "birthdate": "25/05/1971",
+      "birthname": "david chassier",
+      "region": "Loir-et-Cher",
+      "typevisit": "Stupéfiant",
+      "bookingChooseDate": "07/06/2020",
+      "bookedCurrentDate": "",
+      "addressStreet": "53 bis rue albert 1er",
+      "addressZip": "41000",
+      "addressCity": "Blois",
+      "departmentName": "Loir-et-Cher",
+      "departmentCode": "41",
+      "bookUrl": "http://www.loir-et-cher.gouv.fr/booking/create/11097",
+      "endPointUrl": "http://www.loir-et-cher.gouv.fr/ezjscore/call/bookingserver::planning::assign::11097::11098::",
+      "indexDayZero": 0
     }
   ]
 }
