@@ -784,6 +784,46 @@
       "endPointUrl": "http://www.rdv.haute-corse.gouv.fr/ezjscore/call/bookingserver::planning::assign::757::775::",
       "indexDayZero": 364,
       "bookUrl": "http://www.rdv.haute-corse.gouv.fr/booking/create/757"
+    },
+    {
+      "departmentCode": "971",
+      "departmentName": "Guadeloupe",
+      "bypass": true,
+      "endPointUrl": "",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "972",
+      "departmentName": "Martinique",
+      "bypass": true,
+      "endPointUrl": "",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "973",
+      "departmentName": "Guyane",
+      "bypass": true,
+      "endPointUrl": "",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "974",
+      "departmentName": "La Réunion",
+      "bypass": true,
+      "endPointUrl": "",
+      "indexDayZero": 364,
+      "bookUrl": ""
+    },
+    {
+      "departmentCode": "976",
+      "departmentName": "Mayotte",
+      "bypass": true,
+      "endPointUrl": "",
+      "indexDayZero": 364,
+      "bookUrl": ""
     }
   ]
 }
