@@ -381,7 +381,7 @@
       "departmentCode": "47",
       "departmentName": "Lot-et-Garonne",
       "bypass": false,
-      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::0::812::",
+      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::795::2162::",
       "indexDayZero": 0,
       "bookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
     },
@@ -413,7 +413,7 @@
       "departmentCode": "51",
       "departmentName": "Marne",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.marne.gouv.fr/ezjscore/call/bookingserver::planning::assign::15309::18099::",
       "indexDayZero": 0,
       "bookUrl": "http://www.marne.gouv.fr/booking/create/15309"
     },
@@ -677,8 +677,8 @@
       "departmentCode": "84",
       "departmentName": "Vaucluse",
       "bypass": false,
-      "endPointUrl": "http://www.rdv.vaucluse.gouv.fr/ezjscore/call/bookingserver::planning::assign::867::868::",
-      "indexDayZero": 364,
+      "endPointUrl": "http://www.rdv.vaucluse.gouv.fr/ezjscore/call/bookingserver::planning::assign::867::1042::",
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.vaucluse.gouv.fr/booking/create/867"
     },
     {
