@@ -95,6 +95,8 @@ function populateSelect() {
         { "Department_Name": "Val-de-Marne" },
         { "Department_Name": "Val-d’Oise" },
         { "Department_Name": "Guadeloupe" },
+        { "Department_Name": "Martinique" },
+        { "Department_Name": "Guyane" },
         { "Department_Name": "La Réunion" },
         { "Department_Name": "Mayotte" }
     ];
