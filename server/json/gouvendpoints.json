@@ -68,7 +68,7 @@
       "departmentCode": "9",
       "departmentName": "Ariège",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.ariege.gouv.fr/ezjscore/call/bookingserver::planning::assign::2723::16705::",
       "indexDayZero": 0,
       "bookUrl": "http://www.ariege.gouv.fr/booking/create/2723"
     },
@@ -77,7 +77,7 @@
       "departmentName": "Aube",
       "bypass": false,
       "endPointUrl": "http://www.aube.gouv.fr/ezjscore/call/bookingserver::planning::assign::9629::9632::",
-      "indexDayZero": 14,
+      "indexDayZero": 0,
       "bookUrl": "http://www.aube.gouv.fr/booking/create/9629/4"
     },
     {
@@ -100,8 +100,8 @@
       "departmentCode": "13",
       "departmentName": "Bouches-du-Rhône",
       "bypass": false,
-      "endPointUrl": "http://www.bouches-du-rhone.gouv.fr/ezjscore/call/bookingserver::planning::assign::25519::25520::",
-      "indexDayZero": 364,
+      "endPointUrl": "http://www.bouches-du-rhone.gouv.fr/ezjscore/call/bookingserver::planning::assign::25519::33642::",
+      "indexDayZero": 0,
       "bookUrl": "http://www.bouches-du-rhone.gouv.fr/booking/create/25519"
     },
     {
@@ -124,7 +124,7 @@
       "departmentCode": "16",
       "departmentName": "Charente",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.charente.gouv.fr/ezjscore/call/bookingserver::planning::assign::24911::25347::",
       "indexDayZero": 0,
       "bookUrl": "http://www.charente.gouv.fr/booking/create/24911"
     },
@@ -269,7 +269,7 @@
       "departmentCode": "33",
       "departmentName": "Gironde",
       "bypass": false,
-      "endPointUrl": "http://www.gironde.gouv.fr/ezjscore/call/bookingserver::planning::assign::24775::46255::",
+      "endPointUrl": "http://www.gironde.gouv.fr/ezjscore/call/bookingserver::planning::assign::24775::46238::",
       "indexDayZero": 0,
       "bookUrl": "http://www.gironde.gouv.fr/booking/create/24775"
     },
@@ -309,7 +309,7 @@
       "departmentCode": "38",
       "departmentName": "Isère",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.isere.gouv.fr/ezjscore/call/bookingserver::planning::assign::24989::33361::",
       "indexDayZero": 0,
       "bookUrl": "http://www.isere.gouv.fr/booking/create/24989"
     },
@@ -341,8 +341,8 @@
       "departmentCode": "42",
       "departmentName": "Loire",
       "bypass": false,
-      "endPointUrl": "http://www.rdv.loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::773::774::",
-      "indexDayZero": 364,
+      "endPointUrl": "http://www.rdv.loire.gouv.fr/ezjscore/call/bookingserver::planning::assign::773::792::",
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.loire.gouv.fr/booking/create/773"
     },
     {
@@ -357,7 +357,7 @@
       "departmentCode": "44",
       "departmentName": "Loire-Atlantique",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.loire-atlantique.gouv.fr/ezjscore/call/bookingserver::planning::assign::20266::39583::",
       "indexDayZero": 0,
       "bookUrl": "http://www.loire-atlantique.gouv.fr/booking/create/20266"
     },
@@ -381,7 +381,7 @@
       "departmentCode": "47",
       "departmentName": "Lot-et-Garonne",
       "bypass": false,
-      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::795::2162::",
+      "endPointUrl": "http://www.rdv.lot-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::795::2178::",
       "indexDayZero": 0,
       "bookUrl": "http://www.rdv.lot-et-garonne.gouv.fr/booking/create/795"
     },
@@ -445,15 +445,15 @@
       "departmentCode": "55",
       "departmentName": "Meuse",
       "bypass": false,
-      "endPointUrl": "http://www.meuse.gouv.fr/ezjscore/call/bookingserver::planning::assign::9933::9934::",
-      "indexDayZero": 364,
+      "endPointUrl": "http://www.meuse.gouv.fr/ezjscore/call/bookingserver::planning::assign::9933::10731::",
+      "indexDayZero": 0,
       "bookUrl": "http://www.meuse.gouv.fr/booking/create/9933"
     },
     {
       "departmentCode": "56",
       "departmentName": "Morbihan",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.morbihan.gouv.fr/ezjscore/call/bookingserver::planning::assign::21039::24472::",
       "indexDayZero": 0,
       "bookUrl": "http://www.morbihan.gouv.fr/booking/create/21039"
     },
@@ -637,7 +637,7 @@
       "departmentCode": "79",
       "departmentName": "Deux-Sèvres",
       "bypass": false,
-      "endPointUrl": "http://www.deux-sevres.gouv.fr/ezjscore/call/bookingserver::planning::assign::24119::24120::",
+      "endPointUrl": "http://www.deux-sevres.gouv.fr/ezjscore/call/bookingserver::planning::assign::23715::24253::",
       "indexDayZero": 364,
       "bookUrl": "http://www.deux-sevres.gouv.fr/booking/create/23715"
     },
@@ -653,7 +653,7 @@
       "departmentCode": "81",
       "departmentName": "Tarn",
       "bypass": false,
-      "endPointUrl": "http://www.rdv.tarn.gouv.fr/ezjscore/call/bookingserver::planning::assign::811::815::",
+      "endPointUrl": "http://www.tarn-et-garonne.gouv.fr/ezjscore/call/bookingserver::planning::assign::13976::13981::",
       "indexDayZero": 0,
       "bookUrl": "http://www.rdv.tarn.gouv.fr/booking/create/811"
     },
@@ -701,7 +701,7 @@
       "departmentCode": "87",
       "departmentName": "Haute-Vienne",
       "bypass": false,
-      "endPointUrl": "http://www.haute-vienne.gouv.fr/ezjscore/call/bookingserver::planning::assign::18626::18652::",
+      "endPointUrl": "http://www.haute-vienne.gouv.fr/ezjscore/call/bookingserver::planning::assign::18626::18652::0",
       "indexDayZero": 0,
       "bookUrl": "http://www.haute-vienne.gouv.fr/booking/create/18626"
     },
@@ -709,7 +709,7 @@
       "departmentCode": "88",
       "departmentName": "Vosges",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "http://www.vosges.gouv.fr/ezjscore/call/bookingserver::planning::assign::14296::14303::",
       "indexDayZero": 0,
       "bookUrl": "http://www.vosges.gouv.fr/booking/create/14296"
     },

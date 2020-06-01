@@ -27,7 +27,6 @@ def write_ongoing_booking(bookings):
 
 # Write in json file
 def write_booking(bookings, bookings_json):
-    write_server_log(f"write_ongoing_booking...")
     with open(bookings_json, "w", encoding='utf-8') as json_file:
         json_data = {"bookings": bookings}
         json.dump(json_data, json_file, ensure_ascii=False, indent=2)
