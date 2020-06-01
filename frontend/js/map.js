@@ -21,7 +21,11 @@
                         isBookingOpen = departmentAvailability["bookingOpen"];
                     }
                     var todayDate = new Date();
+                    todayDate.setDate(0);
                     var openSlotDate = Date.parse(firstOpenSlot);
+                    if (feature.properties.code == 58) {
+                        console.log("Nievre");
+                    }
                     if (openSlotDate >= todayDate && isBookingOpen) {
                         return {color: "#78995D"};
                     }
