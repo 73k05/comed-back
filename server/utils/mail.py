@@ -2,6 +2,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+from log import write_log
+
 
 def createBody(date_free_slot, booking):
     content = f"Bonjour {booking['firstname']},<br/><br/>"
@@ -57,13 +59,8 @@ def send_mail(subject, date_free_slot, booking):
         server.sendmail(sender_email, toaddrs, text)
     except Exception as e:
         # Print any error messages to stdout
-        f = open("output.txt", "a+")
-        f.write("Erreur: ", e)
-        f.write("\r\n")
-        f.close()
+        write_log(f"Error while sending mail: {e}")
         exit()
     finally:
         server.quit()
-        f = open("output.txt", "a+")
-        f.write("73kBot sent a mail to 73k05" + "\r\n")
-        f.close()
+        write_log("73kBot sent a mail to 73k05")
