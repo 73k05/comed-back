@@ -62,10 +62,10 @@ def get_date_from_data(data):
 # Update index to reach today's date
 def update_index_day_zero_to_today(index_day_zero, date_zero, date_today):
     days_in_week = 7
-    while date_zero < date_today + datetime.timedelta(days=-days_in_week):
+    while date_zero + datetime.timedelta(days=-days_in_week) < date_today:
         date_zero = date_zero + datetime.timedelta(days=days_in_week)
         index_day_zero += days_in_week
-    while date_zero > date_today + datetime.timedelta(days=days_in_week):
+    while date_zero > date_today:
         date_zero = date_zero + datetime.timedelta(days=-days_in_week)
         index_day_zero -= days_in_week
     if index_day_zero < 0:

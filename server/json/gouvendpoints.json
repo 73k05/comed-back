@@ -13,7 +13,7 @@
       "departmentName": "Aisne",
       "bypass": false,
       "endPointUrl": "http://www.aisne.gouv.fr/ezjscore/call/bookingserver::planning::assign::19070::19071::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.aisne.gouv.fr/booking/create/19070"
     },
     {
@@ -45,7 +45,7 @@
       "departmentName": "Alpes-Maritimes",
       "bypass": false,
       "endPointUrl": "http://www.alpes-maritimes.gouv.fr/ezjscore/call/bookingserver::planning::assign::21660::21663::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.alpes-maritimes.gouv.fr/booking/create/21660/4"
     },
     {
@@ -53,7 +53,7 @@
       "departmentName": "Ardèche",
       "bypass": false,
       "endPointUrl": "http://www.rdv.ardeche.gouv.fr/ezjscore/call/bookingserver::planning::assign::802::810::",
-      "indexDayZero": 245,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.ardeche.gouv.fr/booking/create/802/8"
     },
     {
@@ -85,7 +85,7 @@
       "departmentName": "Aude",
       "bypass": false,
       "endPointUrl": "http://www.rdv.aude.gouv.fr/ezjscore/call/bookingserver::planning::assign::807::875::",
-      "indexDayZero": 42,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.aude.gouv.fr/booking/create/807/0"
     },
     {
@@ -93,7 +93,7 @@
       "departmentName": "Aveyron",
       "bypass": false,
       "endPointUrl": "http://www.rdv.aveyron.gouv.fr/ezjscore/call/bookingserver::planning::assign::751::752::",
-      "indexDayZero": 14,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.aveyron.gouv.fr/booking/create/751/4"
     },
     {
@@ -117,7 +117,7 @@
       "departmentName": "Cantal",
       "bypass": false,
       "endPointUrl": "http://www.rdv.cantal.gouv.fr/ezjscore/call/bookingserver::planning::assign::764::766::",
-      "indexDayZero": 91,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.cantal.gouv.fr/booking/create/764/0"
     },
     {
@@ -133,7 +133,7 @@
       "departmentName": "Charente-Maritime",
       "bypass": false,
       "endPointUrl": "http://www.charente-maritime.gouv.fr/ezjscore/call/bookingserver::planning::assign::27136::27137::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.charente-maritime.gouv.fr/booking/create/27136"
     },
     {
@@ -141,7 +141,7 @@
       "departmentName": "Cher",
       "bypass": false,
       "endPointUrl": "http://www.cher.gouv.fr/ezjscore/call/bookingserver::planning::assign::18534::18535::",
-      "indexDayZero": 77,
+      "indexDayZero": 0,
       "bookUrl": "http://www.cher.gouv.fr/booking/create/18534/4"
     },
     {
@@ -149,7 +149,7 @@
       "departmentName": "Corrèze",
       "bypass": false,
       "endPointUrl": "http://www.correze.gouv.fr/ezjscore/call/bookingserver::planning::assign::16790::16791::",
-      "indexDayZero": 35,
+      "indexDayZero": 0,
       "bookUrl": "http://www.correze.gouv.fr/booking/create/16789/2"
     },
     {
@@ -157,7 +157,7 @@
       "departmentName": "Côte-d'Or",
       "bypass": false,
       "endPointUrl": "http://www.rdv.cote-dor.gouv.fr/ezjscore/call/bookingserver::planning::assign::942::943::",
-      "indexDayZero": 84,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.cote-dor.gouv.fr/booking/create/942/4",
       "subDepartmentList": [
         {
@@ -190,7 +190,7 @@
       "departmentName": "Creuse",
       "bypass": false,
       "endPointUrl": "http://www.creuse.gouv.fr/ezjscore/call/bookingserver::planning::assign::9038::9039::",
-      "indexDayZero": 35,
+      "indexDayZero": 0,
       "bookUrl": "http://www.creuse.gouv.fr/booking/create/9038/0"
     },
     {
@@ -206,7 +206,7 @@
       "departmentName": "Doubs",
       "bypass": false,
       "endPointUrl": "http://www.doubs.gouv.fr/ezjscore/call/bookingserver::planning::assign::14641::14639::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.doubs.gouv.fr/booking/create/14641"
     },
     {
@@ -230,7 +230,7 @@
       "departmentName": "Eure-et-Loir",
       "bypass": false,
       "endPointUrl": "http://www.eure-et-loir.gouv.fr/ezjscore/call/bookingserver::planning::assign::22839::22840::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.eure-et-loir.gouv.fr/booking/create/22839"
     },
     {
@@ -238,7 +238,7 @@
       "departmentName": "Finistère",
       "bypass": false,
       "endPointUrl": "http://www.finistere.gouv.fr/ezjscore/call/bookingserver::planning::assign::17254::17255::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.finistere.gouv.fr/booking/create/17254"
     },
     {
@@ -246,7 +246,7 @@
       "departmentName": "Gard",
       "bypass": false,
       "endPointUrl": "http://www.gard.gouv.fr/ezjscore/call/bookingserver::planning::assign::18866::18867::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.gard.gouv.fr/booking/create/18866"
     },
     {
@@ -422,7 +422,7 @@
       "departmentName": "Haute-Marne",
       "bypass": false,
       "endPointUrl": "http://www.haute-marne.gouv.fr/ezjscore/call/bookingserver::planning::assign::9914::9915::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.haute-marne.gouv.fr/booking/create/9912"
     },
     {
@@ -630,7 +630,7 @@
       "departmentName": "Yvelines",
       "bypass": false,
       "endPointUrl": "http://www.yvelines.gouv.fr/ezjscore/call/bookingserver::planning::assign::14256::14257::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.yvelines.gouv.fr/booking/create/14256"
     },
     {
@@ -638,7 +638,7 @@
       "departmentName": "Deux-Sèvres",
       "bypass": false,
       "endPointUrl": "http://www.deux-sevres.gouv.fr/ezjscore/call/bookingserver::planning::assign::23715::24253::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.deux-sevres.gouv.fr/booking/create/23715"
     },
     {
@@ -686,7 +686,7 @@
       "departmentName": "Vendée",
       "bypass": false,
       "endPointUrl": "http://www.rdv.vendee.gouv.fr/ezjscore/call/bookingserver::planning::assign::773::774::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.vendee.gouv.fr/booking/create/773"
     },
     {
@@ -782,47 +782,47 @@
       "departmentName": "Haute-Corse",
       "bypass": false,
       "endPointUrl": "http://www.rdv.haute-corse.gouv.fr/ezjscore/call/bookingserver::planning::assign::757::775::",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": "http://www.rdv.haute-corse.gouv.fr/booking/create/757"
     },
     {
       "departmentCode": "971",
       "departmentName": "Guadeloupe",
-      "bypass": true,
+      "bypass": false,
       "endPointUrl": "",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
       "departmentCode": "972",
       "departmentName": "Martinique",
-      "bypass": true,
+      "bypass": false,
       "endPointUrl": "",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
       "departmentCode": "973",
       "departmentName": "Guyane",
-      "bypass": true,
+      "bypass": false,
       "endPointUrl": "",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
       "departmentCode": "974",
       "departmentName": "La Réunion",
-      "bypass": true,
+      "bypass": false,
       "endPointUrl": "",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": ""
     },
     {
       "departmentCode": "976",
       "departmentName": "Mayotte",
-      "bypass": true,
+      "bypass": false,
       "endPointUrl": "",
-      "indexDayZero": 364,
+      "indexDayZero": 0,
       "bookUrl": ""
     }
   ]

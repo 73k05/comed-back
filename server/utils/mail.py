@@ -22,7 +22,8 @@ def createBody(date_free_slot, booking):
                f"sur <a href='https://www.commissionmedicale.fr'>CommissionMedicale</a>. "
     content += f"Nous avons enregistré cette date et elle ne vous sera plus proposée. Par contre, si nous trouvons un créneau plus proche " \
                f"de la date que vous avez choisi, un nouvel email vous sera envoyé.<br/><br/>"
-    content += f"Votre avis nous intéresse n'hésitez pas à nous en faire part<br/><br/>"
+    content += f"Nous souhaitons vous donner plus de chances d'obtenir la réservation en vous proposant une réservation automatique, si cela vous intéresse, vous pouvez répondre" \
+               f" à notre <a href='https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZAAIO-KVxUN0FDNDBLWlhQVjNSODJGRkpIUUpGOE9OWC4u'>questionnaire</a><br/><br/>"
     content += f"Bonne conduite<br/>Bob"
     return content
 
