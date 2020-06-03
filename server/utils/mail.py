@@ -1,8 +1,14 @@
+import json
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 from log import write_log
+
+# Password
+pass_mail = ""
+with open('../json/config.json') as json_data:
+    pass_mail = json.load(json_data)["creds"]
 
 
 def createBody(date_free_slot, booking):
@@ -22,13 +28,17 @@ def createBody(date_free_slot, booking):
 
 
 def send_mail(subject, date_free_slot, booking):
+    if not pass_mail or pass_mail == "":
+        write_log("Sending mail impossible, creds missing, GOTO gouv/server/json/config.json")
+        return
+
     # Server config
     port = 587  # For SSL
     smtp_server = "mail34.lwspanel.com"
     sender_email = "booking@commissionmedicale.fr"  # Enter your address
     receiver_email = booking["email"]
     bcc = "contact@commissionmedicale.fr"
-    password = "***"
+    password = pass_mail
 
     # Email content
     subject = subject
