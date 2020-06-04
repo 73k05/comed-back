@@ -19,6 +19,9 @@ urlDepartmentList = {}
 bookingOngoingList = {}
 maxDayToLookForward = 120
 
+# Sleeping time in minutes
+sleeptime = 30
+
 while 1 == 1:
 
     # Load Booking Ongoing List
@@ -61,9 +64,6 @@ while 1 == 1:
 
     write_ongoing_booking(bookingListCopy)
     write_bk_booking(bk_bookingList)
-
-    # Sleeping time in minutes
-    sleeptime = 60
 
     write_log(f"============ 73kBot will sleep {str(sleeptime)} minutes _o/ {str(nbRequestSent)} ============")
 
