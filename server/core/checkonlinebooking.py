@@ -57,7 +57,7 @@ while 1 == 1:
         date_free_slot = -1 if not booking_slot["date"] else booking_slot["date"]
         minimum_book_date = max(datetime.datetime.now(), booking_choose_date)
         if booking_slot[
-            "is_open"] and date_free_slot != -1 and booked_date > date_free_slot > minimum_book_date:
+            "is_open"] and date_free_slot != -1 and booked_date > date_free_slot >= minimum_book_date:
             write_log(f"/!\\Slot found, sending email/!\\")
             send_mail("[CoMed] Créneau disponible", date_free_slot, booking)
             booking["bookedCurrentDate"] = date_free_slot.strftime("%d/%m/%Y")

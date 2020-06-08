@@ -18,7 +18,7 @@ def createBody(date_free_slot, booking):
                f"Si le créneau {date_free_slot.strftime('%d/%m/%Y')} n'est plus disponible, notre outil est déjà en train de chercher une meilleure date pour vous.<br/><br/>" \
                f"Dans le cas où le créneau {date_free_slot.strftime('%d/%m/%Y')} est proche de la date souhaitée, " \
                f"moins d'une semaine par exemple, il sera difficile d'en trouver un plus encore proche. " \
-               f"Si ce créneau ne vous convient , vous pouvez en réserver un à nouveau, plus éloigné pour maximiser vos chances d'obtenir une réservation " \
+               f"Si ce créneau ne vous convient pas, vous pouvez en réserver un à nouveau, plus éloigné pour maximiser vos chances d'obtenir une réservation " \
                f"sur <a href='https://www.commissionmedicale.fr'>CommissionMedicale</a>. "
     content += f"Nous avons enregistré cette date et elle ne vous sera plus proposée. Par contre, si nous trouvons un créneau plus proche " \
                f"de la date que vous avez choisi, un nouvel email vous sera envoyé.<br/><br/>"
@@ -71,7 +71,6 @@ def send_mail(subject, date_free_slot, booking):
     except Exception as e:
         # Print any error messages to stdout
         write_log(f"Error while sending mail: {e}")
-        exit()
     finally:
         server.quit()
         write_log("73kBot sent a mail to 73k05")
