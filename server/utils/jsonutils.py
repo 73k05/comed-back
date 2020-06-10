@@ -1,9 +1,6 @@
 import json
 from shutil import copyfile
 
-# Write in json file
-from log import write_server_log
-
 
 def write_department_availability(departments):
     dep_availability_json = '../../frontend/resources/json/departmentavailabilities.json'
