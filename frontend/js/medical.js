@@ -24,7 +24,7 @@ function initEventListener() {
 
 // Email JS init
 (function () {
-    //emailjs.init("user_okaI2d5BZr9wdrnselFor");
+    emailjs.init("user_okaI2d5BZr9wdrnselFor");
 })();
 
 function sendMail(form) {
