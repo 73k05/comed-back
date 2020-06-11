@@ -33,7 +33,7 @@ logger.addHandler(file_handler)
 scheduler = BackgroundScheduler()
 
 
-@scheduler.scheduled_job('interval', minutes=5, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=60, next_run_time=datetime.now())
 def update_online_booking_cron():
     update_online_booking_job()
 
