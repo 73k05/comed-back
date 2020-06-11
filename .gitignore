@@ -8,3 +8,5 @@ server/.idea/**
 .history
 /venv/
 /server/core/server.log
+/frontend/resources/json/bookingongoing.json
+/frontend/resources/json/bookingongoing_bk.json
