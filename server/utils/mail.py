@@ -3,7 +3,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from log import write_log
+from server.utils.log import write_log
 
 # Password
 pass_mail = ""

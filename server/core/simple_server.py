@@ -2,7 +2,6 @@ import logging
 import ssl
 from datetime import datetime
 from functools import wraps
-
 import bottle
 from beaker.middleware import SessionMiddleware
 from bottle import (
@@ -13,9 +12,12 @@ from bottle import (
 )
 from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
+from apscheduler.schedulers.background import BackgroundScheduler
+# import project files
+from server.core.addbooking import add_ongoing_booking
+from server.utils.log import write_server_log
+from server.core.checkonlinebooking import update_online_booking_job
 
-from addbooking import add_ongoing_booking
-from log import write_server_log
 
 logger = logging.getLogger('coMedServer')
 
@@ -26,6 +28,14 @@ formatter = logging.Formatter('%(msg)s')
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
+
+# set up background cron to check online booking every hour
+scheduler = BackgroundScheduler()
+
+
+@scheduler.scheduled_job('interval', minutes=5, next_run_time=datetime.now())
+def update_online_booking_cron():
+    update_online_booking_job()
 
 
 def log_to_logger(fn):
@@ -90,6 +100,7 @@ class SSLCherryPyServer(ServerAdapter):
         finally:
             server.stop()
 
+
 bottle_app = bottle.app()
 
 # Create the default bottle app and then wrap it around
@@ -149,4 +160,5 @@ port = 443
 host = '0.0.0.0'
 if __name__ == "__main__":
     write_server_log(f'Server https://{host}:{port} running...')
+    scheduler.start()
     run(app=app, host=host, port=port, server=SSLCherryPyServer)

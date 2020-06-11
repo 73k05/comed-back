@@ -1,7 +1,7 @@
 import requests
 from requests.exceptions import HTTPError
 
-from log import write_log
+from server.utils.log import write_log
 
 # fake header to bypass security
 headers = {

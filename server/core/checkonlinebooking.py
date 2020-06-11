@@ -3,26 +3,19 @@ import datetime
 import json
 # importing the requests library
 import sys
-
-sys.path.insert(1, '../utils')
-import time
-from bookingutils import get_open_slot
-from mail import send_mail
+from server.utils.bookingutils import get_open_slot
+from server.utils.mail import send_mail
 # Time lib to sleep
-from log import write_log
+from server.utils.log import write_log
+from server.utils.jsonutils import write_ongoing_booking, write_bk_booking
 
-from jsonutils import write_ongoing_booking, write_bk_booking
 
-# Count number of request sent
-nbRequestSent = 0
-urlDepartmentList = {}
-bookingOngoingList = {}
-maxDayToLookForward = 120
-
-# Sleeping time in minutes
-sleeptime = 30
-
-while 1 == 1:
+def update_online_booking_job ():
+    # Count number of request sent
+    nbRequestSent = 0
+    urlDepartmentList = {}
+    bookingOngoingList = {}
+    maxDayToLookForward = 120
 
     # Load Booking Ongoing List
     with open('../../frontend/resources/json/bookingongoing.json') as json_data:
@@ -65,6 +58,9 @@ while 1 == 1:
     write_ongoing_booking(bookingListCopy)
     write_bk_booking(bk_bookingList)
 
-    write_log(f"============ 73kBot will sleep {str(sleeptime)} minutes _o/ {str(nbRequestSent)} ============")
+    write_log(f"============ 73kBot successfully updated online booking _o/ {str(nbRequestSent)} ============")
+    return
 
-    time.sleep(sleeptime * 60)
+
+
+

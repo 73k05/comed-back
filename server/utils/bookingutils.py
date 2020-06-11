@@ -1,10 +1,10 @@
 import datetime
 
-from dateutils import get_date_from_data
-from dateutils import update_index_day_zero_to_today
-from log import write_log
-from requestsender import send_get_request
-from requestsender import send_post_request
+from server.utils.dateutils import get_date_from_data
+from server.utils.dateutils import update_index_day_zero_to_today
+from server.utils.log import write_log
+from server.utils.requestsender import send_get_request
+from server.utils.requestsender import send_post_request
 
 params = {
     "firstname": "Jack",
