@@ -9,6 +9,7 @@ from bottle import (
     run,
     request,
     ServerAdapter,
+    get
 )
 from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
@@ -17,6 +18,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from server.core.addbooking import add_ongoing_booking
 from server.utils.log import write_server_log
 from server.core.checkonlinebooking import update_online_booking_job
+from server.core.updatedepartmentavailability import update_department_availabilities_job
 
 
 logger = logging.getLogger('coMedServer')
@@ -33,9 +35,14 @@ logger.addHandler(file_handler)
 scheduler = BackgroundScheduler()
 
 
-@scheduler.scheduled_job('interval', minutes=60, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=30, next_run_time=datetime.now())
 def update_online_booking_cron():
     update_online_booking_job()
+
+
+@scheduler.scheduled_job('interval', minutes=60, next_run_time=datetime.now())
+def update_department_availabilities_cron():
+    update_department_availabilities_job()
 
 
 def log_to_logger(fn):
@@ -156,9 +163,18 @@ def new_booking():
     write_server_log('------------Booking added------------ \r\n')
 
 
+@get('/department_availabilities')
+def get_department_availabilities():
+    response.headers['Content-Type'] = 'application/json'
+    response.headers['Cache-Control'] = 'no-cache'
+    with open('../json/booking_ongoing.json', "r", encoding='utf-8') as file_handler:
+        return file_handler.read()
+
+
 port = 443
 host = '0.0.0.0'
 if __name__ == "__main__":
     write_server_log(f'Server https://{host}:{port} running...')
     scheduler.start()
     run(app=app, host=host, port=port, server=SSLCherryPyServer)
+    # run(app = app, host='localhost', port=port, debug=True)

@@ -10,7 +10,7 @@ from server.utils.log import write_log
 from server.utils.jsonutils import write_ongoing_booking, write_bk_booking
 
 
-def update_online_booking_job ():
+def update_online_booking_job():
     # Count number of request sent
     nbRequestSent = 0
     urlDepartmentList = {}
@@ -18,7 +18,7 @@ def update_online_booking_job ():
     maxDayToLookForward = 120
 
     # Load Booking Ongoing List
-    with open('../../frontend/resources/json/bookingongoing.json') as json_data:
+    with open('../json/booking_ongoing.json') as json_data:
         bookingList = json.load(json_data)["bookings"]
         bookingListCopy = copy.copy(bookingList)
 

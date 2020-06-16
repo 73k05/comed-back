@@ -3,8 +3,8 @@ from shutil import copyfile
 
 
 def write_department_availability(departments):
-    dep_availability_json = '../../frontend/resources/json/departmentavailabilities.json'
-    copyfile(dep_availability_json, '../../frontend/resources/json/departmentavailabilities_bk.json')
+    dep_availability_json = '../json/department_availabilities.json'
+    copyfile(dep_availability_json, '../json/department_availabilities_bk.json')
     with open(dep_availability_json, "w+") as json_file:
         json_data = {"departments": departments}
         json.dump(json_data, json_file, ensure_ascii=False, indent=2)
@@ -18,7 +18,7 @@ def write_bk_booking(bookings):
 
 # Write ongoing in json file
 def write_ongoing_booking(bookings):
-    bookings_json = '../../frontend/resources/json/bookingongoing.json'
+    bookings_json = '../json/booking_ongoing.json'
     write_booking(bookings, bookings_json)
 
 
