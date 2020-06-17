@@ -17,16 +17,20 @@ from apscheduler.schedulers.background import BackgroundScheduler
 # import project files
 from server.core.addbooking import add_ongoing_booking
 from server.utils.log import write_server_log
-from server.core.checkonlinebooking import update_online_booking_job
-from server.core.updatedepartmentavailability import update_department_availabilities_job
+from server.core.check_online_booking import CheckOnlineBooking
+from server.core.update_department_availability import UpdateDepartmentAvailabilities
 from server.config.configuration_manager import ConfigurationManager
 
 config = ConfigurationManager()
 # load configuration's parameters
-uob_cron_interval = int(config.active_configuration['UOB_CRON_INTERVAL'])
-uda_cron_interval = int(config.active_configuration['UDA_CRON_INTERVAL'])
-port = int(config.active_configuration['PORT'])
-host = config.active_configuration['HOST']
+COB_CRON_INTERVAL = int(config.active_configuration['COB_CRON_INTERVAL'])
+UDA_CRON_INTERVAL = int(config.active_configuration['UDA_CRON_INTERVAL'])
+PORT = int(config.active_configuration['PORT'])
+HOST = config.active_configuration['HOST']
+CERTIFICATE_PATH = config.active_configuration['CERTIFICATE_PATH']
+PRIVATE_KEY_PATH = config.active_configuration['PRIVATE_KEY_PATH']
+DEBUG = config.active_configuration['DEBUG']
+DEPT_AVAILABILITIES_CACHE_MAX_AGE = config.active_configuration['DEPT_AVAILABILITIES_CACHE_MAX_AGE']
 
 logger = logging.getLogger('coMedServer')
 
@@ -40,16 +44,18 @@ logger.addHandler(file_handler)
 
 # set up background cron to check online booking every hour
 scheduler = BackgroundScheduler()
+cob = CheckOnlineBooking()
+uda = UpdateDepartmentAvailabilities()
 
 
-@scheduler.scheduled_job('interval', minutes=uob_cron_interval, next_run_time=datetime.now())
-def update_online_booking_cron():
-    update_online_booking_job()
+@scheduler.scheduled_job('interval', minutes=COB_CRON_INTERVAL, next_run_time=datetime.now())
+def check_online_booking_cron():
+    cob.check_online_booking_job()
 
 
-@scheduler.scheduled_job('interval', minutes=uda_cron_interval, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=UDA_CRON_INTERVAL, next_run_time=datetime.now())
 def update_department_availabilities_cron():
-    update_department_availabilities_job()
+    uda.update_department_availabilities_job()
 
 
 def log_to_logger(fn):
@@ -80,9 +86,7 @@ class SSLCherryPyServer(ServerAdapter):
 
     def run(self, handler):
         server = wsgi.Server((self.host, self.port), handler)
-        # server.ssl_adapter = BuiltinSSLAdapter("./ssl/cacert.pem", "./ssl/privkey.pem")
-        server.ssl_adapter = BuiltinSSLAdapter("/etc/letsencrypt/live/73k05.xyz/cert.pem",
-                                               "/etc/letsencrypt/live/73k05.xyz/privkey.pem")
+        server.ssl_adapter = BuiltinSSLAdapter(CERTIFICATE_PATH, PRIVATE_KEY_PATH)
 
         # By default, the server will allow negotiations with extremely old protocols
         # that are susceptible to attacks, so we only allow TLSv1.2
@@ -150,15 +154,22 @@ def new_booking():
 @get('/department_availabilities')
 def get_department_availabilities():
     response.headers['Content-Type'] = 'application/json'
-    response.headers['Cache-Control'] = 'no-cache'
+    response.headers['Cache-Control'] = 'max-age=' + DEPT_AVAILABILITIES_CACHE_MAX_AGE
     with open('../json/department_availabilities.json', "r", encoding='utf-8') as da_file_handler:
         return da_file_handler.read()
 
 
+def shutdown_cron_jobs():
+    cob.cancelJob = True
+    uda.cancelJob = True
+    scheduler.remove_all_jobs()
+    scheduler.shutdown()
+
+
 if __name__ == "__main__":
-    write_server_log(f'Server https://{host}:{port} running...')
+    write_server_log(f'Server https://{HOST}:{PORT} running...')
     scheduler.start()
-    if config.active_configuration_name == 'PROD':
-        run(app=app, host=host, port=port, server=SSLCherryPyServer)
-    else:
-        run(app = app, host='localhost', port=port, debug=True)
+    run(app=app, host=HOST, port=PORT, server=SSLCherryPyServer, debug=DEBUG)
+    # if we reach here, run has exited (Ctrl-C)
+    # clean up (join) threads here
+    shutdown_cron_jobs()
