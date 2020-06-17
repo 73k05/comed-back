@@ -19,7 +19,14 @@ from server.core.addbooking import add_ongoing_booking
 from server.utils.log import write_server_log
 from server.core.checkonlinebooking import update_online_booking_job
 from server.core.updatedepartmentavailability import update_department_availabilities_job
+from server.config.configuration_manager import ConfigurationManager
 
+config = ConfigurationManager()
+# load configuration's parameters
+uob_cron_interval = int(config.active_configuration['UOB_CRON_INTERVAL'])
+uda_cron_interval = int(config.active_configuration['UDA_CRON_INTERVAL'])
+port = int(config.active_configuration['PORT'])
+host = config.active_configuration['HOST']
 
 logger = logging.getLogger('coMedServer')
 
@@ -35,12 +42,12 @@ logger.addHandler(file_handler)
 scheduler = BackgroundScheduler()
 
 
-@scheduler.scheduled_job('interval', minutes=30, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=uob_cron_interval, next_run_time=datetime.now())
 def update_online_booking_cron():
     update_online_booking_job()
 
 
-@scheduler.scheduled_job('interval', minutes=60, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=uda_cron_interval, next_run_time=datetime.now())
 def update_department_availabilities_cron():
     update_department_availabilities_job()
 
@@ -66,26 +73,6 @@ def log_to_logger(fn):
     return _log_to_logger
 
 
-# class EnableCors(object):
-#     name = 'enable_cors'
-#     api = 2
-#
-#     @staticmethod
-#     def apply(fn, context):
-#         def _enable_cors(*args, **kwargs):
-#             # set CORS headers
-#             response.headers['Access-Control-Allow-Origin'] = 'https://www.commissionmedicale.fr, https://localhost'
-#             response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, OPTIONS'
-#             response.headers[
-#                 'Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
-#
-#             if bottle.request.method != 'OPTIONS':
-#                 # actual request; reply with the actual response
-#                 return fn(*args, **kwargs)
-#
-#         return _enable_cors
-
-
 # Create our own sub-class of Bottle's ServerAdapter
 # so that we can specify SSL. Using just server='cherrypy'
 # uses the default cherrypy server, which doesn't use SSL
@@ -108,8 +95,6 @@ class SSLCherryPyServer(ServerAdapter):
             server.stop()
 
 
-bottle_app = bottle.app()
-
 # Create the default bottle app and then wrap it around
 # a beaker middleware and send it back to bottle to run
 session_opts = {
@@ -118,9 +103,8 @@ session_opts = {
     "session.data_dir": "./data",
     "session.auto": True,
 }
-# bottle_app.install(EnableCors())
+bottle_app = bottle.app()
 bottle_app.install(log_to_logger)
-
 app = SessionMiddleware(bottle_app, session_opts)
 
 
@@ -167,14 +151,14 @@ def new_booking():
 def get_department_availabilities():
     response.headers['Content-Type'] = 'application/json'
     response.headers['Cache-Control'] = 'no-cache'
-    with open('../json/booking_ongoing.json', "r", encoding='utf-8') as file_handler:
-        return file_handler.read()
+    with open('../json/department_availabilities.json', "r", encoding='utf-8') as da_file_handler:
+        return da_file_handler.read()
 
 
-port = 443
-host = '0.0.0.0'
 if __name__ == "__main__":
     write_server_log(f'Server https://{host}:{port} running...')
     scheduler.start()
-    run(app=app, host=host, port=port, server=SSLCherryPyServer)
-    # run(app = app, host='localhost', port=port, debug=True)
+    if config.active_configuration_name == 'PROD':
+        run(app=app, host=host, port=port, server=SSLCherryPyServer)
+    else:
+        run(app = app, host='localhost', port=port, debug=True)
