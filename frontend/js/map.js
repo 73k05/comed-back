@@ -67,7 +67,7 @@
 function getDepartment(departmentCode, departmentList) {
     var departmentToReturn;
     $.each(departmentList, function (index, department) {
-        if (parseInt(department.departmentCode) === parseInt(departmentCode)) {
+        if (department.departmentCode === departmentCode) {
             departmentToReturn = department;
             return department
         }

@@ -98,7 +98,9 @@ function populateSelect() {
         { "Department_Name": "Martinique" },
         { "Department_Name": "Guyane" },
         { "Department_Name": "La Réunion" },
-        { "Department_Name": "Mayotte" }
+        { "Department_Name": "Mayotte" },
+        { "Department_Name": "Corse-du-Sud" },
+        { "Department_Name": "Haute-Corse" }
     ];
 
     let element = document.getElementById('region');

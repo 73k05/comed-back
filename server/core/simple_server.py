@@ -31,6 +31,7 @@ CERTIFICATE_PATH = config.active_configuration['CERTIFICATE_PATH']
 PRIVATE_KEY_PATH = config.active_configuration['PRIVATE_KEY_PATH']
 DEBUG = config.active_configuration['DEBUG']
 DEPT_AVAILABILITIES_CACHE_MAX_AGE = config.active_configuration['DEPT_AVAILABILITIES_CACHE_MAX_AGE']
+CORS_ALLOW_ORIGIN = config.active_configuration['CORS_ALLOW_ORIGIN']
 
 logger = logging.getLogger('coMedServer')
 
@@ -135,7 +136,7 @@ def enable_cors_after_request_hook():
 
 
 def add_cors_headers():
-    bottle.response.headers['Access-Control-Allow-Origin'] = 'https://www.commissionmedicale.fr'
+    bottle.response.headers['Access-Control-Allow-Origin'] = CORS_ALLOW_ORIGIN
     bottle.response.headers['Access-Control-Allow-Methods'] = \
         'GET, POST, PUT, OPTIONS'
     bottle.response.headers['Access-Control-Allow-Headers'] = \
