@@ -23,8 +23,8 @@ from server.config.configuration_manager import ConfigurationManager
 
 config = ConfigurationManager()
 # load configuration's parameters
-COB_CRON_INTERVAL = int(config.active_configuration['COB_CRON_INTERVAL'])
-UDA_CRON_INTERVAL = int(config.active_configuration['UDA_CRON_INTERVAL'])
+BOOKING_CRON_INTERVAL = int(config.active_configuration['BOOKING_CRON_INTERVAL'])
+DEPARTMENT_CRON_INTERVAL = int(config.active_configuration['DEPARTMENT_CRON_INTERVAL'])
 PORT = int(config.active_configuration['PORT'])
 HOST = config.active_configuration['HOST']
 CERTIFICATE_PATH = config.active_configuration['CERTIFICATE_PATH']
@@ -48,12 +48,12 @@ cob = CheckOnlineBooking()
 uda = UpdateDepartmentAvailabilities()
 
 
-@scheduler.scheduled_job('interval', minutes=COB_CRON_INTERVAL, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=BOOKING_CRON_INTERVAL, next_run_time=datetime.now())
 def check_online_booking_cron():
     cob.check_online_booking_job()
 
 
-@scheduler.scheduled_job('interval', minutes=UDA_CRON_INTERVAL, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=DEPARTMENT_CRON_INTERVAL, next_run_time=datetime.now())
 def update_department_availabilities_cron():
     uda.update_department_availabilities_job()
 
