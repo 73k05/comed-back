@@ -8,7 +8,7 @@
         zoomOffset: -1
     }).addTo(map);
     //GEt dep availability list
-    $.getJSON("./resources/json/departmentavailabilities.json", function (departmentAvailabilityList) {
+    $.getJSON("https://localhost:3030/department_availabilities", function (departmentAvailabilityList) {
         //Get dep list in map
         $.getJSON("./resources/depmaps/departements.geojson", function (departmentJson) {
             L.geoJSON(departmentJson, {
@@ -67,7 +67,7 @@
 function getDepartment(departmentCode, departmentList) {
     var departmentToReturn;
     $.each(departmentList, function (index, department) {
-        if (parseInt(department.departmentCode) === parseInt(departmentCode)) {
+        if (department.departmentCode === departmentCode) {
             departmentToReturn = department;
             return department
         }

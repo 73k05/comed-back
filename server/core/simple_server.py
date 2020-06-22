@@ -135,7 +135,7 @@ def enable_cors_after_request_hook():
 
 
 def add_cors_headers():
-    bottle.response.headers['Access-Control-Allow-Origin'] = 'https://www.commissionmedicale.fr'
+    bottle.response.headers['Access-Control-Allow-Origin'] = CORS_ALLOW_ORIGIN
     bottle.response.headers['Access-Control-Allow-Methods'] = \
         'GET, POST, PUT, OPTIONS'
     bottle.response.headers['Access-Control-Allow-Headers'] = \
