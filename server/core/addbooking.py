@@ -1,20 +1,16 @@
 # Add a new booking to the JSON ongoing
 import datetime
 import json
-
-import sys
-
-sys.path.insert(1, '../utils')
-from log import write_server_log
+from utils.log import write_server_log
 # Load Booking Ongoing List
-from jsonutils import write_ongoing_booking
+from utils.jsonutils import write_ongoing_booking
 
 
 # Add a booking to ongoing booking list
 def add_ongoing_booking(booking):
     now = datetime.datetime.now()
     write_server_log(f"[{now.strftime('%H:%M')}] Add Booking to ongoing: {booking}")
-    with open('../../frontend/resources/json/bookingongoing.json', "r", encoding='utf-8') as json_data:
+    with open('../json/booking_ongoing.json', "r", encoding='utf-8') as json_data:
         bookingList = json.load(json_data)["bookings"]
 
     bookingList.append(add_endpoint_to_booking(booking))

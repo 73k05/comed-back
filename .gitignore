@@ -6,3 +6,5 @@ server/.idea/*.xml
 *.idea
 server/.idea/**
 .history
+/venv/
+/server/core/server.log
