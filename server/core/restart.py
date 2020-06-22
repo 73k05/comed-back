@@ -16,5 +16,4 @@ git_pull_process = Popen(["git", "pull"])
 git_pull_process.wait()
 
 print('Starting servers...')
-Popen(['nohup', 'python3.7', 'check_online_booking.py', '&'])
-Popen(['nohup', 'python3.7', 'simple_server.py', '&'])
+Popen(['nohup', 'python3.7', 'core/simple_server.py', '&'])
