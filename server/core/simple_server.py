@@ -15,11 +15,15 @@ from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
 from apscheduler.schedulers.background import BackgroundScheduler
 # import project files
-from core.addbooking import add_ongoing_booking
-from utils.log import write_server_log
-from core.check_online_booking import CheckOnlineBooking
-from core.update_department_availability import UpdateDepartmentAvailabilities
-from config.configuration_manager import ConfigurationManager
+import sys
+sys.path.insert(1, '../utils')
+sys.path.insert(1, '../core')
+sys.path.insert(1, '../config')
+from addbooking import add_ongoing_booking
+from log import write_server_log
+from check_online_booking import CheckOnlineBooking
+from update_department_availability import UpdateDepartmentAvailabilities
+from configuration_manager import ConfigurationManager
 
 config = ConfigurationManager()
 # load configuration's parameters

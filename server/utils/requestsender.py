@@ -1,7 +1,9 @@
 import requests
 from requests.exceptions import HTTPError
-
-from utils.log import write_log
+# import project files
+import sys
+sys.path.insert(1, '../utils')
+from log import write_log
 
 # fake header to bypass security
 headers = {

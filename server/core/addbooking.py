@@ -1,9 +1,12 @@
 # Add a new booking to the JSON ongoing
 import datetime
 import json
-from utils.log import write_server_log
+# import project files
+import sys
+sys.path.insert(1, '../utils')
+from log import write_server_log
 # Load Booking Ongoing List
-from utils.jsonutils import write_ongoing_booking
+from jsonutils import write_ongoing_booking
 
 
 # Add a booking to ongoing booking list
