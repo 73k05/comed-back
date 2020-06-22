@@ -12,7 +12,7 @@ def write_department_availability(departments):
 
 # Write backup in json file
 def write_bk_booking(bookings):
-    bookings_json = '../json/bk_booking.json'
+    bookings_json = '../json/booking_ongoing_bk.json'
     write_booking(bookings, bookings_json)
 
 

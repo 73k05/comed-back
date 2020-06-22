@@ -22,7 +22,7 @@ class CheckOnlineBooking:
             booking_list = json.load(json_data)["bookings"]
             booking_list_copy = copy.copy(booking_list)
 
-        with open('../json/bk_booking.json') as json_data:
+        with open('../json/booking_ongoing_bk.json') as json_data:
             bk_booking_list = json.load(json_data)["bookings"]
 
         nb_request_sent += 1
