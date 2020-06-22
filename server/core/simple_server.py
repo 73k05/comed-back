@@ -16,6 +16,7 @@ from cheroot.ssl.builtin import BuiltinSSLAdapter
 from apscheduler.schedulers.background import BackgroundScheduler
 # import project files
 import sys
+import tzlocal
 sys.path.insert(1, '../utils')
 sys.path.insert(1, '../core')
 sys.path.insert(1, '../config')
@@ -48,7 +49,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 # set up background cron to check online booking every hour
-scheduler = BackgroundScheduler(timezone='UTC')
+scheduler = BackgroundScheduler(timezone=tzlocal.get_localzone())
 cob = CheckOnlineBooking()
 uda = UpdateDepartmentAvailabilities()
 
