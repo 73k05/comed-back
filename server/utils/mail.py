@@ -75,5 +75,5 @@ def send_mail(subject, date_free_slot, booking):
         # Print any error messages to stdout
         write_log(f"Error while sending mail: {e}")
     finally:
-        quit()
+        server.quit()
         write_log("73kBot sent a mail to 73k05")
