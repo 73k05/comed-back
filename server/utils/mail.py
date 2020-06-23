@@ -66,11 +66,11 @@ def send_mail(subject, date_free_slot, booking):
     try:
         server = smtplib.SMTP(smtp_server, port)
         # Can be omitted
-        ehlo()
-        starttls()
-        ehlo()
-        login(sender_email, password)
-        sendmail(sender_email, toaddrs, text)
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login(sender_email, password)
+        server.sendmail(sender_email, toaddrs, text)
     except Exception as e:
         # Print any error messages to stdout
         write_log(f"Error while sending mail: {e}")

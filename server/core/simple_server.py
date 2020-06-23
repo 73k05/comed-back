@@ -49,7 +49,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 # set up background cron to check online booking every hour
-scheduler = BackgroundScheduler(timezone=tzlocal.get_localzone())
+scheduler = BackgroundScheduler()
 cob = CheckOnlineBooking()
 uda = UpdateDepartmentAvailabilities()
 
