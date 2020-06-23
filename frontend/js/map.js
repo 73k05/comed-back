@@ -8,7 +8,7 @@
         zoomOffset: -1
     }).addTo(map);
     //GEt dep availability list
-    $.getJSON("https://localhost:3030/department_availabilities", function (departmentAvailabilityList) {
+    $.getJSON("https://73k05.xyz/department_availabilities", function (departmentAvailabilityList) {
         //Get dep list in map
         $.getJSON("./resources/depmaps/departements.geojson", function (departmentJson) {
             L.geoJSON(departmentJson, {
