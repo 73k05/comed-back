@@ -18,11 +18,11 @@ class CheckOnlineBooking:
         max_day_to_look_forward = 120
 
         # Load Booking Ongoing List
-        with open('../json/booking_ongoing.json') as json_data:
+        with open('json/booking_ongoing.json') as json_data:
             booking_list = json.load(json_data)["bookings"]
             booking_list_copy = copy.copy(booking_list)
 
-        with open('../json/booking_ongoing_bk.json') as json_data:
+        with open('json/booking_ongoing_bk.json') as json_data:
             bk_booking_list = json.load(json_data)["bookings"]
 
         nb_request_sent += 1

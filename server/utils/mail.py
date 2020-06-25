@@ -7,7 +7,7 @@ from utils.log import write_log
 
 # Password
 pass_mail = ""
-with open('../json/config.json') as json_data:
+with open('json/config.json') as json_data:
     pass_mail = json.load(json_data)["creds"]
 
 

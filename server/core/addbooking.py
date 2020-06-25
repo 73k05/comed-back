@@ -10,7 +10,7 @@ from utils.jsonutils import write_ongoing_booking
 def add_ongoing_booking(booking):
     now = datetime.datetime.now()
     write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] Add Booking to ongoing: {booking}")
-    with open('../json/booking_ongoing.json', "r", encoding='utf-8') as json_data:
+    with open('json/booking_ongoing.json', "r", encoding='utf-8') as json_data:
         bookingList = json.load(json_data)["bookings"]
 
     bookingList.append(add_endpoint_to_booking(booking))
@@ -21,7 +21,7 @@ def add_ongoing_booking(booking):
 # Add endpoint datas to booking and return it
 def add_endpoint_to_booking(booking):
     now = datetime.datetime.now()
-    with open('../json/gouvendpoints.json', "r", encoding='utf-8') as json_data:
+    with open('json/gouvendpoints.json', "r", encoding='utf-8') as json_data:
         urlDepartmentList = json.load(json_data)["gouvUrlList"]
     for department in urlDepartmentList:
         try:

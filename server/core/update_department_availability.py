@@ -21,7 +21,7 @@ class UpdateDepartmentAvailabilities:
         max_day_to_look_forward = 120
 
         # Load dep list
-        with open('../json/gouvendpoints.json') as json_data:
+        with open('json/gouvendpoints.json') as json_data:
             url_department_list = json.load(json_data)["gouvUrlList"]
 
         department_availability_list = []

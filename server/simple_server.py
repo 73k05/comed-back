@@ -156,7 +156,7 @@ def new_booking():
 def get_department_availabilities():
     response.headers['Content-Type'] = 'application/json'
     response.headers['Cache-Control'] = 'max-age=' + DEPT_AVAILABILITIES_CACHE_MAX_AGE
-    with open('../json/department_availabilities.json', "r", encoding='utf-8') as da_file_handler:
+    with open('json/department_availabilities.json', "r", encoding='utf-8') as da_file_handler:
         return da_file_handler.read()
 
 

@@ -6,7 +6,8 @@ check if a slot is libre in for visite medical http://www.rdv.puy-de-dome.gouv.f
 ```
 sudo apt-get update -y
 sudo apt-get install -y python3.7 python3-python-utils python3-distutils python3-pip python3-setuptools 
-python3.7 -m pip install psutil
+python3.7 -m pip install psutil bottle beaker cheroot apscheduler
+
 ```
 ## **Note:** 
 after running the server if you faced error: unsupported locale setting then you need to install FR language on your device system
