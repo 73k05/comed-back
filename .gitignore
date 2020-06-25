@@ -8,3 +8,4 @@ server/.idea/**
 .history
 /venv/
 /server/core/server.log
+/server/json/*
