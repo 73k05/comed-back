@@ -2,13 +2,11 @@ import copy
 import datetime
 import json
 # import project files
-import sys
-sys.path.insert(1, '../utils')
-from bookingutils import get_open_slot
-from mail import send_mail
+from utils.bookingutils import get_open_slot
+from utils.mail import send_mail
 # Time lib to sleep
-from log import write_log
-from jsonutils import write_ongoing_booking, write_bk_booking
+from utils.log import write_log
+from utils.jsonutils import write_ongoing_booking, write_bk_booking
 
 
 class CheckOnlineBooking:

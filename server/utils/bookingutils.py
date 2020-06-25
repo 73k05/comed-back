@@ -1,12 +1,10 @@
 import datetime
-# import project files
-import sys
-sys.path.insert(1, '../utils')
-from dateutils import get_date_from_data
-from dateutils import update_index_day_zero_to_today
-from log import write_log
-from requestsender import send_get_request
-from requestsender import send_post_request
+#import project files
+from utils.dateutils import get_date_from_data
+from utils.dateutils import update_index_day_zero_to_today
+from utils.log import write_log
+from utils.requestsender import send_get_request
+from utils.requestsender import send_post_request
 
 params = {
     "firstname": "Jack",
