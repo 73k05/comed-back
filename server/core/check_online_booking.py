@@ -35,14 +35,11 @@ class CheckOnlineBooking:
             if self.cancelJob:
                 return
             now = datetime.datetime.now()
-            write_log("[" + now.strftime("%H:%M") + "] Booking...")
+            write_log("[" + now.strftime("%d/%m/%y %H:%M") + "] Booking...")
 
-            code = booking["departmentCode"]
             booking_choose_date = datetime.datetime.strptime(booking["bookingChooseDate"], "%d/%m/%Y")
             booked_date = datetime.datetime.now() + datetime.timedelta(days=max_day_to_look_forward) if not booking[
                 "bookedCurrentDate"] else datetime.datetime.strptime(booking["bookedCurrentDate"], "%d/%m/%Y")
-            email = booking["email"]
-            book_url = booking["bookUrl"]
 
             # Purge file
             if booked_date < now or booking_choose_date < now:
@@ -54,11 +51,10 @@ class CheckOnlineBooking:
             write_log(f"Department availability: {booking_slot}")
             date_free_slot = -1 if not booking_slot["date"] else booking_slot["date"]
             minimum_book_date = max(datetime.datetime.now(), booking_choose_date)
-            if booking_slot[
-                "is_open"] and date_free_slot != -1 and booked_date > date_free_slot >= minimum_book_date:
+            if booking_slot["is_open"] and date_free_slot != -1 and booked_date > date_free_slot >= minimum_book_date:
                 write_log(f"/!\\Slot found, sending email/!\\")
-                send_mail("[CoMed] Créneau disponible", date_free_slot, booking)
-                booking["bookedCurrentDate"] = date_free_slot.strftime("%d/%m/%Y")
+                if send_mail("[CoMed] Créneau disponible", date_free_slot, booking) == True:
+                    booking["bookedCurrentDate"] = date_free_slot.strftime("%d/%m/%Y")
 
         write_ongoing_booking(booking_list_copy)
         write_bk_booking(bk_booking_list)

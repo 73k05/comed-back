@@ -12,7 +12,7 @@ from jsonutils import write_ongoing_booking
 # Add a booking to ongoing booking list
 def add_ongoing_booking(booking):
     now = datetime.datetime.now()
-    write_server_log(f"[{now.strftime('%H:%M')}] Add Booking to ongoing: {booking}")
+    write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] Add Booking to ongoing: {booking}")
     with open('../json/booking_ongoing.json', "r", encoding='utf-8') as json_data:
         bookingList = json.load(json_data)["bookings"]
 
@@ -30,7 +30,7 @@ def add_endpoint_to_booking(booking):
         try:
             departmentName = department["departmentName"]
             if departmentName == booking["region"]:
-                write_server_log(f"[{now.strftime('%H:%M')}] Endpoint found: {department}")
+                write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] Endpoint found: {department}")
                 booking["departmentName"] = department["departmentName"]
                 booking["departmentCode"] = department["departmentCode"]
                 booking["bookUrl"] = department["bookUrl"]

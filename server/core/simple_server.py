@@ -169,7 +169,7 @@ def get_department_availabilities():
 def get_output():
     response.headers['Content-Type'] = 'text/plain; charset=utf-8'
     response.headers['Cache-Control'] = 'no-cache'
-    with open('output.txt', "r", encoding='utf-8') as da_file_handler:
+    with open('output.log', "r", encoding='utf-8') as da_file_handler:
         return da_file_handler.read()
 
 
