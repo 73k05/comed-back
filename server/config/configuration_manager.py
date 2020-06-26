@@ -1,7 +1,7 @@
 import configparser
 import os
 
-CONFIG_FILE_LOCATION = '../config/config.ini'
+CONFIG_FILE_LOCATION = 'config/config.ini'
 
 
 class ConfigurationManager:

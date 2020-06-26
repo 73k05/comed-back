@@ -1,12 +1,10 @@
 import datetime
 import json
-# import project files
-import sys
-sys.path.insert(1, '../utils')
-from bookingutils import get_open_slot
-from jsonutils import add_department_to_list
-from jsonutils import write_department_availability
-from log import write_log
+#import project files
+from utils.bookingutils import get_open_slot
+from utils.jsonutils import add_department_to_list
+from utils.jsonutils import write_department_availability
+from utils.log import write_log
 
 
 class UpdateDepartmentAvailabilities:
@@ -23,7 +21,7 @@ class UpdateDepartmentAvailabilities:
         max_day_to_look_forward = 120
 
         # Load dep list
-        with open('../json/gouvendpoints.json') as json_data:
+        with open('json/gouvendpoints.json') as json_data:
             url_department_list = json.load(json_data)["gouvUrlList"]
 
         department_availability_list = []

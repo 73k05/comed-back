@@ -7,4 +7,5 @@ server/.idea/*.xml
 server/.idea/**
 .history
 /venv/
-/server/core/server.log
+/server/json/*
+/server/*.log
