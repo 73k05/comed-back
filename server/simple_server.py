@@ -152,7 +152,7 @@ def new_booking():
     write_server_log('------------Booking added------------ \r\n')
 
 
-@get('/department_availabilities', )
+@get('/department_availabilities')
 def get_department_availabilities():
     response.headers['Content-Type'] = 'application/json'
     response.headers['Cache-Control'] = 'max-age=' + DEPT_AVAILABILITIES_CACHE_MAX_AGE
