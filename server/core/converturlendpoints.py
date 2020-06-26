@@ -13,7 +13,7 @@ nbTotalTries = 0
 nbEndPointsCracked = 0
 
 # Load dep list
-with open('../json/gouvendshortpointstocrack.json') as json_data:
+with open('json/gouvendshortpointstocrack.json') as json_data:
 	urlDepartmentList = json.load(json_data)["gouvUrlList"]
 
 # fake header to bypass security

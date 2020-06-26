@@ -2,15 +2,12 @@ import json
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-# import project files
-import sys
-sys.path.insert(1, '../utils')
-from log import write_log
+#import project files
+from utils.log import write_log
 
 # Password
 pass_mail = ""
-with open('../json/config.json') as json_data:
+with open('json/config.json') as json_data:
     pass_mail = json.load(json_data)["creds"]
 
 

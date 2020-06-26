@@ -15,19 +15,14 @@ from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
 from apscheduler.schedulers.background import BackgroundScheduler
 # import project files
-import sys
-import tzlocal
-sys.path.insert(1, '../utils')
-sys.path.insert(1, '../core')
-sys.path.insert(1, '../config')
-from addbooking import add_ongoing_booking
-from log import write_server_log
-from check_online_booking import CheckOnlineBooking
-from update_department_availability import UpdateDepartmentAvailabilities
-from configuration_manager import ConfigurationManager
+from core.addbooking import add_ongoing_booking
+from utils.log import write_server_log
+from core.check_online_booking import CheckOnlineBooking
+from core.update_department_availability import UpdateDepartmentAvailabilities
+from config.configuration_manager import ConfigurationManager
 
+# loads applicative configuration
 config = ConfigurationManager()
-# load configuration's parameters
 BOOKING_CRON_INTERVAL = int(config.active_configuration['BOOKING_CRON_INTERVAL'])
 DEPARTMENT_CRON_INTERVAL = int(config.active_configuration['DEPARTMENT_CRON_INTERVAL'])
 PORT = int(config.active_configuration['PORT'])
@@ -161,7 +156,7 @@ def new_booking():
 def get_department_availabilities():
     response.headers['Content-Type'] = 'application/json'
     response.headers['Cache-Control'] = 'max-age=' + DEPT_AVAILABILITIES_CACHE_MAX_AGE
-    with open('../json/department_availabilities.json', "r", encoding='utf-8') as da_file_handler:
+    with open('json/department_availabilities.json', "r", encoding='utf-8') as da_file_handler:
         return da_file_handler.read()
 
 
