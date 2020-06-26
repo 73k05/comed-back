@@ -24,33 +24,33 @@ function initEventListener() {
 
 // Email JS init
 (function () {
-    // emailjs.init("user_okaI2d5BZr9wdrnselFor");
+    emailjs.init("user_okaI2d5BZr9wdrnselFor");
 })();
 
 function sendMail(form) {
-    // if (form == undefined || !form.checkValidity()) {
-    //     console.error(
-    //         "Error, email empty or wrong or medical rendez-vous already sent"
-    //     );
-    //     return;
-    // }
-    //
-    // showProgressBar();
-    //
-    // emailjs.send("commissionmedicale", getTemplate(), getParams(form)).then(
-    //     function (response) {
-    //         console.log("SUCCESS!", response.status, response.text);
-    //         hideProgressBar();
-    //         showSuccesMessage();
-    //         onBookingSuccess(form);
-    //     },
-    //     function (error) {
-    //         enableBookButton(form);
-    //         console.log("FAILED...", error);
-    //         hideProgressBar();
-    //         showErrorMEssage();
-    //     }
-    // );
+    if (form == undefined || !form.checkValidity()) {
+        console.error(
+            "Error, email empty or wrong or medical rendez-vous already sent"
+        );
+        return;
+    }
+    
+    showProgressBar();
+
+    emailjs.send("commissionmedicale", getTemplate(), getParams(form)).then(
+        function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            hideProgressBar();
+            showSuccesMessage();
+            onBookingSuccess(form);
+        },
+        function (error) {
+            enableBookButton(form);
+            console.log("FAILED...", error);
+            hideProgressBar();
+            showErrorMEssage();
+        }
+    );
 }
 
 function disableBookButton(form) {
