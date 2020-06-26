@@ -33,8 +33,8 @@ def createBody(date_free_slot, booking):
 
 def send_mail(subject, date_free_slot, booking):
     if not pass_mail or pass_mail == "":
-        write_log("Sending mail impossible, creds missing, GOTO gouv/server/json/config.json")
-        return
+        write_log("Error Sending mail impossible, creds missing, GOTO gouv/server/json/config.json")
+        return False
 
     # Server config
     port = 587  # For SSL
@@ -71,9 +71,12 @@ def send_mail(subject, date_free_slot, booking):
         server.ehlo()
         server.login(sender_email, password)
         server.sendmail(sender_email, toaddrs, text)
+        write_log("Mail sent successfully")
+        return True
     except Exception as e:
         # Print any error messages to stdout
         write_log(f"Error while sending mail: {e}")
+        return False
     finally:
-        server.quit()
         write_log("73kBot sent a mail to 73k05")
+        server.quit()
