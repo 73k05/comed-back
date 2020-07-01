@@ -145,7 +145,7 @@ def add_cors_headers():
 
 @bottle.route('/booking/new', method=['POST'])
 def new_booking():
-    write_server_log('------------Add new booking ------------\r\n')
+    write_server_log('\r\n------------Add new booking ------------')
     write_server_log(request)
     write_server_log(request.json)
     add_ongoing_booking(request.json)

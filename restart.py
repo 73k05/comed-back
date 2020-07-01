@@ -18,7 +18,7 @@ git_pull_process = Popen(["git", "pull"])
 git_pull_process.wait()
 
 now = datetime.datetime.now()
-shutil.move("output.log", "output"+now.strftime("%d-%m-%y_%H:%M")+".log")
+shutil.move("output.log", "output" + now.strftime("%d-%m-%y_%H:%M") + ".log")
 
 print('Starting servers...')
 Popen(['nohup', 'python3.7', 'simple_server.py', '&'])

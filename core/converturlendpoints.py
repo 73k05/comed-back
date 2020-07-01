@@ -2,7 +2,7 @@ import datetime
 import json
 import requests
 from requests.exceptions import HTTPError
-from server.utils.log import write_log
+from utils.log import write_log
 
 nbMaxRequestPerDepartement = 200
 boundariesMin = 0
