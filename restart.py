@@ -1,12 +1,12 @@
+import datetime
+import shutil
 from subprocess import Popen
 
 import psutil
-import shutil
-import datetime
 
 for process in psutil.process_iter():
     try:
-        if process.cmdline() == ['python3.7', 'simple_server.py', '&']:
+        if process.cmdline() == ['python3.7', 'simple_server.py', 'PROD', '&']:
             print('Process found kill simple_server.py Terminating it. -Sarah Conor-')
             process.terminate()
     except ProcessLookupError as err:

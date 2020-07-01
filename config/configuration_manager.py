@@ -1,5 +1,6 @@
 import configparser
 import os
+import sys
 
 CONFIG_FILE_LOCATION = 'config/config.ini'
 
@@ -16,6 +17,8 @@ class ConfigurationManager:
 
         config.read(CONFIG_FILE_LOCATION)
         # gets the active app's configuration name
-        self.default_configuration = config['DEFAULT']
-        self.active_configuration_name = self.default_configuration['ACTIVE_CONFIGURATION']
-        self.active_configuration = config[self.active_configuration_name]
+        if len(sys.argv) <= 1 or (str(sys.argv[1]) != "DEV_JRE" and str(sys.argv[1]) != "PROD"):
+            print("Error, cannot start server if not given argument parameter DEV_JRE|PROD")
+            quit()
+        else:
+            self.active_configuration = config[str(sys.argv[1])]
