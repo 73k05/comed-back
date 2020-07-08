@@ -9,7 +9,3 @@ class GouvEndPoint(MongoModel):
     endPointUrl = fields.CharField(blank=True)
     indexDayZero = fields.IntegerField()
     bookUrl = fields.CharField(blank=True)
-
-    # class Meta:
-    #     write_concern = WriteConcern(j=True)
-    #     connection_alias = 'my-app'
