@@ -28,12 +28,12 @@ def add_endpoint_to_booking(booking):
         return
 
     try:
-            write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] Endpoint found: {department}")
-            booking["departmentName"] = department.departmentName
-            booking["departmentCode"] = department.departmentCode
-            booking["bookUrl"] = department.bookUrl
-            booking["endPointUrl"] = department.endPointUrl
-            booking["indexDayZero"] = department.indexDayZero
+        write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] Endpoint found: {department}")
+        booking["departmentName"] = department.departmentName
+        booking["departmentCode"] = department.departmentCode
+        booking["bookUrl"] = department.bookUrl
+        booking["endPointUrl"] = department.endPointUrl
+        booking["indexDayZero"] = department.indexDayZero
     except:
         write_server_log(f"[{now.strftime('%H:%M')}] JSON ERROR!")
     return booking
