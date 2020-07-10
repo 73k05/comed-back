@@ -1,8 +1,6 @@
 # Add a new booking to the JSON ongoing
 import datetime
-import json
-#import project files
-from model.booking_ongoing import BookingOngoing
+
 from model.gouv_endpoint import GouvEndPoint
 from utils.json_to_model_converter import to_booking_ongoing
 from utils.log import write_server_log
@@ -13,6 +11,7 @@ def add_ongoing_booking(booking):
     now = datetime.datetime.now()
     write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] Add Booking to ongoing: {booking}")
 
+    # add endpoint to new booking, and save it to db
     add_endpoint_to_booking(booking)
     booking_ongoing = to_booking_ongoing(booking)
     booking_ongoing.save()
@@ -25,7 +24,12 @@ def add_endpoint_to_booking(booking):
     department = GouvEndPoint.objects.raw({"departmentName": region}).first()
     if department is None:
         write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] No endpoint found: {region}")
-        return
+        booking["departmentName"] = ""
+        booking["departmentCode"] = ""
+        booking["bookUrl"] = ""
+        booking["endPointUrl"] = ""
+        booking["indexDayZero"] = 0
+        return booking
 
     try:
         write_server_log(f"[{now.strftime('%d/%m/%y %H:%M')}] Endpoint found: {department}")
