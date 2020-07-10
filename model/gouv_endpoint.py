@@ -1,5 +1,6 @@
+from datetime import datetime
+
 from pymodm import MongoModel, fields
-from pymongo.write_concern import WriteConcern
 
 
 class GouvEndPoint(MongoModel):
@@ -9,3 +10,11 @@ class GouvEndPoint(MongoModel):
     endPointUrl = fields.CharField(blank=True)
     indexDayZero = fields.IntegerField()
     bookUrl = fields.CharField(blank=True)
+    createDate = fields.DateTimeField()
+    updateDate = fields.DateTimeField()
+
+    def save(self):
+        self.updateDate = datetime.now()
+        if not self.createDate:
+            self.createDate = datetime.now()
+        super(GouvEndPoint, self).save()

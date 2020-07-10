@@ -1,8 +1,10 @@
-from pymodm import MongoModel, fields
+from datetime import datetime
+
+from pymodm import fields, MongoModel
 
 
 class BookingOngoing(MongoModel):
-    email = fields.EmailField(primary_key=True)
+    email = fields.EmailField()
     firstName = fields.CharField()
     lastName = fields.CharField()
     phone = fields.CharField()
@@ -21,3 +23,12 @@ class BookingOngoing(MongoModel):
     bookUrl = fields.CharField()
     endPointUrl = fields.CharField()
     indexDayZero = fields.CharField()
+    purged = fields.BooleanField()
+    createDate = fields.DateTimeField()
+    updateDate = fields.DateTimeField()
+
+    def save(self):
+        self.updateDate = datetime.now()
+        if not self.createDate:
+            self.createDate = datetime.now()
+        super(BookingOngoing, self).save()
