@@ -64,4 +64,17 @@ pip3 install cheroot
 pip3 install beaker
 pip3 install paramiko
 pip3 install apscheduler
+pip3 install pymodm
 ```
+
+# MongoDB
+## Mac
+### Install
+`brew tap mongodb/brew`
+`brew install mongodb-community@4.2`
+### Start/stop
+`brew services start mongodb-community@4.2`
+`brew services stop mongodb-community@4.2`
+### Run in BG
+`mongod --config /usr/local/etc/mongod.conf --fork`
+`ps aux | grep -v grep | grep mongod`
