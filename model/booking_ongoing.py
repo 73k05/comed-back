@@ -23,7 +23,7 @@ class BookingOngoing(MongoModel):
     bookUrl = fields.CharField()
     endPointUrl = fields.CharField()
     indexDayZero = fields.CharField()
-    purged = fields.BooleanField()
+    archived = fields.BooleanField()
     createDate = fields.DateTimeField()
     updateDate = fields.DateTimeField()
 

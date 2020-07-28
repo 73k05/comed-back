@@ -18,7 +18,7 @@ class CheckOnlineBooking:
         nb_request_sent += 1
 
         # Check all prefs
-        for booking in BookingOngoing.objects.raw({"purged": False}):
+        for booking in BookingOngoing.objects.raw({"archived": False}):
             # to handle server stop without waiting the end of job
             if self.cancelJob:
                 return
@@ -29,9 +29,9 @@ class CheckOnlineBooking:
             booked_date = datetime.datetime.now() + datetime.timedelta(days=max_day_to_look_forward) if not booking\
                 .bookedCurrentDate else booking.bookedCurrentDate
 
-            # Tag as purged
+            # Tag as archived
             if booked_date < now or booking_choose_date < now:
-                booking.purged = True
+                booking.archived = True
                 booking.save()
                 continue
 

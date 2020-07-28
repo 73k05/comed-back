@@ -27,7 +27,7 @@ def to_booking_ongoing(json_item):
     booking.bookUrl = json_item["bookUrl"]
     booking.endPointUrl = json_item["endPointUrl"]
     booking.indexDayZero = json_item["indexDayZero"]
-    booking.purged = False
+    booking.archived = False
     return booking
 
 
