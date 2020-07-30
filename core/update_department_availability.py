@@ -3,7 +3,7 @@ import datetime
 # import project files
 from model.department_availability import DepartmentAvailability
 from model.gouv_endpoint import GouvEndPoint
-from utils.bookingutils import get_open_slot
+from utils.request.bookingutils import get_open_slot
 from utils.log import write_log
 
 

@@ -2,7 +2,7 @@
 import datetime
 
 from model.gouv_endpoint import GouvEndPoint
-from utils.json_to_model_converter import to_booking_ongoing
+from utils.converter.json_to_model_converter import to_booking_ongoing
 from utils.log import write_server_log
 
 

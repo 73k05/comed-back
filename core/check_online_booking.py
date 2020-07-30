@@ -2,7 +2,7 @@ import datetime
 
 # import project files
 from model.booking_ongoing import BookingOngoing
-from utils.bookingutils import get_open_slot
+from utils.request.bookingutils import get_open_slot
 # Time lib to sleep
 from utils.log import write_log
 from utils.mail import send_mail

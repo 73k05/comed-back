@@ -3,8 +3,8 @@ import datetime
 from utils.dateutils import get_date_from_data
 from utils.dateutils import update_index_day_zero_to_today
 from utils.log import write_log
-from utils.requestsender import send_get_request
-from utils.requestsender import send_post_request
+from utils.request.requestsender import send_get_request
+from utils.request.requestsender import send_post_request
 
 params = {
     "firstname": "Jack",

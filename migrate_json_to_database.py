@@ -1,10 +1,9 @@
 import json
 
 from pymodm.connection import connect
+from utils.converter.json_to_model_converter import to_booking_ongoing, to_gouv_endpoint, to_department_availability
 
 from config.configuration_manager import ConfigurationManager
-from model.booking_ongoing import BookingOngoing
-from utils.json_to_model_converter import to_booking_ongoing, to_gouv_endpoint, to_department_availability
 
 config = ConfigurationManager()
 DB_URL = config.active_configuration['DATABASE_URL']
