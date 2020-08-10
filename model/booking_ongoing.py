@@ -3,7 +3,7 @@ from datetime import datetime
 from pymodm import fields, MongoModel
 
 
-class BookingOngoing(MongoModel):
+class Booking(MongoModel):
     email = fields.EmailField()
     firstName = fields.CharField()
     lastName = fields.CharField()
@@ -31,4 +31,4 @@ class BookingOngoing(MongoModel):
         self.updateDate = datetime.now()
         if not self.createDate:
             self.createDate = datetime.now()
-        super(BookingOngoing, self).save()
+        super(Booking, self).save()

@@ -1,7 +1,7 @@
 import json
 
 from pymodm.connection import connect
-from model.booking_ongoing import BookingOngoing
+from model.booking_ongoing import Booking
 from model.department_availability import DepartmentAvailability
 from model.gouv_endpoint import GouvEndPoint
 from utils.converter.json_to_model_converter import to_booking_ongoing, to_gouv_endpoint, to_department_availability
@@ -28,7 +28,18 @@ with open('json/booking_ongoing.json') as json_data:
 bookings_ongoing = []
 for booking_json in bookings:
     bookings_ongoing.append(to_booking_ongoing(booking_json))
-BookingOngoing.objects.bulk_create(bookings_ongoing)
+Booking.objects.bulk_create(bookings_ongoing)
+
+with open('json/booking_ongoing_bk.json') as json_data:
+    bookings_archived = json.load(json_data)["bookings"]
+
+# Creates BK archived bookings in db
+booking_archived_list = []
+for booking_archived_json in bookings_archived:
+    booking_archived = to_booking_ongoing(booking_archived_json)
+    booking_archived.archived = True
+    booking_archived_list.append(booking_archived)
+Booking.objects.bulk_create(booking_archived_list)
 
 with open('json/department_availabilities.json') as json_data:
     department_availabilities_json = json.load(json_data)["departments"]

@@ -1,7 +1,7 @@
 import datetime
 
 # import project files
-from model.booking_ongoing import BookingOngoing
+from model.booking_ongoing import Booking
 from utils.request.bookingutils import get_open_slot
 # Time lib to sleep
 from utils.log import write_log
@@ -18,7 +18,7 @@ class CheckOnlineBooking:
         nb_request_sent += 1
 
         # Check all prefs
-        for booking in BookingOngoing.objects.raw({"archived": False}):
+        for booking in Booking.objects.raw({"archived": False}):
             # to handle server stop without waiting the end of job
             if self.cancelJob:
                 return

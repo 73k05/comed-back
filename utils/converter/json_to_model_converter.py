@@ -1,11 +1,11 @@
-from model.booking_ongoing import BookingOngoing
+from model.booking_ongoing import Booking
 from model.department_availability import DepartmentAvailability
 from model.gouv_endpoint import GouvEndPoint
 from utils.dateutils import string_to_date
 
 
 def to_booking_ongoing(json_item):
-    booking = BookingOngoing()
+    booking = Booking()
     booking.email = json_item["email"]
     booking.firstName = json_item["firstname"]
     booking.lastName = json_item["lastname"]
