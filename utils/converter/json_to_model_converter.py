@@ -10,11 +10,17 @@ def to_booking_ongoing(json_item):
     booking.firstName = json_item["firstname"]
     booking.lastName = json_item["lastname"]
     booking.phone = json_item["phone"]
-    booking.number = json_item["number"]
+    try:
+        booking.number = json_item["number"]
+        booking.birthName = json_item["birthname"]
+        booking.typeVisit = json_item["typevisit"]
+        booking.region = json_item["region"]
+    except:
+        booking.birthName = ""
+        booking.number = 0
+        booking.typeVisit = ""
+        booking.region = ""
     booking.birthDate = string_to_date(json_item["birthdate"])
-    booking.birthName = json_item["birthname"]
-    booking.region = json_item["region"]
-    booking.typeVisit = json_item["typevisit"]
     booking.bookingChooseDate = string_to_date(json_item["bookingChooseDate"])
     # avoid resetting booked current date if user subscribe twice
     if json_item["bookedCurrentDate"]:

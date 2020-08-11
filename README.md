@@ -75,6 +75,10 @@ pip3 install pymodm
 ### Start/stop
 `brew services start mongodb-community@4.2`
 `brew services stop mongodb-community@4.2`
+## Linux
+### Install
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 ### Run in BG
 `mongod --config /usr/local/etc/mongod.conf --fork`
+### Check process
 `ps aux | grep -v grep | grep mongod`
