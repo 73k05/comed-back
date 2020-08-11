@@ -14,6 +14,7 @@ from bottle import (
 from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
 from apscheduler.schedulers.background import BackgroundScheduler
+from pymodm.connection import connect
 # import project files
 from core.addbooking import add_ongoing_booking
 from utils.log import write_server_log
@@ -32,6 +33,7 @@ PRIVATE_KEY_PATH = config.active_configuration['PRIVATE_KEY_PATH']
 DEBUG = config.active_configuration['DEBUG']
 DEPT_AVAILABILITIES_CACHE_MAX_AGE = config.active_configuration['DEPT_AVAILABILITIES_CACHE_MAX_AGE']
 CORS_ALLOW_ORIGIN = config.active_configuration['CORS_ALLOW_ORIGIN']
+DB_URL = config.active_configuration['DATABASE_URL']
 
 logger = logging.getLogger('coMedServer')
 
@@ -42,6 +44,9 @@ formatter = logging.Formatter('%(msg)s')
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
+
+# Connects to database
+connect(DB_URL)
 
 # set up background cron to check online booking every hour
 scheduler = BackgroundScheduler()

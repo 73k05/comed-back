@@ -3,8 +3,8 @@ import datetime
 from utils.dateutils import get_date_from_data
 from utils.dateutils import update_index_day_zero_to_today
 from utils.log import write_log
-from utils.requestsender import send_get_request
-from utils.requestsender import send_post_request
+from utils.request.requestsender import send_get_request
+from utils.request.requestsender import send_post_request
 
 params = {
     "firstname": "Jack",
@@ -35,10 +35,10 @@ def get_params_from_user(userJson):
 
 
 def get_open_slot(department, max_day_to_look_forward, date_wanted):
-    department_name = department["departmentName"]
-    end_point_url = department["endPointUrl"]
-    department_book_url = department["bookUrl"]
-    day_zero = department["indexDayZero"]
+    department_name = department.departmentName
+    end_point_url = department.endPointUrl
+    department_book_url = department.bookUrl
+    day_zero = department.indexDayZero
 
     write_log("[" + date_wanted.strftime("%H:%M") + "] Department " + str(department_name) + " availability update...")
 

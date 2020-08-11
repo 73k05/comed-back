@@ -71,3 +71,10 @@ def update_index_day_zero_to_today(index_day_zero, date_zero, date_today):
     if index_day_zero < 0:
         index_day_zero = 0
     return index_day_zero
+
+
+def string_to_date(date_string_value):
+    if not date_string_value:
+        return None
+    return datetime.datetime.strptime(date_string_value, '%d/%m/%Y')
+
