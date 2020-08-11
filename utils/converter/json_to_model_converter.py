@@ -15,7 +15,7 @@ def to_booking_ongoing(json_item):
         booking.birthName = json_item["birthname"]
         booking.typeVisit = json_item["typevisit"]
         booking.region = json_item["region"]
-    except:
+    except KeyError:
         booking.birthName = ""
         booking.number = 0
         booking.typeVisit = ""
