@@ -22,7 +22,7 @@ class Booking(MongoModel):
     departmentCode = fields.CharField()
     bookUrl = fields.CharField()
     endPointUrl = fields.CharField()
-    indexDayZero = fields.CharField()
+    indexDayZero = fields.IntegerField()
     archived = fields.BooleanField()
     createDate = fields.DateTimeField()
     updateDate = fields.DateTimeField()

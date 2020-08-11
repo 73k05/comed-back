@@ -1,4 +1,4 @@
-from model.booking_ongoing import Booking
+from model.booking import Booking
 from model.department_availability import DepartmentAvailability
 from model.gouv_endpoint import GouvEndPoint
 from utils.dateutils import string_to_date

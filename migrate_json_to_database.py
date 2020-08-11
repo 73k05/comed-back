@@ -1,7 +1,7 @@
 import json
 
 from pymodm.connection import connect
-from model.booking_ongoing import Booking
+from model.booking import Booking
 from model.department_availability import DepartmentAvailability
 from model.gouv_endpoint import GouvEndPoint
 from utils.converter.json_to_model_converter import to_booking_ongoing, to_gouv_endpoint, to_department_availability

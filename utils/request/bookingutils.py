@@ -35,8 +35,8 @@ def get_params_from_user(userJson):
 
 
 def get_open_slot(department, max_day_to_look_forward, date_wanted):
-    department_name = department.departmentCode
-    end_point_url = department.departmentName
+    department_name = department.departmentName
+    end_point_url = department.endPointUrl
     department_book_url = department.bookUrl
     day_zero = department.indexDayZero
 
