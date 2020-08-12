@@ -21,4 +21,4 @@ now = datetime.datetime.now()
 shutil.move("output.log", "output" + now.strftime("%d-%m-%y_%H:%M") + ".log")
 
 print('Starting servers...')
-Popen(['nohup', 'python3.7', 'simple_server.py', '&'])
+Popen(['nohup', 'python3.7', 'simple_server.py', 'PROD', '&'])
