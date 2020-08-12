@@ -1,4 +1,3 @@
-output.log
 server/__pycache__
 utils/__pycache__
 server/.idea
@@ -8,4 +7,5 @@ server/.idea/**
 .history
 /venv/
 /json/*
-/server/*.log
+output.log
+server.log
