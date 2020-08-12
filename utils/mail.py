@@ -12,9 +12,9 @@ with open('json/config.json') as json_data:
 
 
 def createBody(date_free_slot, booking):
-    content = f"Bonjour {booking['firstname']},<br/><br/>"
+    content = f"Bonjour {booking.firstName},<br/><br/>"
     content += f"Merci d'avoir réservé sur <a href='https://www.commissionmedicale.fr'>CommissionMedicale</a>. Nous avons trouvé un créneau pouvant vous interesser. "
-    content += f"Rendez-vous au plus vite sur <a href={booking['bookUrl']}>le site du gouvernement</a>, la date {date_free_slot.strftime('%d/%m/%Y')} est disponible. " \
+    content += f"Rendez-vous au plus vite sur <a href={booking.bookUrl}>le site du gouvernement</a>, la date {date_free_slot.strftime('%d/%m/%Y')} est disponible. " \
                f"Si le créneau {date_free_slot.strftime('%d/%m/%Y')} n'est plus disponible, notre outil est déjà en train de chercher une meilleure date pour vous.<br/><br/>" \
                f"Dans le cas où le créneau {date_free_slot.strftime('%d/%m/%Y')} est proche de la date souhaitée, " \
                f"moins d'une semaine par exemple, il sera difficile d'en trouver un plus encore proche. " \
@@ -37,7 +37,7 @@ def send_mail(subject, date_free_slot, booking):
     port = 587  # For SSL
     smtp_server = "mail34.lwspanel.com"
     sender_email = "booking@commissionmedicale.fr"  # Enter your address
-    receiver_email = booking["email"]
+    receiver_email = booking.email
     bcc = "contact@commissionmedicale.fr"
     password = pass_mail
 
