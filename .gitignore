@@ -1,4 +1,4 @@
-output.txt
+output.log
 server/__pycache__
 utils/__pycache__
 server/.idea
