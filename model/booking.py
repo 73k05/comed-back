@@ -1,6 +1,9 @@
 from datetime import datetime
 
 from pymodm import fields, MongoModel
+from pymodm.errors import ValidationError
+
+from utils.log import write_log
 
 
 class Booking(MongoModel):
@@ -11,7 +14,7 @@ class Booking(MongoModel):
     number = fields.IntegerField()
     birthDate = fields.DateTimeField()
     birthName = fields.CharField(blank=True)
-    region = fields.CharField()
+    region = fields.CharField(blank=True)
     typeVisit = fields.CharField()
     bookingChooseDate = fields.DateTimeField()
     bookedCurrentDate = fields.DateTimeField(blank=True)
@@ -19,9 +22,9 @@ class Booking(MongoModel):
     addressZip = fields.CharField()
     addressCity = fields.CharField()
     departmentName = fields.CharField()
-    departmentCode = fields.CharField()
-    bookUrl = fields.CharField()
-    endPointUrl = fields.CharField()
+    departmentCode = fields.CharField(blank=True)
+    bookUrl = fields.CharField(blank=True)
+    endPointUrl = fields.CharField(blank=True)
     indexDayZero = fields.IntegerField()
     archived = fields.BooleanField()
     createDate = fields.DateTimeField()
@@ -31,4 +34,7 @@ class Booking(MongoModel):
         self.updateDate = datetime.now()
         if not self.createDate:
             self.createDate = datetime.now()
-        super(Booking, self).save()
+            try:
+                super(Booking, self).save()
+            except ValidationError as e:
+                write_log(f"Error saving booking: {e}")

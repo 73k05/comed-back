@@ -1,37 +1,11 @@
 import datetime
-#import project files
+
+# import project files
 from utils.dateutils import get_date_from_data
 from utils.dateutils import update_index_day_zero_to_today
 from utils.log import write_log
 from utils.request.requestsender import send_get_request
 from utils.request.requestsender import send_post_request
-
-params = {
-    "firstname": "Jack",
-    "lastname": "Bolet",
-    "email": "qdfgfaezrr@yopmail.com",
-    "emailcheck": "qdfgfaezrr@yopmail.com",
-    "eZBookingAdditionalField_value_877": "01/01/1991",
-    "eZBookingAdditionalField_value_878": "Bolet",
-    "eZBookingAdditionalField_value_879": "3 rue Pierre",
-    "eZBookingAdditionalField_value_881": "07000",
-    "eZBookingAdditionalField_value_882": "Privas"
-}
-
-
-def get_params_from_user(userJson):
-    params = {
-        "firstname": userJson["firstname"],
-        "lastname": userJson["lastname"],
-        "email": userJson["email"],
-        "emailcheck": userJson["emailcheck"],
-        "eZBookingAdditionalField_value_877": userJson["birthDate"],
-        "eZBookingAdditionalField_value_878": userJson["lastname"],
-        "eZBookingAdditionalField_value_879": userJson["lastname"],
-        "eZBookingAdditionalField_value_879": "3 rue Pierre",
-        "eZBookingAdditionalField_value_881": "07000",
-        "eZBookingAdditionalField_value_882": "Privas"}
-    return params
 
 
 def get_open_slot(department, max_day_to_look_forward, date_wanted):
@@ -79,7 +53,7 @@ def get_open_slot(department, max_day_to_look_forward, date_wanted):
             index_footer = data.find('<footer>')
             closed_sentence = "Attention : Cette page n'est pas disponible pour le moment !"
             closed = data.find('ultérieurement', 0, index_footer) != -1 or data.find(closed_sentence, 0,
-                                                                                    index_footer) != -1
+                                                                                     index_footer) != -1
             if closed:
                 return {"is_open": False, "date": booking_try_date}
             else:

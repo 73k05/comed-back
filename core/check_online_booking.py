@@ -30,7 +30,8 @@ class CheckOnlineBooking:
                 .bookedCurrentDate else booking.bookedCurrentDate
 
             # Tag as archived
-            if booked_date < now or booking_choose_date < now:
+            if booked_date < now or booking_choose_date < now or not booking.endPointUrl:
+                write_log(f"Archiving booking of: {booking.email}")
                 booking.archived = True
                 booking.save()
                 continue
