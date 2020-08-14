@@ -2,7 +2,9 @@ import logging
 import ssl
 from datetime import datetime
 from functools import wraps
+
 import bottle
+from apscheduler.schedulers.background import BackgroundScheduler
 from beaker.middleware import SessionMiddleware
 from bottle import (
     response,
@@ -11,16 +13,18 @@ from bottle import (
     ServerAdapter,
     get
 )
+from bson.json_util import dumps
 from cheroot import wsgi
 from cheroot.ssl.builtin import BuiltinSSLAdapter
-from apscheduler.schedulers.background import BackgroundScheduler
 from pymodm.connection import connect
+from pymongo import MongoClient
+
+from config.configuration_manager import ConfigurationManager
 # import project files
 from core.addbooking import add_ongoing_booking
-from utils.log import write_server_log
 from core.check_online_booking import CheckOnlineBooking
 from core.update_department_availability import UpdateDepartmentAvailabilities
-from config.configuration_manager import ConfigurationManager
+from utils.log import write_server_log
 
 # loads applicative configuration
 config = ConfigurationManager()
@@ -33,7 +37,12 @@ PRIVATE_KEY_PATH = config.active_configuration['PRIVATE_KEY_PATH']
 DEBUG = config.active_configuration['DEBUG']
 DEPT_AVAILABILITIES_CACHE_MAX_AGE = config.active_configuration['DEPT_AVAILABILITIES_CACHE_MAX_AGE']
 CORS_ALLOW_ORIGIN = config.active_configuration['CORS_ALLOW_ORIGIN']
+# PyMdom
 DB_URL = config.active_configuration['DATABASE_URL']
+# PyMongo
+DATABASE_HOST = config.active_configuration['DATABASE_HOST']
+DATABASE_PORT = int(config.active_configuration['DATABASE_PORT'])
+DATABASE_NAME = config.active_configuration['DATABASE_NAME']
 
 logger = logging.getLogger('coMedServer')
 
@@ -45,8 +54,11 @@ file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-# Connects to database
+# Connects to database pymdom
 connect(DB_URL)
+# Connects to database pymongo
+client = MongoClient(DATABASE_HOST, DATABASE_PORT)
+comed_database = client[DATABASE_NAME]
 
 # set up background cron to check online booking every hour
 scheduler = BackgroundScheduler()
@@ -161,8 +173,7 @@ def new_booking():
 def get_department_availabilities():
     response.headers['Content-Type'] = 'application/json'
     response.headers['Cache-Control'] = 'max-age=' + DEPT_AVAILABILITIES_CACHE_MAX_AGE
-    with open('json/department_availabilities.json', "r", encoding='utf-8') as da_file_handler:
-        return da_file_handler.read()
+    return dumps(list(comed_database.department_availability.find()))
 
 
 @get('/logs')

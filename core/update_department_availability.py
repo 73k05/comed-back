@@ -3,8 +3,8 @@ import datetime
 # import project files
 from model.department_availability import DepartmentAvailability
 from model.gouv_endpoint import GouvEndPoint
-from utils.request.bookingutils import get_open_slot
 from utils.log import write_log
+from utils.request.bookingutils import get_open_slot
 
 
 class UpdateDepartmentAvailabilities:
@@ -42,7 +42,7 @@ class UpdateDepartmentAvailabilities:
             department_book_url = gouv_endpoint.bookUrl
 
             # Bypass this department if needed for efficient testing sometimes
-            if gouv_endpoint.bypass or nb_request_sent < department_start_index or\
+            if gouv_endpoint.bypass or nb_request_sent < department_start_index or \
                     nb_request_sent > department_stop_index:
                 write_log("Skip dep!")
                 self.save_department_availability(department_code, department_name, {"is_open": False, "date": ""},
