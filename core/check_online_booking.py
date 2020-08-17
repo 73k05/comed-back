@@ -2,10 +2,10 @@ import datetime
 
 # import project files
 from model.booking import Booking
-from utils.request.bookingutils import get_open_slot
 # Time lib to sleep
 from utils.log import write_log
 from utils.mail import send_mail
+from utils.request.bookingutils import get_open_slot
 
 
 class CheckOnlineBooking:
@@ -15,10 +15,10 @@ class CheckOnlineBooking:
         # Count number of request sent
         nb_request_sent = 0
         max_day_to_look_forward = 120
-        nb_request_sent += 1
 
         # Check all prefs
         for booking in Booking.objects.raw({"archived": False}):
+            nb_request_sent += 1
             # to handle server stop without waiting the end of job
             if self.cancelJob:
                 return
@@ -26,7 +26,7 @@ class CheckOnlineBooking:
             write_log("[" + now.strftime("%d/%m/%y %H:%M") + "] Booking...")
 
             booking_choose_date = booking.bookingChooseDate
-            booked_date = datetime.datetime.now() + datetime.timedelta(days=max_day_to_look_forward) if not booking\
+            booked_date = datetime.datetime.now() + datetime.timedelta(days=max_day_to_look_forward) if not booking \
                 .bookedCurrentDate else booking.bookedCurrentDate
 
             # Tag as archived

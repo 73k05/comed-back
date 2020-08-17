@@ -34,7 +34,7 @@ class Booking(MongoModel):
         self.updateDate = datetime.now()
         if not self.createDate:
             self.createDate = datetime.now()
-            try:
-                super(Booking, self).save()
-            except ValidationError as e:
-                write_log(f"Error saving booking: {e}")
+        try:
+            super(Booking, self).save()
+        except ValidationError as e:
+            write_log(f"Error saving booking: {e}")
