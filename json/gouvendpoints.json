@@ -221,7 +221,7 @@
       "departmentCode": "27",
       "departmentName": "Eure",
       "bypass": false,
-      "endPointUrl": "",
+      "endPointUrl": "https://www.eure.gouv.fr/ezjscore/call/bookingserver::planning::assign::17595::36233::",
       "indexDayZero": 0,
       "bookUrl": "http://www.eure.gouv.fr/booking/create/17595"
     },

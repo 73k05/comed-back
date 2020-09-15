@@ -11,13 +11,13 @@ from utils.request.bookingutils import get_open_slot
 class CheckOnlineBooking:
     cancelJob = False
 
-    def check_online_booking_job(self):
+    def check_online_booking_job(self, premium_booking):
         # Count number of request sent
         nb_request_sent = 0
         max_day_to_look_forward = 120
 
         # Check all prefs
-        for booking in Booking.objects.raw({"archived": False}):
+        for booking in Booking.objects.raw({"archived": False, "premiumBooking": premium_booking}):
             nb_request_sent += 1
             # to handle server stop without waiting the end of job
             if self.cancelJob:

@@ -65,9 +65,32 @@ pip3 install beaker
 pip3 install paramiko
 pip3 install apscheduler
 pip3 install pymodm
+pip3 install --upgrade stripe
+pip3 install jsonify
 ```
 
 # MongoDB
+## Config
+### Configuration file location on mac
+```vi /usr/local/etc/mongod.conf```
+### Configuration file location on linux
+```vi ...```
+
+The content of the file should look like this 
+```
+systemLog:
+  destination: file
+  path: /usr/local/var/log/mongodb/mongo.log
+  logAppend: true
+storage:
+  dbPath: /usr/local/var/mongodb
+net:
+  bindIp: 127.0.0.1
+setParameter:
+   enableLocalhostAuthBypass: false
+   cursorTimeoutMillis: 1200000
+```
+
 ## Mac
 ### Install
 `brew tap mongodb/brew`

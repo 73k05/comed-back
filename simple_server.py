@@ -4,6 +4,7 @@ from datetime import datetime
 from functools import wraps
 
 import bottle
+import stripe as stripe
 from apscheduler.schedulers.background import BackgroundScheduler
 from beaker.middleware import SessionMiddleware
 from bottle import (
@@ -28,7 +29,8 @@ from utils.log import write_server_log
 
 # loads applicative configuration
 config = ConfigurationManager()
-BOOKING_CRON_INTERVAL = int(config.active_configuration['BOOKING_CRON_INTERVAL'])
+BOOKING_CRON_INTERVAL_FREE = int(config.active_configuration['BOOKING_CRON_INTERVAL_FREE'])
+BOOKING_CRON_INTERVAL_PREMIUM = int(config.active_configuration['BOOKING_CRON_INTERVAL_PREMIUM'])
 DEPARTMENT_CRON_INTERVAL = int(config.active_configuration['DEPARTMENT_CRON_INTERVAL'])
 PORT = int(config.active_configuration['PORT'])
 HOST = config.active_configuration['HOST']
@@ -60,15 +62,23 @@ connect(DB_URL)
 client = MongoClient(DATABASE_HOST, DATABASE_PORT)
 comed_database = client[DATABASE_NAME]
 
+# Set up stripe API key
+stripe.api_key = "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"
+
 # set up background cron to check online booking every hour
 scheduler = BackgroundScheduler()
 cob = CheckOnlineBooking()
 uda = UpdateDepartmentAvailabilities()
 
 
-@scheduler.scheduled_job('interval', minutes=BOOKING_CRON_INTERVAL, next_run_time=datetime.now())
+@scheduler.scheduled_job('interval', minutes=BOOKING_CRON_INTERVAL_FREE, next_run_time=datetime.now())
 def check_online_booking_cron():
-    cob.check_online_booking_job()
+    cob.check_online_booking_job(False)
+
+
+@scheduler.scheduled_job('interval', minutes=BOOKING_CRON_INTERVAL_PREMIUM, next_run_time=datetime.now())
+def check_online_booking_cron():
+    cob.check_online_booking_job(True)
 
 
 @scheduler.scheduled_job('interval', minutes=DEPARTMENT_CRON_INTERVAL, next_run_time=datetime.now())
@@ -182,6 +192,23 @@ def get_output():
     response.headers['Cache-Control'] = 'no-cache'
     with open('output.log', "r", encoding='utf-8') as da_file_handler:
         return da_file_handler.read()
+
+
+@bottle.route('/booking/create-payment-intent', method=['POST'])
+def post_pay_boost():
+    try:
+        # data = json.loads(request.data)
+        intent = stripe.PaymentIntent.create(
+            amount=100,
+            currency='eur'
+        )
+        write_server_log(f"Payment intent created: {intent['client_secret']} \r\n")
+        return dumps({
+            'clientSecret': intent['client_secret']
+        })
+    except Exception as e:
+        write_server_log(f"Payment intent error: {e} \r\n")
+        return dumps(error=str(e)), 403
 
 
 def shutdown_cron_jobs():
