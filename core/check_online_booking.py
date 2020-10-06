@@ -46,4 +46,4 @@ class CheckOnlineBooking:
                     booking.bookedCurrentDate = date_free_slot
                     booking.save()
 
-        write_log(f"============ 73kBot successfully updated online booking _o/ {str(nb_request_sent)} ============")
+        write_log(f"============ 73kBot successfully updated online Premium={str(premium_booking)} booking _o/ {str(nb_request_sent)} ============")

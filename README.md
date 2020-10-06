@@ -19,26 +19,21 @@ export LC_CTYPE="fr_FR.UTF-8"
 sudo dpkg-reconfigure locales
 ```
 
-# start
-## Change pwd and/or smtp config in rendev.py password = "***" and run
-```
-python3.7 checkonlinebooking.py
-```
+# Run Server
+## Email
+Change pwd and/or smtp config by password = "***"
 
 ## Or if you want to start and quit
 ```
 nohup python3.7 checkonlinebooking.py &
 ```
-## Update repo and restart
+
+## PROD: Update repo and restart
 ```
 python3.7 restart.py
 ```
 
-## Start server for autoadding ongoing booking
-```
-```
-
-# after start
+# Logs
 Open new terminal and paste the following command to dispaly the output of the server
 ```
 tail -f output.txt 
@@ -65,8 +60,7 @@ pip3 install beaker
 pip3 install paramiko
 pip3 install apscheduler
 pip3 install pymodm
-pip3 install --upgrade stripe
-pip3 install jsonify
+pip3 install stripe
 ```
 
 # MongoDB
