@@ -63,7 +63,7 @@ client = MongoClient(DATABASE_HOST, DATABASE_PORT)
 comed_database = client[DATABASE_NAME]
 
 # Set up stripe API key
-stripe.api_key = "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"
+stripe.api_key = "***"
 
 # set up background cron to check online booking every hour
 scheduler = BackgroundScheduler()
